@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>2025. 11. 11.오후 3:33:59</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+
+<script>
+
+   // 버튼을 클릭하면 호출되는 함수
+   function btn_click() {
+      window.location.href="http://www.sist.co.kr"
+   }
+   
+   function coffee_click(){
+	   window.location.href="ex14_coffee.html"
+   }
+
+</script>
+
+</head>
+<body>
+
+<img usemap="#workmap" src="/webPro/html/images/workplace.jpg" alt="">
+
+<map name="workmap">
+   <area alt="computer" shape="rect" coords="34,44,270,350" href="ex14_computer.html">
+   <area alt="phone" shape="rect" coords="290,172, 333, 250" href="ex14_phone.html">
+   <area alt="coffee" shape="circle" coords="337, 300, 44" onclick="coffee_click()">
+</map>
+
+<hr>
+
+<!-- 버튼 태그 : 인라인 모드 -->
+<!-- 
+   클릭 이벤트 처리
+   on이벤트명="" 속성을 사용한다
+-->
+<button onclick="btn_click()">버튼을 클릭하면 쌍용 교육센터로 이동</button>
+<br>
+<button onclick='window.location.href="http://www.sist.co.kr";'>버튼을 클릭하면 쌍용 교육센터로 이동</button>
+
+<hr>
+
+<!--
+   [html 이미지 맵 == 지도]
+   - 하나의 이미지를 클릭 가능한 여러 영역으로 나눠서 다른 작업을 수행
+   - <map> 태그  : 이미지 맵을 정의
+     <area> 태그 : 클릭 가능한 영역
+     usemap 속성
+   - 클릭 이벤트 발생 -> 작업 처리
+-->
+
+</body>
+</html>

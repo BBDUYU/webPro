@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>2025. 11. 11. 오후 4:03:04</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico"> 
+</head>
+<body>
+<!-- 
+	[picture 태그]
+	- 다양한 기기마다 알맞은 이미지로 선택해서 출력하는 이미지 태그
+	- 반응형 웹
+	- 하나의 웹사이트가 다양한 접속기기에 맞춰서 화면 출력
+ -->
+ <!--  
+ <img alt="" src="/webPro/html/images/img_pink_flowers.jpg">
+ <br>
+ <img alt="" src="/webPro/html/images/img_white_flower.jpg">
+ <br>
+ <img alt="" src="/webPro/html/images/img_orange_flowers.jpg">
+ -->
+<picture>
+	<source media="(min-width:650px)" srcset="/webPro/html/images/img_pink_flowers.jpg">
+	<source media="(min-width:450px)" srcset="/webPro/html/images/img_white_flower.jpg">
+	<img alt="" src="/webPro/html/images/img_orange_flowers.jpg">
+</picture>
+</body>
+</html>

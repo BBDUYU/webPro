@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>2025. 11. 11. 오후 4:28:39</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico"> 
+<script>
+function team1_hide(){
+	window.alert("팀1조 숨기기");
+	var t1s_오승종= document.getElementById("t1_1");
+	t1s_오승종.style.display="none";
+	var t1s_김민배= document.getElementById("t1_2");
+	t1s_김민배.style.display="none";
+}
+function team1_show(){
+	window.alert("팀1조 숨기기");
+	var t1s_오승종= document.getElementById("t1_1");
+	t1s_오승종.style.display="inline";
+	var t1s_김민배= document.getElementById("t1_2");
+	t1s_김민배.style.display="inline";
+}
+</script>
+</head>
+<body>
+<!-- 
+	[span] 
+	 ㄴ 인라인 모드
+	 ㄴ 주로 '특정 텍스트' 요소로 그룹화 하여 스타일 적용
+	    또는 js로 처리할 목적으로 사용된다
+	 ㄴ 다른 요소를 담을 수 있는 컨테이너 역할
+-->
+<span id="t1_1">오승종</span> <br>
+<span id="t1_2">김민배</span> <br>
+<span id="t1_3">이지혜</span> <br>
+<span id="t1_4">지영주</span> <br>
+<span id="t1_5">류지호</span> <br>
+<span id="t1_6">김다원</span> <br>
+<span id="t1_7">장소예</span> <br>
+
+<br>
+<br>
+<span id="t2_1">김호연</span> <br>
+<span id="t2_2">김수진</span> <br>
+<span id="t2_3">오승찬</span> <br>
+<span id="t2_4">이나영</span> <br>
+<span id="t2_5">최현아</span> <br>
+<span id="t2_6">문종범</span> <br>
+<span id="t2_7">김유진</span> <br>
+<br>
+<br>
+<button onclick="team1_hide()">1조 숨기기</button>
+<button onclick="team1_show()">1조 보이기</button>
+</body>
+</html>

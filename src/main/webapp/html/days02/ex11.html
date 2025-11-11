@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>2025. 11. 11. 오후 2:28:45</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico"> 
+<style>
+  .frame {
+    display: inline-block;
+    padding: 15px; /* 액자 내부 여백 (유리-사진 거리 느낌) */
+    background: #fff; /* 액자 내부 배경 */
+    border: 8px solid #d4af37; /* 액자 테두리 색 (금색 느낌) */
+    box-shadow: 
+      0 0 0 5px #b8860b,  /* 이중 테두리 효과 */
+      4px 4px 15px rgba(0,0,0,0.3); /* 그림자 (입체감) */
+    border-radius: 6px; /* 살짝 둥근 모서리 */
+  }
+
+  .frame img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px; /* 사진 모서리 약간 둥글게 */
+  }
+</style>
+</head>
+<body>
+<h3>이미지</h3>
+<div class="frame">
+<a href="../images/pic_trulli.jpg" target="_blank"><img alt="이탈리아" src="../images/pic_trulli.jpg" style="width:100px;height:75px;"></a>
+</div>
+<hr>
+<a href="../images/pic_trulli.jpg" target="_blank">튤립</a>
+<hr>
+<img alt="이탈리아" src="../images/pic_trulli.jpg">
+<img alt="이탈리아" src="../images/pic_trulli.jpg" width="500" height="333">
+<hr>
+<img alt="이탈리아" src="../images/pic_trulli.jpg" width="100">
+<!-- 
+	1. 이미지는 웹페이지의 디자인과 모양을 개선
+	2. 이미지는 [인라인]
+	3. alt 속성 - 이미지를 대체할 텍스트를 지정하는 속성
+	   src 속성 - 이미지 경로(URL)
+	4. 이미지 크기(너비+높이)를 반드시 지정하는것이 좋다
+	   이유? 이미지를 로딩하는 동안 웹페이지가 깜빡일수 있음
+	5. html의 단위를 생략하면 px
+	6. 모든 브라우저에서 지원하는 이미지의 파일 형식
+	   gif, ico, jpeg, png, svg, apng
+ -->
+</body>
+</html>

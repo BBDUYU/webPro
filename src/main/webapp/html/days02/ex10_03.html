@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>2025. 11. 11. 오후 12:38:15</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico"> 
+<script>
+	//js는 대소문자 구분
+	//js로 함수
+	function test() {
+		window.alert("경고창"); 
+		//다른문서로 이동하는 js코딩
+		
+		//이동할 경로를 저장할 변수선언
+		var url="http://localhost/webPro/html/days01/ex02.html#htmlbasic";
+		window.location.href=url;
+	}
+</script>
+</head>
+<body>
+<!-- 
+	[a 링크]
+	1. 다른 문서로 이동 URL	#fragment
+	2. javascript (사용자반응처리) 처리
+ -->
+<a href="../days01/ex02.html#htmlbasic">html 기본구조 설명 이동</a><br>
+<!-- javascript로 이동 -->
+<a href="javascript:test();">html 기본구조 설명 이동</a>
+</body>
+</html>
