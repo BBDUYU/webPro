@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>2025. 11. 11. 오후 4:28:31</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+</head>
+<body>
+<span id="team1">
+   <span id="t1_1">오승종</span><br>
+   <span id="t1_2">김민배</span><br>
+   <span id="t1_3">이지혜</span><br>
+   <span id="t1_4">지영주</span><br>
+   <span id="t1_5">류지호</span><br>
+   <span id="t1_6">김다원</span><br>
+   <span id="t1_7" style="display: none;">장소예</span><br>
+</span>
+      <br>
+      <br>
+<span id="team2">      
+   <span>김호연</span><br>
+   <span>김수진</span><br>
+   <span>오승찬</span><br>
+   <span>이나영</span><br>
+   <span>최현아</span><br>
+   <span>문종범</span><br>
+   <span>김유진</span><br>
+</span>
+<br>
+<br>
+
+<button>1조 숨기기</button>
+<button>1조 보이기</button>
+<!-- jQuery -->
+<script>
+	$("button").first().on("click",function(){
+		window.alert("팀1조 숨기기");
+		$("#team1").hide();
+	});
+	$("button").last().on("click",function(){
+		window.alert("팀1조 보이기");
+		$("#team1").show();
+	});
+</script>
+</body>
+</html>
