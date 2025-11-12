@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>2025. 11. 12. 오전 11:32:36</title>
+<link rel="shortcut icon" type="image/x-icon"
+	href="http://localhost/webPro/images/SiSt.ico">
+	<style>
+	
+		table{
+			border:solid 1px #ddd;
+			width:400px;
+			margin:0 auto;
+		}
+		th,td,button{
+			border:solid 1px #ddd;
+		}
+		
+		thead th{ 
+			background-color: #000000;
+			color:#ffffff;
+		}
+		tbody tr:nth-child(odd){
+			background-color: #ddd;
+			
+		}
+		tbody tr:hover{
+			border:1px solid #ddd;
+			background-color: red;
+			color: white;
+			cursor: pointer;		
+		}
+	
+	
+	
+	
+	</style>
+</head>
+<body>
+	<!-- 
+      [table] 태그
+         ㄴ 데이터를 행/열로 출력
+         ㄴ 배치(layout) 활용
+         
+               컬럼     컬럼
+               table cell
+               <td>
+               
+   table row/<tr>   deptno   dname           loc           컬럼명 행 tr     
+   table row/<tr>   10      ACCOUNTING      NEW YORK   행    tr  table row   
+   table row/<tr>   20     RESEARCH      DALLAS        행   
+   table row/<tr>   30      SALES         CHICAGO       행      
+   table row/<tr>   40      OPERATIONS      BOSTON     행
+   
+        td cell 텍스트, html 요소, 이미지, 
+               테이블, 목록, 링크
+               등등 포함.
+ -->
+
+	<table>
+		<caption>부서 정보</caption>
+		<thead>
+			<tr>
+				<th>deptno</th>
+				<th>dname</th>
+				<th>loc</th>
+			</tr>
+		</thead>
+		<tbody>
+		<tr>
+			<td>10</td>
+			<td>ACCOUNTING</td>
+			<td>NEW YORK</td>
+		</tr>
+		<tr>
+			<td>20</td>
+			<td>RESEARCH</td>
+			<td>DALLAS</td>
+		</tr>
+		<tr>
+			<td>30</td>
+			<td>SALES</td>
+			<td>CHICAGO</td>
+		</tr>
+		<tr>
+			<td>40</td>
+			<td>OPERATIONS</td>
+			<td>BOSTON</td>
+		</tr>
+		</tbody>
+		<tfoot>
+		<tr>
+			<td colspan="3" align="center">
+				<button>추가</button>
+				<button>수정</button>
+				<button>삭제</button>
+			</td>
+		</tr>
+		</tfoot>
+	</table>
+
+
+</body>
+</html>

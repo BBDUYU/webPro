@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>2025. 11. 12. 오후 4:39:02</title>
+<link rel="shortcut icon" type="image/x-icon"
+	href="http://localhost/webPro/images/SiSt.ico">
+<style>
+div {
+	width: 100px;
+	height: 100px;
+	border: solid 1px;
+}
+/*두번째 div숨기기*/
+div:nth-child(3) {
+	background-color: red;
+	/* display:none; 위치 유지 X*/
+	visibility: hidden; /*위치 유지*/ 
+}
+</style>
+</head>
+<body>
+	<!-- display, visibility 차이 -->
+	<button>숨긴 div요소 보이기</button>
+		<div>1</div>
+		<div>2</div>
+		<div>3</div>
+		<div>4</div>
+</body>
+</html>

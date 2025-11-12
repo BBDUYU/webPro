@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>2025. 11. 12.오전 8:40:05</title>
+<link rel="shortcut icon" type="image/x-icon"
+	href="http://localhost/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+<style>
+button {
+	width: 98px;
+	color: black;
+	border: solid 1px gray;
+	background-color: white;
+	cursor: pointer;
+	vertical-align: middle;
+	height: 25px;
+}
+
+a:link {
+	color: black;
+	text-decoration: none;
+	border: solid 1px gray;
+	/* border-radius: 5px; */
+	display: inline-block;
+	width: 100px;
+	text-align: center;
+	vertical-align: middle;
+	height: 23px
+}
+
+a:visited {
+	color: black;
+	text-decoration: none;
+}
+
+a:hover {
+	color: red; 
+}
+
+a:active {
+	
+}
+
+span#team1 {
+	border: solid 1px gray;
+	display: inline-block;
+	width: 203px;
+}
+
+span#team1>span {
+	display: inline-block;
+	width: 48%;
+	text-align: center;
+}
+span#team1>span:hover {
+	background-color: yellow;
+	color: red;
+}
+</style>
+
+
+</head>
+
+<body>
+
+	<h3>javascript 사용</h3>
+
+	<p>
+		<a href="#" id="ch">숨기기</a>
+	</p>
+
+	<span id="team1"> <span>오승종</span> <span>김민배</span> <span>이지혜</span>
+		<span>지영주</span> <span>류지호</span> <span>김다원</span> <span>장소예</span>
+	</span>
+<!-- <script>
+var toggle = true;
+
+$("body > p > a").on("click", function(e) {
+
+    $("#team1").toggle();
+
+    if (toggle) {
+        $('#ch').text('보이기');
+    } else {
+        $('#ch').text('숨기기');
+    }
+
+    toggle = !toggle;
+});
+
+</script> -->
+<script>
+   $("body > p > a").on("click", function () {
+      
+      if($(this).text() == "숨기기") {
+         $("span#team1").hide();
+         $(this).text("보이기");
+      } else {
+         $("span#team1").show();
+         $(this).text("숨기기");
+      }
+      
+      // alert("숨기기");
+      // $("span#team1").hide();
+      // $("body > p > a").text("보이기");
+      // 기본 기능 X
+      event.preventDefault();
+   });
+</script>
+</body>
+</html>

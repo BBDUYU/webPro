@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>2025. 11. 12. 오전 9:01:54</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico"> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<style>
+	button{
+		border: solid 1px;
+		border-color:black;
+		background-color: white;
+		color: purple;
+		padding-left: 20px;
+		padding-right: 20px;
+		padding-top: 5px;
+		padding-bottom: 5px;
+		cursor: pointer;
+		
+	}
+	#team{
+		border:solid 1px;
+		display:inline-block;
+	}
+	span{
+		color: red;
+		padding:20px;
+	}
+</style> 
+</head>
+<body>
+<h3>javascript 사용</h3>
+<button>숨기기</button>
+<button>보이기</button><br><br>
+
+<div id="team">
+	<span>오승종</span>  <span>김민배</span> <br>
+	<span>이지혜</span>  <span>지영주</span> <br>
+	<span>류지호</span>  <span>김다원</span> <br>
+	<span>장소예</span>
+</div>
+<script>
+	$("button").first().on("click",function(){
+		$("#team").hide();
+	});
+	$("button").last().on("click",function(){
+		$("#team").show();
+	});
+</script>
+
+
+</body>
+</html>
