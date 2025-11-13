@@ -14,7 +14,7 @@
 </head>
 <body>
 <!-- button{"숨긴 div 요소 보이기"}+div{$}*2+#third{3}+div{4} -->
-<button>"숨긴 div 요소 보이기"</button>
+<button onclick="show()">"숨긴 div 요소 보이기"</button>
 <div>1</div>
 <div>2</div>
 <div id="third">3</div>
@@ -27,9 +27,32 @@
 	box3.className="box";
 	box3.setAttribute("class","box");
 	*/
+	function show(){
+		alert("보이기");
+		box.forEach(div=>{
+			if(div.style.visibility="hidden"){
+				div.style.visibility="visible";
+			}
+		})
+	}
 	
 	var box=document.querySelectorAll("body div");
-	console.log(box.length);
+	/* console.log(box.length); */
+	box.forEach(div=>{
+		console.log(div.innerText);
+		div.classList.add("box");
+	})
+	
+	var box2=document.querySelector("body div:nth-child(3)");
+	box2.style.visibility="hidden";
+	
+	var box3=document.querySelector("#third");
+	box3.onclick=function(click){
+		//alert("click");
+		//box3.style.visibility="hidden";
+		this.style.visibility="hidden";
+	}
+	
 	
 </script>
 

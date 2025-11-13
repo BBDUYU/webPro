@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>2025. 11. 13. 오후 3:17:08</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico"> 
+<style>
+	h3{
+		background-color: yellow;
+	}
+	h3:hover{
+		
+	}
+	/* :: 가상요소
+		ㄴ 인라인인거같음
+		ㄴ 요소의 지정된 부분에 스타일을 지정하는데 사용*/
+	h3::before{
+		content: url('../../images/SiSt.ico');
+	}
+	h3::after{
+		content: "~~~~";
+	}
+</style>
+</head>
+<body>
+<h3>Lorem ipsum dolor sit amet.</h3>
+<h3>Lorem ipsum dolor sit amet.</h3>
+<h3>Lorem ipsum dolor sit amet.</h3>
+</body>
+</html>

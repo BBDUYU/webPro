@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2025. 11. 13. 오후 2:46:24</title>
+<link rel="shortcut icon" type="image/x-icon"
+	href="http://localhost/webPro/images/SiSt.ico">
+<style>
+	* {
+		box-sizing: border-box; /*배치매우중요*/
+	}
+	
+	body {
+		font-family: Arial, Helvetica, sans-serif;
+	}
+	
+	div#header {
+		color: white;
+		background-color: #666;
+		padding: 30px;
+		text-align: center;
+		font-size: 35px;
+	}
+	
+	div#footer {
+		color: white;
+		background-color: #777;
+		padding: 20px;
+		text-align: center;
+		font-size: 25px;
+	}
+	
+	div#section {
+		border:solid 1px red;
+		/* display:flex; */
+	}
+	div#section>div#nav{
+		width:30%;
+		background-color: #ccc;
+		padding:20px;
+		float:left;
+	}
+	div#section>div#article{
+		width: 70%;
+		background-color: #f1f1f1;
+		padding: 20px;
+		float:left;
+	}
+	
+	div#section::after{
+		content:"";
+		display: table; 
+		clear:both; /* float 레이아웃 적용을 끊어줌 */
+	}
+	
+/* 	div#clear{
+		clear:both; /* float 레이아웃 적용을 끊어줌 */
+/*	} */
+</style>
+<style>
+	/*
+		css2에 도입된 미디어쿼리 규칙을 사용하면
+		미디어 유형마다 다른 스타일 규칙을 정의할 수 있다
+		- 장치마다
+			ㄴ 뷰포트의 너비와 높이
+			ㄴ 뷰포트의 가로 / 세로
+			ㄴ 해상도
+			에 따라 맞춤형 스타일 적용
+		- 형식
+		@media not|only mediatype and (적용규칙) and (적용규칙){
+				적용할 스타일		
+		}
+		mediatype : all,print,screen
+		적용규칙 : max-height, min-height, height
+				 max-width, min-width, width
+	*/
+	/* css 미디어 쿼리 - 반응형 웹 */
+	@media screen and (max-width:800px){
+		div#section>div#nav,div#section>div#article{
+			width:100%;
+			height: auto;
+		}
+	}
+</style>
+</head>
+<body>
+	<div id="header">
+		<h2>Cites-시멘틱태그(sementic elements)</h2>
+	</div>
+	<div id="section">
+		<div id="nav">
+			<ul>
+				<li><a href="#">London</a></li>
+				<li><a href="#">Paris</a></li>
+				<li><a href="#">Seoul</a></li>
+			</ul>
+		</div>
+		<div id="article">
+			<h2>London</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo
+				repellat porro dolor eum illum eligendi atque dolorem harum quod
+				esse sint earum aspernatur minima suscipit iste aut itaque ipsa
+				dicta.</p>
+			<p>Saepe aspernatur autem quo totam repudiandae voluptas! Aliquam
+				modi asperiores dolorem cumque dolor facilis cum temporibus maiores
+				nesciunt doloremque iusto reiciendis voluptatibus omnis fuga
+				eligendi explicabo unde nam illo ad.</p>
+			<h2>Paris</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+				Voluptatibus repellat cumque in repellendus porro architecto qui
+				molestiae assumenda provident impedit earum dolorem eligendi facilis
+				tempore amet laudantium ipsam. Aliquam quis?</p>
+			<p>Voluptatibus delectus recusandae explicabo necessitatibus quod
+				hic numquam fuga vitae fugit tempore fugiat dolores expedita
+				deleniti incidunt minima magnam at animi soluta iusto quae. Numquam
+				ullam aut est minima fuga?</p>
+			<h2>Seoul</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius
+				dicta libero minima repellat labore molestiae autem quam sit
+				ratione. Laborum suscipit earum velit unde iste nihil deleniti id
+				illo quae!</p>
+			<p>Voluptatibus nobis nulla debitis laborum dolorem saepe odit
+				veniam ut totam hic laboriosam laudantium libero voluptatem
+				obcaecati nemo aperiam quasi cum eveniet suscipit quia. Eveniet illo
+				ipsam consequuntur veritatis voluptatum.</p>
+		</div>
+	</div>
+	<!-- <div id="clear"></div> -->
+	<div id="footer">
+		<h2>FOOTER</h2>
+	</div>
+</body>
+</html>
