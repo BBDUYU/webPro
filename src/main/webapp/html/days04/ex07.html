@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>2025. 11. 13. 오후 4:15:46</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico"> 
+<style>
+
+	.class5{
+		display: flex;
+		justify-content: center;
+	}
+	.teamGroup{
+		border: solid 1px red;
+		margin: 5px;
+		width: 30%;
+	}
+	.teamGroup .teamLeader{
+		font-weight: bold;
+		color: red;
+	}
+	.teamGroup .classLeader{
+		font-weight: bold;
+		background-color: yellow;
+	}
+	.teamGroup .absent{
+		text-decoration: line-through;
+	}
+	
+</style>
+
+</head>
+<body>
+<!-- [class 속성]
+	 ㄴ 클래스명 대소문자 구분
+ -->
+ <div class="class5">
+	<div id="team1" class="teamGroup">
+		<ul>
+			<li class="teamLeader classLeader">오승종</li>
+			<li class="absent">김민배</li>
+			<li>이지혜</li>
+			<li>지영주</li>
+			<li class="absent">류지호</li>
+			<li class="absent">김다원</li>
+			<li class="absent">장소예</li>
+		</ul>
+	</div>
+	<div id="team2" class="teamGroup">
+		<ul>
+			<li class="teamLeader">김호연</li>
+			<li class="absent">김수진</li>
+			<li class="absent">오승찬</li>
+			<li>이나영</li>
+			<li class="absent">최현아</li>
+			<li>문종범</li> 
+			<li>김유진</li>
+		</ul>
+	</div>
+</div>
+</body>
+<!-- 
+<script>
+	var liList = document.querySelectorAll(".teamGroup li");
+	liList.forEach(function(li, index) {
+		li.onclick = function() {
+			/* console.log(li.innerText); */ 
+			if (this.style.textDecoration==="line-through") {
+				this.style.textDecoration= "none";
+			}else{
+				this.style.textDecoration= "line-through";
+			}
+			
+		};
+	});
+	
+</script>
+ -->
+ <!-- 
+<script>
+   /* 모든 1, 2조 팀원들에 해당하는 li 요소를 얻어옴  */
+   const liList = document.querySelectorAll(".teamGroup li");
+   /* alert(liList.length); */
+   liList.forEach(li=>{
+      li.onclick = function () {
+    	const style = window.getComputedStyle(li);
+    	// text-decoration-line 속성을 확인
+    	if (style.textDecorationLine.includes('line-through')) {
+    		li.style.textDecorationLine='none';
+    	} else {
+    		li.style.textDecorationLine = 'line-through';
+    	}
+      }
+      /* li.addEventListener("click", function (){}); */
+   });
+</script>
+ -->
+ <script>
+   /* 모든 1, 2조 팀원들에 해당하는 li 요소를 얻어옴  */
+   const liList = document.querySelectorAll(".teamGroup li");
+   /* alert(liList.length); */
+   liList.forEach(li=>{
+      li.onclick = function () {
+    	const style = window.getComputedStyle(li);
+    	// text-decoration-line 속성을 확인
+    	if (style.textDecorationLine.includes('line-through')) {
+    		li.style.textDecorationLine='none';
+    	} else {
+    		li.style.textDecorationLine = 'line-through';
+    	}
+      }
+      /* li.addEventListener("click", function (){}); */
+   });
+</script>
+ 
+</html>

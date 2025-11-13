@@ -30,29 +30,23 @@
 		text-align: center;
 		font-size: 25px;
 	}
-	
+	/*컨테이너*/
 	div#section {
 		border:solid 1px red;
-		/* display:flex; */
+		display:flex;
 	}
 	div#section>div#nav{
 		width:30%;
 		background-color: #ccc;
 		padding:20px;
-		float:left;
 	}
 	div#section>div#article{
 		width: 70%;
 		background-color: #f1f1f1;
 		padding: 20px;
-		float:left;
 	}
 	
-	div#section::after{
-		content:"";
-		display: table; 
-		clear:both; /* float 레이아웃 적용을 끊어줌 */
-	}
+
 	
 /* 	div#clear{
 		clear:both; /* float 레이아웃 적용을 끊어줌 */
