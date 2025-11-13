@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>2025. 11. 13. 오전 11:26:15</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico"> 
+<style>
+	.box{
+		width:100px;
+		height:100px;
+		border: solid 1px;
+	}
+</style>
+</head>
+<body>
+<!-- button{"숨긴 div 요소 보이기"}+div{$}*2+#third{3}+div{4} -->
+<button>"숨긴 div 요소 보이기"</button>
+<div>1</div>
+<div>2</div>
+<div id="third">3</div>
+<div>4</div>
+
+<script>
+	/* [1]
+	var box3=document.getElementById("third");
+	box3.classList.add("box");
+	box3.className="box";
+	box3.setAttribute("class","box");
+	*/
+	
+	var box=document.querySelectorAll("body div");
+	console.log(box.length);
+	
+</script>
+
+</body>
+</html>
