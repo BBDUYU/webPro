@@ -2,12 +2,62 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>2025. 11. 17. 오후 4:24:12</title>
-<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2025. 11. 17.오후 4:24:11</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+<style>
+   body {
+      border: 1px solid red;
+      margin: 0;
+      padding: 0;
+   }
+   div {
+      border: 1px solid black;
+      
+      /*
+      margin-top: 50px; 
+      margin-right:75px;
+      margin-bottom: 150px; 
+      margin-left: 150px;
+      */
+     /*  margin:50px 75px 100px 150px; */
+     
+     /* 오른쪽여백 = 왼쪽여백이 같은경우를 약식으로 나타내면
+      margin-top: 50px; 
+      margin-right:75px;
+      margin-bottom: 150px; 
+      margin-left: 75px;
+                         r|l */
+      /* margin : 50px 75px 150px; */
+      /*		t|b     r|l*/
+      /* margin: 50px 75px */
+   }
+   
+   div.third{
+   	margin:10px auto;
+   }
+</style>
 
 </head>
 <body>
+
+<!--
+   margin 속성 == 테두리(border)의 바깥쪽 여백
+   padding 속성 == 테두리(border)의 안쪽 여백
+   
+   단위 : auto(브라우저 여백을 계산)
+         px, pt, cm 등등 길이 단위
+         % 부모 요소의 너비에 대한 여백 %로 지정
+         inherit 여백이 부모 요소로부터 상속됨
+         음수값도 허용함
+-->
+
+<!-- .demo>lorem^div*2>lorem -->
+<div class="demo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae cumque hic deleniti ipsa nemo culpa assumenda voluptas velit corporis alias. Optio iure voluptatum quia itaque eum. Modi tempore nam esse.</div>
+<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores veniam itaque fugiat voluptatibus blanditiis ab fuga est dolorum tenetur ut velit quidem. Consequatur esse ut exercitationem quae ipsam voluptatum ducimus.</div>
+<div class="third" style="width:400px">Ipsa aspernatur quas rerum incidunt ullam explicabo ratione dolorem consectetur eligendi non veritatis nostrum labore suscipit molestias maxime soluta reiciendis delectus minima culpa sapiente architecto consequatur voluptatibus ducimus quam dignissimos.</div>
 
 </body>
 </html>
