@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2025. 11. 14. 오후 3:30:07</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<style>
+ .box{
+   border:solid 1px gray;
+   padding: 5px;
+ }
+</style>
+</head>
+<body>
+<div>
+  <select id="classMember" size="5" multiple="multiple">
+    <!-- <optgroup label="1조"> -->
+    	<option value="1">오승종</option>
+    	<option value="2">김민배</option>
+    	<option value="3">이지혜</option>
+    	<option value="4">지영주</option>
+    	<option value="5">류지호</option>
+    	<option value="6">김다원</option>
+    	<option value="7">장소예</option>
+    <!-- </optgroup>  -->
+    <!-- <optgroup label="2조"> -->
+    	<option value="8">김호연</option>
+    	<option value="9">김수진</option>
+    	<option value="10">오승찬</option>
+    	<option value="11">이나영</option>
+    	<option value="12">최현아</option>
+    	<option value="13">문종범</option>
+    	<option value="14">김유진</option>
+    <!-- </optgroup> -->
+  </select>
+  
+  <button>선택 멤버 확인</button>
+  <div>X</div>
+  
+</div>
+<hr>
+<div>
+  <p>문종범씨 하고 싶은 말 ? </p>
+  <!-- textarea.value -->
+  <textarea id="content" rows="10" cols="50"></textarea>
+  <button onclick="multiline_test(this);">확인</button>
+  <div class="box">X</div>
+</div>
+<script>
+  function multiline_test(btnok){	
+	  var msg = document.getElementById("content").value ;
+	  document.querySelector("div.box").innerText = msg;
+  }
+</script>
+<hr>
+<div id="survey">
+  설문조사시작일 : <input type="date" id="survey_start" value="2025-11-01"><br>
+  설문조사종료일 : <input type="date" id="survey_end" value="2025-11-30"><br>
+  <br>
+  <input type="button" id="btnSurvey" value="설문조사 확인" 
+         onclick="test(this);">
+  <br>
+  <div>X</div>
+</div>
+<script>
+  function test(btn){
+	 // alert( btn.value );
+	  const startDate = document.querySelector("#survey_start").value;
+	  const endDate = document.querySelector("#survey_end").value;
+	  
+	  const demo = document.querySelector("#survey > div");
+	  demo.innerText = `${startDate} ~ ${endDate}`;
+	  
+  }
+</script>
+
+<hr>
+<div>
+  색상 : <input type="color" id="color"><br>
+  글크기 : <input type="number" id="fsize" min="16" max="50">
+  <br>
+  <input type="button" id="btnColor" value="색 확인">
+  <div id="demo">TEST</div> 
+</div>
+<script>
+  const divDemo = document.querySelector("#demo");
+  const color = document.querySelector("#color");  
+  const btnColor = document.querySelector("#btnColor");
+  const fsize = document.querySelector("#fsize");
+  
+  btnColor.addEventListener("click", function (){
+	  //console.log("버튼 클릭이벤트 발생!!!");
+	  // divDemo.innerText = "버튼 클릭이벤트 발생!!!";
+	  divDemo.innerText = color.value;
+	  divDemo.style.color = color.value;
+	  divDemo.style.fontSize = fsize.value +"px";
+	  
+  });
+</script>
+</body>
+</html>
+
+
+  
+

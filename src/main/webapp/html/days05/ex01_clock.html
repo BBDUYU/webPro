@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>2025. 11. 14. 오전 10:02:50</title>
+<link rel="shortcut icon" type="image/x-icon"
+	href="http://localhost/webPro/images/SiSt.ico">
+<style>
+.clock {
+	width: 10em;
+	font-size: 20px;
+	text-align: center;
+}
+</style>
+</head>
+<body onload="init();">
+
+	<div id="clock" class="clock"></div>
+
+	<script>
+		function init() {
+			console.log("> init().");
+			dispClock();
+		}
+
+		function dispClock() {
+			const clockDiv = document.querySelector("#clock");
+			// js
+			const now = new Date();
+
+			const year = now.getFullYear();
+			const month = now.getMonth() + 1;
+			const day = now.getDate();
+
+			const hours = now.getHours();
+			const minutes = now.getMinutes();
+			const seconds = now.getSeconds();
+
+			clockDiv.innerText = `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
+			// clockDiv.innerText = year + "." + month + "."+day;
+			
+			// 1초후에 dispClock() 함수를 호출하세요. 
+			window.setTimeout(dispClock, 1000);
+			
+		}
+	</script>
+</body>
+</html>
+
+
+
+
+
