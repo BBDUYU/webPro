@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>2025. 11. 17. 오전 10:36:08</title>
+<link rel="shortcut icon" type="image/x-icon"
+	href="http://localhost/webPro/images/SiSt.ico">
+</head>
+<body>
+<img id="scream" src="../images/img_the_scream.jpg" alt="The Scream" width="220" height="277">
+<p>
+	<button>클릭</button>
+</p>
+
+<canvas id="myCanvas" width="250" height="300" style="border:1px solid #d3d3d3"></canvas>
+	<script>
+		var c = document.querySelector("#myCanvas");
+		var ctx = c.getContext("2d");
+		var screamImg=document.querySelector("#scream");
+		
+		document.querySelector("body>p>button").addEventListener("click",function(){
+			ctx.drawImage(screamImg,10,10);			
+		});
+		
+		
+	</script>
+</body>
+</html>

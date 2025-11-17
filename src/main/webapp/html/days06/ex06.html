@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>2025. 11. 17. 오전 11:16:51</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico"> 
+</head>
+<body>
+<!-- 
+	html 멀티미디어
+	1. 웹에서 멀티미디어 ? 사운드, 음악, 비디오, 영화, 애니메이션 등등
+	2. 최초 웹 브라우저에서는 단일 색상의 텍스트만 지원
+		ㄴ 나중에 글꼴, 색상, 이미지, 멀티미디어 등이 지원되는 태그
+	3. 웹페이지에서 다양한 유형의 멀티미디어 지원하는 태그 존재
+	4. 멀티미디어 파일 : .wav .mp3 .mp4 .mpg .wmp .avi지원
+		html 표준 지원
+		ㄴ 비디오 : mp4, webm, ogg
+		ㄴ 오디오 : mp3, wav, ogg
+	5. <video> 태그 - 웹페이지에서 비디오를 표시하는데 사용되는 태그
+		ㄴ 항상 너비, 높이 설정 
+		   비디오가 로딩되는 동안 깜빡임이 발생할수있기 때문에
+		ㄴ controls 속성을 사용해서 재생, 일시정지, 볼륨 등등
+ -->
+ <video src="movie.mp4" width="320" height="240"
+ 	controls="controls">
+ 	<!-- 크롬 브라우저에서는 자동재생 X 
+ 	     음소거된 자동재생은 허용
+ 	-->
+ </video>
+ <hr>
+  <video width="320" height="240"
+ 	controls autoplay muted>
+	<source src="movie.mp4" type="video/mp4">
+	<source src="movie.ogg" type="video/ogg">
+ </video>
+ <hr>
+ <!-- 
+ 	비디오 : <video>
+ 	오디오 : <audio> 오디오를 웹페이지에서 재생하는데 사용되는 태그
+  -->
+  <audio>
+  	<source src="movie.mp3" type="audio/mp3">
+  	<source src="movie.ogg" type="audio/ogg">
+  	
+  </audio>
+</body>
+</html>

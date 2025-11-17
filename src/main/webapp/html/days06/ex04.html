@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>2025. 11. 17. 오전 10:36:08</title>
+<link rel="shortcut icon" type="image/x-icon"
+	href="http://localhost/webPro/images/SiSt.ico">
+</head>
+<body>
+	<!-- 
+	[html 그래픽 - canvas, svg]
+		ㄴ canvas 요소 : js를 사용해서 그래픽처리를 하는데 사용되는 태그
+			ㄴ 그래픽 컨테이너 역할 (도화지)
+			ㄴ 모든 브라우저 지원
+			ㄴ 그리기 작업은 js사용
+			ㄴ 선, 원, 사각형, 텍스트, 이미지 추가 등등
+ -->
+	<canvas id="myCanvas" width="200" height="200"
+		style="border: 1px solid #000"></canvas>
+
+	<script>
+		var c = document.querySelector("#myCanvas");
+		var ctx = c.getContext("2d");
+		ctx.moveTo(0,0);
+		ctx.lineTo(200,100);
+		ctx.stroke();
+		
+		ctx.beginPath();
+/* 		ctx.arc(95, 50, 40, 0, 0.5* Math.PI ); */
+		ctx.arc(95, 50, 40, 0, 2* Math.PI );
+		ctx.stroke();
+		
+		//텍스트
+		ctx.font="30px Arial";
+		ctx.strokeText("Hello World",10,50)
+		
+	</script>
+</body>
+</html>

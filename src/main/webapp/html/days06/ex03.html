@@ -6,10 +6,24 @@
 <link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico"> 
 </head>
 <body>
-<form action="">
+<form action="ex03_02.html" method="get" target="_blank" novalidate="novalidate">
 	ID : <input type="text" name="id" value="admin" readonly="readonly">
 	<br>
-	<input type="submit">
+	Email : <input type="email" value="admin@naver.com" disabled="disabled">
+	<br>
+	Phone : <input type="text" pattern="[0-9]{3}-\d{4}-\d{4}" placeholder="000-0000-0000">
+	<br>
+	KOR : <input type="number" min="0" max="100" step="2">
+	<br>
+	Time : <input type="time" />
+	<br>
+	URL : <input type="url" required="required"/>
+	<br>
+	Search : <input type="search" />
+	<br>
+	첨부파일 : <input type="file" name="attach" />
+	<br>
+	<input type="submit" formaction="ex03_03.html" formmethod="post" formenctype="multipart/form-data" formnovalidate="formnovalidate">
 </form>
 </body>
 </html>
