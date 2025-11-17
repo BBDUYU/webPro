@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2025. 11. 17. 오후 2:46:28</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+<pre style="background-color: rgba(255,30,50,0.3)">
+  [css 색상] 
+  1. 140개의 미리 명명된 표준 색상명 gray, blue, red 등등
+  2. hex    #16진수
+           #00 00 00
+           R    G    B
+           0  ~ 255
+           00 ~ FF
+  3. RGB 색의 3원색 ( 빨, 녹, 파 )
+      rgb(빨,녹,파)
+      0 ~ 255
+  4. RGBA( 빨, 녹, 파, 투명도 )
+           (완전투명)0.0 ~ 1.0(불투명)
+  5. HSL ( 색상, 채도, 명도 )
+     색상  0 ~ 360 (0 ~ 120 빨강, 121 ~ 240 녹색, 241 ~ 파랑)
+     채도         백분율      0%(회색음영) ~ 100%(풀컬러)
+     명도(밝기)   백분율      0%(검은색)  ~  100%(흰색)
+     
+     - HSLA()
+</pre>
+
+<div id="controls">
+빨강 : <input id="r" type="range" min="0" max="255"><span></span>
+녹색 : <input id="g" type="range" min="0" max="255"><span></span>
+파랑 : <input id="b" type="range" min="0" max="255"><span></span>
+투명도 : <input id="a" type="range" min="0" max="100"><span></span>
+</div>
+<script>
+var preBackgroundColor=$("pre").css("background-color");
+console.log(preBackgroundColor);
+if(preBackgroundColor.startsWith("rgba")){
+	
+	var rgbaArr = preBackgroundColor.match(/^rgba?\((\d+), (\d+), (\d+), ([0-9\.]+)\)$/);
+	var red=rgbaArr[1];
+	var green=rgbaArr[2];
+	var blue=rgbaArr[3];
+	var alpha=rgbaArr[4];
+	
+	$("#r").val(red); $("#r").next().text(red);
+	$("#g").val(green); $("#g").next().text(green);
+	$("#b").val(blue); $("#b").next().text(blue);
+	$("#a").val(alpha); $("#a").next().text(alpha);
+}
+$("#controls input[type=range]").on("input",function(){
+	let rval=$("#r").val(); $("#r").next().text(rval);
+	let gval=$("#g").val(); $("#g").next().text(gval);
+	let bval=$("#b").val(); $("#b").next().text(bval);
+	let aval = $("#a").val()/100;   $("#a").next().text(aval);
+	
+	$("pre").css("background-color",`rgba(${rval},${gval},${bval},${aval})`);
+});
+
+</script>
+</body>
+</html>

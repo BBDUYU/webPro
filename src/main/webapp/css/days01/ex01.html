@@ -10,13 +10,58 @@
 	  head 태그안에 style 태그를 사용하는 방법
 	  내부(internal) css 적용방법*/
 	  
-	p{
+	*{ /*0점*/
+		padding: 0;
+		margin: 0;
+	}  
+	  
+	body > p#first{ /*1점+1점+100점*/
+		color:navy
+	}  
+	  
+	p#first{ /*1점+100점*/
+		color:yellow;
+	}  
+	  
+	#first{ /*100점*/
+		color:green;
+	}  
+	  
+	p{	/*1점*/
 		color:red;
 		text-align: center;
+	}
+	p.second{ /*1+10점*/
+		
+	}
+	.second{/*10점*/
+		border:1px solid red;
+	}
+	/*1+10점*/
+	input[type=text]{
+	
 	}
 </style>
 </head>
 <body>
+<!-- 
+	css의 특이성
+	ㄴ 요소에 최종적으로 적용되는 스타일을 결정하는 알고리즘
+	ㄴ 하나의 요소에 두개 이상의 스타일을 적용하는경우
+	  특이성이 가장 높은 선언을 우선시한다
+	ㄴ 특이성 규칙
+		#아이디 : 100점
+		
+		태그명  : 1점
+		::after, ::before 가상요소 : 1점
+		
+		*(범용선택자) : 0점
+		
+		 
+		.클래스명 : 10점
+		:가상클래스 : 10점
+		[type=text] : 10점
+ -->
 <!-- 
 	[css]
    1. html 문서의 스타일을 지정하는데 사용되는 언어
@@ -34,11 +79,13 @@
    			속성명:속성값;   			
    		}
  -->
- <p>Lorem ipsum dolor sit amet.</p>
- <p>In accusantium facilis perferendis voluptatem.</p>
+ <p id="first">Lorem ipsum dolor sit amet.</p>
+ <p class="second">In accusantium facilis perferendis voluptatem.</p>
  <div>Lorem ipsum dolor sit.</div>
- <div>Voluptates vitae neque natus.</div>
+ <div class="second">Voluptates vitae neque natus.</div>
  <div>Odit sint corporis atque!</div>
- <div>Obcaecati quaerat asperiores quae.</div>
+ <!-- css를 적용하는 두번째 방법 -->
+ <!-- inline Css적용방법 1000점-->
+ <div style="color:navy">Obcaecati quaerat asperiores quae.</div>
 </body>
 </html>
