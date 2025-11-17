@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>2025. 11. 17. 오전 9:18:00</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico"> 
+</head>
+<body onload="init()" onunload="">
+
+<form action="a.html" method="get">
+<input type="hidden" name="nickname" value="admin" />
+<input type="hidden" name="age" value="20"/>
+<br>
+<input type="image" src="../images/programming.gif"/>
+<input type="image" src="../images/programming.gif"/>
+<br>
+<input type="month">
+<br>
+국어 : <input type="number" min="0" max="100" value="0">
+<br>
+볼륨 : <input type="range" min="0" max="100" value="10">
+<div id="demo"></div>
+<br>
+<button type="submit">제출</button>
+</form>
+
+<script>
+	function init(){
+		const volumnRange = document.querySelector("form>[type=range]");
+		const demo = document.querySelector("#demo");
+		demo.innerHTML=`<span style='color:red'>${volumnRange.value}</span>`;
+		/* alert(volumnRange); */
+		
+		volumnRange.addEventListener("input",function(e){
+			console.log('값이바뀜 :'+ e.target.value);
+			demo.innerHTML=`<span style='color:red'>${volumnRange.value}</span>`;
+			demo.style.fontSize=e.target.value+'px';
+		});
+	}
+</script>
+</body>
+</html>

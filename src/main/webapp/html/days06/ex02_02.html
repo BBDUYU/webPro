@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2025. 11. 17. 오전 9:18:01</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body onload="init();">
+<form action="a.html" method="get">
+  <input type="hidden" name="nickname" value="admin">
+  <input type="hidden" name="age" value="20">
+  <br>
+    <input type="image" src="../images/programming.gif">  
+    <input type="image" src="../images/programming.gif">  
+  <br>
+    <input type="month">
+  <br>
+    국어 : <input type="number" min="0" max="100" value="0">
+  <br>
+    볼륨 : <input type="range" min="0" max="100" value="10">
+    <div id="demo"></div>
+    <br>
+  <input type="submit">
+</form>
+
+<script >
+   function init() {
+      // 초기화 작업
+      const volumnRange = $("form > [type=range]");
+      const demo = $("#demo");
+      // innerText = text() jquery method
+      // innerHTML = html() jquery method
+   
+      demo.html( `<span style='color:red'>${volumnRange.val()}</span>`);
+
+      volumnRange.on("input", function(){
+        demo.html( `<span style='color:blue'>${volumnRange.val()}</span>`);
+        demo.css("font-size",volumnRange.val() + 'px');
+      });
+      
+   }
+</script>
+</body>
+</html>
