@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>2025. 11. 18. 오후 2:11:52</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico"> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<style>
+	.imgbox{
+		width:120px;
+		border:1px solid gray;
+		padding:6px;
+		margin:4px;
+		text-align:center;
+	}
+	.imgbox img{
+		width:100%;
+	}
+	
+</style>
+</head>
+<body>
+<h3>display, visibility 속성 차이점</h3>
+<div style="display:flex">
+	<div id="imgbox1" class="imgbox">Box1<img src="../images/img_5terre.jpg" alt="" /><button>Remove</button></div>
+	<div id="imgbox2" class="imgbox">Box2<img src="../images/img_lights.jpg" alt="" /><button>Hide</button></div>
+	<div id="imgbox3" class="imgbox">Box3<img src="../images/img_forest.jpg" alt="" /><button>ResetAll</button></div>
+</div>
+<script>
+	$("#imgbox1>button").on("click",function(){
+		$(this).parent().hide();
+	});
+	$("#imgbox2>button").on("click",function(){
+		$(this).parent().css("visibility","hidden");
+	});
+	$("#imgbox3>button").on("click",function(){
+		$("#imgbox1").show();
+		$("#imgbox2").css("visibility","visible");
+	});
+</script>
+
+</body>
+</html>
