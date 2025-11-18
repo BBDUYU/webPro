@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>2025. 11. 18. 오후 4:10:33</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico"> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<style>
+	.box{
+		border:1px solid gray;
+		text-align: center;		
+		width:100px;
+		height:100px;
+		
+	}
+	div:first-of-type{
+		background-color: red;
+	}
+	
+	div:nth-of-type(2) {
+		background-color: green;
+		/*상대좌표*/
+		position:relative;
+		left:20px;
+		top:20px
+	}
+	div:nth-of-type(3){
+		background-color: blue;
+		position:fixed;
+		right:20px;
+		bottom:20px;
+	}
+	div:nth-of-type(4){
+		background-color: yellow;
+		position:absolute;
+		left:100px;
+		top:200px;
+		z-index:-1;
+	}
+</style>
+</head>
+<body>
+<!-- 웹 페이지 요청할 때 js 5개의 div요소를 생성해서 표시 -->
+<!-- position 속성 설명 -->
+<script>
+	for (var i = 1; i <=5 ; i++) {
+		//1. <div>Box - 1</div>
+		const div = document.createElement("div");
+		div.innerText=`Box - ${i}`;
+
+		div.classList.add("box");
+
+		document.body.appendChild(div);
+	}
+</script>
+</body>
+</html>
