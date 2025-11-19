@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>2025. 11. 19. 오전 10:24:52</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico"> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<style>
+	*{
+		/*너비에 테두리, 패딩 속성값을 포함 여부 속성 : box-sizing*/
+		
+		box-sizing: border-box;
+	}
+	body{
+		font-family: Arial,Verdana,sans-serif;
+	}
+	.open-button{
+		background-color: #555;
+		color:white;
+		padding: 16px 20px;
+		border:none;
+		cursor:pointer;
+		opacity: 0.8;
+		width:280px;
+		position: fixed;
+		right: 28px;
+		bottom: 23px;
+	}
+	.form-popup{
+		border: 3px solid #f1f1f1;
+		position: fixed;
+		right: 15px;
+		bottom: 0;
+		z-index:10;
+		display: none;
+	}
+	.form-container{
+		max-width: 300px;
+		padding: 10px;
+		background-color: white;
+	}
+	.form-container input[type=text],
+	.form-container input[type=password]{
+		width: 100%;
+		border: none;
+		background-color: #f1f1f1;
+		margin: 5px 0 22px 0;
+		padding: 15px;
+	}
+	.form-container input[type=text]:focus,
+	.form-container input[type=password]:focus{
+
+		background-color: #ddd;
+		outline: none;
+
+	}
+	.form-container .btn{
+		background-color: #4caf50;
+		color:white;
+		border:none;
+		padding: 16px 20px;
+		cursor: pointer;
+		width: 100%;
+		margin-bottom: 10px;
+		opacity: 0.8;
+	}
+	.form-container .btn.cancel{
+		background-color: red;
+	}
+	.form-container .btn:hover .open-button:hover{
+		opacity: 1;
+	}
+	
+</style>
+</head>
+<body>
+<!-- h3+button+div>form>h1+label>b^+input+label>b^+input+button+button -->
+<h3>팝업 폼</h3>
+<button class="open-button">Open Form</button>
+<div class="form-popup" id="myForm">
+	<form action="" class="form-container" autocomplete="off">
+		<h1>login</h1>
+		<label for="email"><b>Eamil</b></label>
+		<input type="text" placeholder="Enter Email" id="email" name="email"required/>
+		<label for="pwd"><b>Password</b></label>
+		<input type="password" placeholder="Enter Password" id="pwd" name="pwd" required/>
+		<button type="submit" class="btn">login</button>
+		<button type="button" class="btn cancel">Close</button>
+	</form>
+</div>
+<script>
+//jquery
+$("body > button.open-button").on("click",function(){
+	$("#myForm").css("display","block");
+	$("#email").focus();
+})
+$("#myForm button.cancel").on("click",function(){
+	$("#myForm").css("display","none");
+	$("#email").val("");
+	$("#pwd").val("");
+})
+/* js
+document.querySelector("body > button.open-button").onclick=function(){
+	document.querySelector("#myForm").style.display="block";
+	document.querySelector("#email").focus();
+}
+document.querySelector("#myFrom button.cancel").onclick=function(){
+	document.querySelector("#myForm").style.display="none";
+	document.querySelector("#email").value="";
+	document.querySelector("#pwd").value="";
+
+}
+*/
+</script>
+</body>
+</html>

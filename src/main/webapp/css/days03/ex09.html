@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>2025. 11. 19. 오후 12:25:42</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico"> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<style>
+	p{
+		background-color: red;
+		padding: 20px;
+		
+		display: none;
+	}
+	/* 롤 오버 효과
+	div:hover > p{
+		display: block;
+	}
+	*/
+</style>
+</head>
+<body>
+<!-- 
+	:의사클래스
+		ㄴ 어떤 요소의 특정상태를 정의하는 선택자
+		ㄴ a:hover
+		  input:focus
+		
+	::의사요소
+		ㄴ 어떤 요소의 지정된 부분에 스타일을 정하는 선택자
+		ㄴ .row::after float:left
+			   ::before
+		ㄴ 첫 문자
+		  첫 라인
+ -->
+ <div>
+ 	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia temporibus cum animi.
+ 	<p>
+ 		---Lorem ipsum dolor.
+ 	</p>
+ </div>
+ <script>
+ 	//jquery 롤오버효과
+ 	//$("div").hover();
+ 	$("div").hover(
+ 		/*마우스가 올라갈때*/
+ 		function(){
+ 			$("div > p").show()
+ 		},
+ 		/*마우스가 내려갈때*/
+ 		function(){
+ 			$("div > p").hide()
+ 		});
+ 	
+ </script>
+ 	
+ <script>
+ 	//js 롤오버효과
+ 	/*
+ 	const div=document.querySelector("div");
+ 	const p=document.querySelector("div > p");
+ 	
+ 	//마우스를 올리면 p보이게
+ 	div.addEventListener("mouseover",function(){
+ 		p.style.display="block";
+ 	});
+ 	//마우스를 내리면 p안보이게
+ 	div.onmouseout=function(){
+ 		p.style.display="none";
+ 	}
+ 	*/
+ </script>
+</body>
+</html>

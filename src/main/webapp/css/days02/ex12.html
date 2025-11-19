@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>2025. 11. 18. 오후 3:36:53</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico"> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<style>
+	.box{
+		border:1px solid gray;
+		text-align: center;
+		color:red;
+		
+		width:100px;
+		height:100px;
+		
+		/* position:static; */
+	}
+</style>
+</head>
+<!-- <body onclick="" onload="init()"> -->
+<body>
+
+<!-- position 속성 : static 정적 (기본값)
+t/r/b/l 속성 사용할수없다 
+<div class="box">Box - 1</div>
+<div class="box">Box - 2</div>
+<div class="box">Box - 3</div>
+js 사용해서 동적으로 div 요소를 생성해서 body의 자식으로 추가
+-->
+<script>
+	function init(){
+		//페이지 초기화 작업
+	}
+	document.body.onload = addElement;
+	function addElement(){
+		/* console.log("> onload 이벤트 발생"); */
+		//1. <div>Box - 1</div>
+		const div1 = document.createElement("div")
+		//2. Box - 1
+		const content = document.createTextNode("Box - 1");
+		//3. <div class="box">Box - 1</div>
+		div1.appendChild(content);
+		//4. class속성을 추가
+		/* div1.className="box" */
+		div1.classList.add("box");
+		   // 5. 클릭 이벤트 처리.
+		   div1.addEventListener("click", function() {
+		      this.classList.remove("box");
+		   }); 
+		//6. div1을 body요소의 자식으로 추가
+		/* document.body.appendChild(div1); */
+		document.body.prepend(div1);
+	}
+</script>
+</body>
+</html>

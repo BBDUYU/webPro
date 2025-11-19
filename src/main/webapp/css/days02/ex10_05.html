@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>2025. 11. 18. 오후 2:35:19</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico"> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<style>
+	#panel,.flip{
+		background-color: #4acf50;
+		color: white;
+		text-align: center;
+		font-size: 16px;
+		padding: 10px;
+		margin: auto;
+		border:1px solid #a6d8a8;
+	}
+	/*
+ 	.panel{
+		display:none;
+	} */
+	
+	.flip:hover{
+		cursor: pointer;
+		color: red;
+	}
+</style>
+</head>
+<body>
+<p class="flip">Click to show panel</p>
+<div class="panel">
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit illo voluptatum quam id molestias suscipit delectus beatae. A eos quae totam labore fuga nam expedita voluptas doloribus saepe dignissimos in.</p>
+	<p>Ab quasi similique consequuntur maiores sequi eaque error ipsam voluptates odio culpa. Error quo est in libero commodi iure veniam beatae et dolores magni impedit necessitatibus odit fuga distinctio dolor.</p>
+	<p>Velit molestiae totam harum vero nemo assumenda laborum praesentium fugiat maiores dolorum inventore accusantium nihil similique ducimus necessitatibus adipisci eligendi dolorem nam consequatur mollitia illum veritatis id doloremque consectetur quod!</p>
+</div>
+<p class="flip">Click to show panel</p>
+<div class="panel">
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit illo voluptatum quam id molestias suscipit delectus beatae. A eos quae totam labore fuga nam expedita voluptas doloribus saepe dignissimos in.</p>
+	<p>Ab quasi similique consequuntur maiores sequi eaque error ipsam voluptates odio culpa. Error quo est in libero commodi iure veniam beatae et dolores magni impedit necessitatibus odit fuga distinctio dolor.</p>
+	<p>Velit molestiae totam harum vero nemo assumenda laborum praesentium fugiat maiores dolorum inventore accusantium nihil similique ducimus necessitatibus adipisci eligendi dolorem nam consequatur mollitia illum veritatis id doloremque consectetur quod!</p>
+</div>
+<p class="flip">Click to show panel</p>
+<div class="panel">
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit illo voluptatum quam id molestias suscipit delectus beatae. A eos quae totam labore fuga nam expedita voluptas doloribus saepe dignissimos in.</p>
+	<p>Ab quasi similique consequuntur maiores sequi eaque error ipsam voluptates odio culpa. Error quo est in libero commodi iure veniam beatae et dolores magni impedit necessitatibus odit fuga distinctio dolor.</p>
+	<p>Velit molestiae totam harum vero nemo assumenda laborum praesentium fugiat maiores dolorum inventore accusantium nihil similique ducimus necessitatibus adipisci eligendi dolorem nam consequatur mollitia illum veritatis id doloremque consectetur quod!</p>
+</div>
+<p class="flip">Click to show panel</p>
+<div class="panel">
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit illo voluptatum quam id molestias suscipit delectus beatae. A eos quae totam labore fuga nam expedita voluptas doloribus saepe dignissimos in.</p>
+	<p>Ab quasi similique consequuntur maiores sequi eaque error ipsam voluptates odio culpa. Error quo est in libero commodi iure veniam beatae et dolores magni impedit necessitatibus odit fuga distinctio dolor.</p>
+	<p>Velit molestiae totam harum vero nemo assumenda laborum praesentium fugiat maiores dolorum inventore accusantium nihil similique ducimus necessitatibus adipisci eligendi dolorem nam consequatur mollitia illum veritatis id doloremque consectetur quod!</p>
+</div>XXX
+<script>
+	
+	$("div.panel").hide();
+	$("p.flip").on("click",function(){
+		$(this).next().slideToggle();
+	});
+</script>
+
+</body>
+</html>
