@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>2025. 11. 19. 오후 4:17:52</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico"> 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<style>
+	span.fa{
+		font-size: 25px;
+		
+	}
+	span.fa.checked{
+		color:orange;
+	}
+</style>
+</head>
+<body>
+<h3>상품 평점(별점)</h3>
+<span class="fa fa-star"></span>
+<span class="fa fa-star"></span>
+<span class="fa fa-star"></span>
+<span class="fa fa-star"></span>
+<span class="fa fa-star"></span>
+<script>
+
+	$("span.fa.fa-star").on("click",function(){
+		$("span.fa.fa-star").removeClass("checked");
+		$(this).addClass("checked").prevAll("span.fa.fa-star").addClass("checked");
+	})
+	
+/* alert(starSpan.length); 
+	//var -> let 클로저 개념 (면접 질문)
+	| 키워드      | 재선언 | 재할당 |
+	| --------- | ---  | ---  |
+	| **var**   | 가능  | 가능  |
+	| **let**   | 불가능 | 가능  |
+	| **const** | 불가능 | 불가능 |
+	
+	*/
+	
+</script>
+</body>
+</html>
