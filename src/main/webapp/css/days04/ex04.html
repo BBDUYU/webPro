@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>2025. 11. 20. 오전 11:03:53</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico"> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<style>
+	/* input[type]{ */
+	/* input[type=text]{ */
+	/* [title='flower']{  *//* WHERE title='flower'*/
+	/*[title^='flower']{*//* WHERE title='flower%'*/
+	/*[title$='flower']{*//* WHERE title='%flower'*/
+	/* [title*='flower']{ *//* WHERE title='%flower%'*/
+	[title~='flower']{/*정확하게 flower만 찾는*/
+		width:200px;
+		border:solid 1px red;
+		padding:0;
+	}
+</style>
+</head>
+<body>
+<!-- 
+	css 선택자 설명 - 속성
+		ㄴ 특정 속성, 속성값을 가진 html 요소를 선택자
+	1. 속성명
+	2. 속성명=속성값
+	3. 속성명^=속성값
+	4. 속성명=$속성값
+	5. 속성명*=속성값
+	6. 속성명~=속성값
+	7. 속성명|=속성값
+
+ -->
+ <a href="#" title="klematis flower">naver</a><br />
+ <a href="#" title="flower">daum</a><br />
+ <a href="#" title="flower-kbs">daum</a><br />
+ <a href="#" title="kbsflower">sist</a><br />
+ <a href="#" title="kbs-flower">taeyo</a><br />
+ <a href="#" title="flowers">admin</a><br />
+ <hr />
+ <input/><br />
+ <input/><br />
+ <input type="text" /><br />
+ <input type="text" /><br />
+ <input type="text" /><br />
+ <input type="submit" /><br />
+ <input type="reset" /><br />
+</body>
+</html>
