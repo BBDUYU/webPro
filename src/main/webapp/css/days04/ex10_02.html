@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>2025. 11. 20. 오후 4:09:11</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico"> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<style>
+div {
+   width: 300px;
+   height: 100px;
+   background-color: yellow;
+   border: 1px solid;
+}
+</style>
+</head>
+<body>
+<input type="radio" id="rdoClockWise" name="direction" value="1" checked="checked" />
+<label for="rdoClockWise">시계방향</label>
+
+<input type="radio" id="rdoReverseClockWise" name="direction" value="-1" />
+<label for="rdoReverseClockWise">반시계방향</label>
+<br />
+회전속도 : 
+<input type="range" id="rSpeed" min="10" max="1000" value="10" />
+<br />
+<button>회전시작</button>
+<button disabled="disabled">회전멈춤</button>
+<p>.</p>
+<p>.</p>
+<p>.</p>
+<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta facilis similique natus atque eos reprehenderit.</div>
+<script>
+	const btnStart=document.querySelector("body > button:first-of-type")
+	const btnStop=document.querySelector("body > button:last-of-type")
+	const target=document.querySelector("body > div")
+
+	let angle=0;
+	let timer;
+	let flag=true;
+	
+	btnStart.onclick=function(){
+		/* alert("회전시작") */
+		/* setTimeout(()=>{},milliseconds); */
+		/* 10<=rSpeed.value<=10000 */
+		
+		const rdbList=document.querySelectorAll("input[name='direction']");
+/* 		for (var i = 0; i < rdbList.length; i++) {
+			console.log(i+":"+rdbList[i].checked)
+		} */
+		if(rdbList[0].checked) flag=true
+		else flag=false;
+		
+/* 		const selectedDirection = document.querySelector('input[name="direction"]:checked').value;
+ */
+		timer=setInterval(() => {
+/* 			angle += parseInt(selectedDirection);
+ */			target.style.transform=`rotate(${angle}deg)`;
+ 			flag?angle++:angle--;
+		}, rSpeed.value);
+		btnStart.disabled=true;
+		btnStop.disabled=false;
+	}
+	 btnStop.onclick=function(){
+		/* alert("회전멈춤") */
+		clearInterval(timer);
+		btnStart.disabled=false;
+		btnStop.disabled=true;
+	}
+</script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>2025. 11. 20. 오후 2:33:00</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico"> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<style>
+	p{
+		width: 200px;
+		border: 1px solid gray;
+	}
+	p.to1{
+		white-space:nowrap;
+		overflow: hidden;
+		text-overflow:ellipsis;
+	}
+	p.to1:hover{
+		overflow: visible;
+	}
+	p.to3{
+		word-break:break-all;
+		word-wrap:break-word;/*긴단어를 다른줄로 넘김*/
+	}
+	
+</style>
+</head>
+<body>
+
+<p class="to1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad deserunt ducimus cupiditate dignissimos aliquid excepturi ipsa sint officia accusantium veniam. Temporibus adipisci quos minus molestias fugit ratione eum laborum quod.</p>
+<p class="to2">Nam odit nobis ipsum illum deleniti. Quaerat aliquid illum quos alias fugiat! Commodi magnam inventore illo aliquam est unde dolore esse id accusamus impedit eum adipisci officiis natus tenetur at?</p>
+<p class="to3">Perferendis quos consequatur porro tempore perspiciatis repellendus deserunt dolores in accusantium minima quod temporibusssssssssssssssssssssssssssss inventore atque officiis velit. Quibusdam modi quae natus eligendi rem repudiandae quaerat molestias a reiciendis aliquam!</p>
+<p class="to4">Distinctio deleniti blanditiis sunt reiciendis soluta aspernatur a recusandae aliquam quos nam obcaecati exercitationem neque vero quo cumque. Voluptas explicabo unde hic alias quisquam cupiditate dicta nobis. Voluptatem distinctio hic.</p>
+<!-- 
+	css 텍스트 효과 속성
+		ㄴ 텍스트 오버플로, 줄바꿈, 줄바꿈 규칙, 쓰기모드
+	1) text-overflow : 텍스트 오버플로
+		ㄴ 넘치는 텍스트는 잘라내기
+		ㄴ 생략부호
+		
+		white-space : nowrap
+		overflow : hidden
+		
+		
+	2) word-wrap : 긴 단어를 나누어서 다음 라인으로 넘기는속성
+	3) word-break : 줄바꿈 규칙
+	4) writing-mode : 텍스트 줄이 수평/수직으로 배치되는 속성
+ -->
+</body>
+</html>
