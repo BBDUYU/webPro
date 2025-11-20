@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>2025. 11. 20. 오전 10:24:42</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico"> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<style>
+	button{
+		display: inline-block;
+		padding: 5px;
+		border: none;
+		
+		background-color: red;
+		color: white;
+		cursor: pointer;
+	}
+	button:hover{
+		opacity: 0.7;
+	}
+</style>
+
+
+</head>
+<body>
+<!-- 
+	마우스 롤오버 효과
+ -->
+ <button type="button">마우스 롤오버 효과</button>
+ <button>마우스 롤오버 효과</button>
+ <button>마우스 롤오버 효과</button>
+<script>
+$("button")
+	.mouseover(function() {
+    $(this).css("background-color", "blue");
+  })
+	.mouseout(function() {
+    $(this).css("background-color", "red");
+  });
+</script>
+
+ <script>
+ /* js
+ 	const btnList = document.querySelectorAll("button");
+ 	for (var i = 0; i < btnList.length; i++) {
+		btnList[i].onmouseover=function(){
+			this.style.backgroundColor="blue";
+		}
+		btnList[i].onmouseout=function(){
+			this.style.backgroundColor="red";
+		}
+	}
+ 	*/
+ </script>
+ 
+ 
+</body>
+</html>
