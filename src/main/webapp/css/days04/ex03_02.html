@@ -31,7 +31,8 @@
 			$(this).append("<span>***</span>");
 		}
 		,function(){
-			$(this).find("span").remove();
+			$(this).children().last().remove();
+			/* $(this).find("span").remove(); */
 		}
 	);
 </script>
