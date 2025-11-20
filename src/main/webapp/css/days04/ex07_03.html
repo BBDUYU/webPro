@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>2025. 11. 20. 오후 12:18:37</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico"> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<style>
+	div{
+		width:150px;
+		height: 120px;
+		border:1px solid;
+		background: url('../images/img_flwr.gif') no-repeat;
+		
+		background-size: contain;
+	}
+	#div2{
+		/*
+			포함하다
+			contain 값 : 내용 영역 내부에 맞게 이미지 크기 조정		
+		*/
+		background-size: contain;
+	}
+	#div2{
+		/*
+			내용영역이 배경이미지로 완전히 덮히도록 이미지를 최대로 크게 조정	
+		*/
+		background-size: cover;
+	}
+</style>
+</head>
+<body>
+<img src="../images/img_flwr.gif" alt="" />
+<br />
+<div id="div1">
+	<p>Lorem ipsum dolor sit amet.</p>
+</div>
+<div id="div2">
+	<p>Animi illo nam nostrum eveniet.</p>
+</div>
+<div id="div3">
+	<p>Nesciunt sunt optio eligendi ad!</p>
+</div>
+</body>
+</html>
