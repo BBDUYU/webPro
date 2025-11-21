@@ -31,10 +31,10 @@
 </div>
 
 <script>
-/* $(".add").on("click", function () {
+/*  $(".add").on("click", function () {
     let text = $(".full").val();  
     $("#demo").text("결과 : " + text); 
-}); */
+});  */
 
 /* document.querySelector(".add").addEventListener("click", function () {
     let text = document.querySelector(".full").value;
@@ -43,19 +43,20 @@
 
 </script>
   <script>
-     const txtContent = document.querySelector("#txtContent");
-     const btnExec = document.querySelector("body > div > button.add");
-     const demo = document.querySelector("#demo");
+  
+  $(function(){
+	  const txtContent = $("#txtContent");
+	  const btnExec = $("body > div > button.add");
+	  const demo = $("#demo");
 
-     btnExec.onclick = function () {
-	     let content = txtContent.value;
-	     demo.innerHTML = `결과 : <br><span style='color:red'>${content}</span>`;
-	      
-	/*      txtContent.value = "";
-	     txtContent.focus(); */
-	     
-	     txtContent.select();
-     }
+	     btnExec.on("click",function () {
+		     let content = txtContent.val();
+		     demo.html(`결과 : <br><span style='color:red'>${content}</span>`);
+		     	     
+		     txtContent.select();
+	     })
+  })
+    
   </script>
 </body>
 </html>
