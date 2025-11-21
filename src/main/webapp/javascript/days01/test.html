@@ -19,10 +19,13 @@
 		min-height:4rem;
 	}
 
-#data div {
-    margin-bottom: 0.2rem;
-    padding: 0.2rem;
-}
+	#data div {
+	    margin-bottom: 0.2rem;
+	    padding: 0.2rem;
+	}
+	#data div:hover{
+		cursor: pointer;
+	}
 	#data div.active {
 	    color: red;               /* 포커스 시 글자 빨강 */
 	    background-color: yellow; /* 포커스 시 배경 노랑 */
@@ -64,26 +67,24 @@
 $(document).ready(function() {
     let dataList = [];
 
-    function renderData() {
-        $('#data').empty();
-        dataList.forEach(name => {
-            let $div = $('<div tabindex="0"></div>').text(name);
-            $('#data').append($div);
-        });
-    }
-
     function addName(name) {
-        // 이전 포커스 제거
-        $('#data div').removeClass('active');
-
         // 배열에 추가
         dataList.push(name);
 
-        // 새 div 생성 및 추가
-        let $div = $('<div tabindex="0"></div>').text(name).addClass('active');
-        $('#data').append($div);
+        // 새 div 생성
+        let $div = $('<div tabindex="0"></div>').text(name);
 
-        // 새 div에 포커스
+        // 클릭 시 active 처리
+        $div.click(function() {
+            $('#data div').removeClass('active'); // 이전 active 제거
+            $(this).addClass('active');          // 클릭한 div 활성화
+        });
+
+        // 기존 active 제거 후 새로 추가되는 div 활성화
+        $('#data div').removeClass('active');
+        $div.addClass('active');
+
+        $('#data').append($div);
         $div.focus();
     }
 
@@ -96,9 +97,9 @@ $(document).ready(function() {
             alert("이름을 입력해주세요.");
         }
     });
-
 });
 </script>
+
 
 
 
