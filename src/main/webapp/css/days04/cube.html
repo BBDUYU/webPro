@@ -3,16 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>체스판 3D 큐브</title>
 <style>
   body {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #111;
-    perspective: 800px;
     margin: 0;
+    perspective: 800px;
+    background-color: #111;
   }
 
   .cube-container {
@@ -20,7 +19,7 @@
     height: 200px;
     position: relative;
     transform-style: preserve-3d;
-    animation: rotate 8s infinite linear;
+    cursor: grab;
   }
 
   .cube-face {
@@ -39,56 +38,133 @@
     height: 100%;
   }
 
-  /* 체스판 색상 패턴 */
+  /* 체스 패턴 */
   .square:nth-child(odd) { background: white; }
   .square:nth-child(even) { background: black; }
 
-  /* 각 면 위치 */
+  /* Cube Faces */
   .front  { transform: translateZ(100px); }
   .back   { transform: rotateY(180deg) translateZ(100px); }
   .right  { transform: rotateY(90deg) translateZ(100px); }
   .left   { transform: rotateY(-90deg) translateZ(100px); }
   .top    { transform: rotateX(90deg) translateZ(100px); }
   .bottom { transform: rotateX(-90deg) translateZ(100px); }
-
-  @keyframes rotate {
-    0%   { transform: rotateX(0deg) rotateY(0deg); }
-    100% { transform: rotateX(360deg) rotateY(360deg); }
-  }
 </style>
 </head>
 <body>
-  <div class="cube-container">
-    <div class="cube-face front">
-      <div class="square"></div><div class="square"></div><div class="square"></div>
-      <div class="square"></div><div class="square"></div><div class="square"></div>
-      <div class="square"></div><div class="square"></div><div class="square"></div>
-    </div>
-    <div class="cube-face back">
-      <div class="square"></div><div class="square"></div><div class="square"></div>
-      <div class="square"></div><div class="square"></div><div class="square"></div>
-      <div class="square"></div><div class="square"></div><div class="square"></div>
-    </div>
-    <div class="cube-face right">
-      <div class="square"></div><div class="square"></div><div class="square"></div>
-      <div class="square"></div><div class="square"></div><div class="square"></div>
-      <div class="square"></div><div class="square"></div><div class="square"></div>
-    </div>
-    <div class="cube-face left">
-      <div class="square"></div><div class="square"></div><div class="square"></div>
-      <div class="square"></div><div class="square"></div><div class="square"></div>
-      <div class="square"></div><div class="square"></div><div class="square"></div>
-    </div>
-    <div class="cube-face top">
-      <div class="square"></div><div class="square"></div><div class="square"></div>
-      <div class="square"></div><div class="square"></div><div class="square"></div>
-      <div class="square"></div><div class="square"></div><div class="square"></div>
-    </div>
-    <div class="cube-face bottom">
-      <div class="square"></div><div class="square"></div><div class="square"></div>
-      <div class="square"></div><div class="square"></div><div class="square"></div>
-      <div class="square"></div><div class="square"></div><div class="square"></div>
-    </div>
-  </div>
+
+<div class="cube-container" id="cube">
+  <div class="cube-face front"><div class="square"></div><div class="square"></div><div class="square"></div><div class="square"></div><div class="square"></div><div class="square"></div><div class="square"></div><div class="square"></div><div class="square"></div></div>
+  <div class="cube-face back"><div class="square"></div><div class="square"></div><div class="square"></div><div class="square"></div><div class="square"></div><div class="square"></div><div class="square"></div><div class="square"></div><div class="square"></div></div>
+  <div class="cube-face right"><div class="square"></div><div class="square"></div><div class="square"></div><div class="square"></div><div class="square"></div><div class="square"></div><div class="square"></div><div class="square"></div><div class="square"></div></div>
+  <div class="cube-face left"><div class="square"></div><div class="square"></div><div class="square"></div><div class="square"></div><div class="square"></div><div class="square"></div><div class="square"></div><div class="square"></div><div class="square"></div></div>
+  <div class="cube-face top"><div class="square"></div><div class="square"></div><div class="square"></div><div class="square"></div><div class="square"></div><div class="square"></div><div class="square"></div><div class="square"></div><div class="square"></div></div>
+  <div class="cube-face bottom"><div class="square"></div><div class="square"></div><div class="square"></div><div class="square"></div><div class="square"></div><div class="square"></div><div class="square"></div><div class="square"></div><div class="square"></div></div>
+</div>
+
+<script>
+  const cube = document.getElementById("cube");
+
+  // 간단 쿼터니언 생성
+  function quatFromEuler(x, y, z) {
+    let cx = Math.cos(x/2), sx = Math.sin(x/2);
+    let cy = Math.cos(y/2), sy = Math.sin(y/2);
+    let cz = Math.cos(z/2), sz = Math.sin(z/2);
+    return {
+      w: cx*cy*cz + sx*sy*sz,
+      x: sx*cy*cz - cx*sy*sz,
+      y: cx*sy*cz + sx*cy*sz,
+      z: cx*cy*sz - sx*sy*cz
+    };
+  }
+
+  function quatToMatrix(q) {
+    const {w, x, y, z} = q;
+    return [
+      1 - 2*y*y - 2*z*z,  2*x*y - 2*z*w,      2*x*z + 2*y*w,      0,
+      2*x*y + 2*z*w,        1 - 2*x*x - 2*z*z,  2*y*z - 2*x*w,      0,
+      2*x*z - 2*y*w,        2*y*z + 2*x*w,      1 - 2*x*x - 2*y*y,  0,
+      0,                    0,                  0,                  1
+    ];
+  }
+
+  function matrixToCSS(m) {
+    return `matrix3d(${m.join(",")})`;
+  }
+
+  let rotX = 0, rotY = 0;
+  let velX = 0, velY = 0;
+  let autoX = 0.01, autoY = 0.02;
+  let isDragging = false;
+  let startX = 0, startY = 0;
+
+  function render() {
+    if (!isDragging && Math.abs(velX) < 0.001 && Math.abs(velY) < 0.001) {
+      rotX += autoX;
+      rotY += autoY;
+    }
+
+    if (!isDragging) {
+      rotX += velX;
+      rotY += velY;
+      velX *= 0.95;
+      velY *= 0.95;
+    }
+
+    const q = quatFromEuler(rotX, rotY, 0);
+    const m = quatToMatrix(q);
+    cube.style.transform = matrixToCSS(m);
+
+    requestAnimationFrame(render);
+  }
+  requestAnimationFrame(render);
+
+  // 드래그
+  document.addEventListener("mousedown", e => {
+    isDragging = true;
+    startX = e.clientX;
+    startY = e.clientY;
+  });
+
+  document.addEventListener("mousemove", e => {
+    if (!isDragging) return;
+    let dx = e.clientX - startX;
+    let dy = e.clientY - startY;
+
+    rotY += -dx * 0.01;
+    rotX += dy * 0.01;
+
+    velY = -dx * 0.005;
+    velX = dy * 0.005;
+
+    startX = e.clientX;
+    startY = e.clientY;
+  });
+
+  document.addEventListener("mouseup", () => isDragging = false);
+
+  // 모바일 터치
+  document.addEventListener("touchstart", e => {
+    isDragging = true;
+    startX = e.touches[0].clientX;
+    startY = e.touches[0].clientY;
+  });
+  document.addEventListener("touchmove", e => {
+    if (!isDragging) return;
+    let dx = e.touches[0].clientX - startX;
+    let dy = e.touches[0].clientY - startY;
+
+    rotY += -dx * 0.01;
+    rotX += dy * 0.01;
+
+    velY = -dx * 0.005;
+    velX = dy * 0.005;
+
+    startX = e.touches[0].clientX;
+    startY = e.touches[0].clientY;
+  });
+  document.addEventListener("touchend", () => isDragging = false);
+
+</script>
 </body>
 </html>
