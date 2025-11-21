@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>2025. 11. 21. 오후 2:17:22</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico"> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<style>
+	
+	body{
+		display: grid;
+		
+		width:100vw;
+		height:100vh;
+		
+		/* grid-template-columns: repeat(4,auto); */
+		grid-template-columns: 3fr 1fr;
+		grid-template-rows: 100px auto 50px;
+		grid-template-areas: 'header header' 'main aside' 'footer footer';
+	}
+
+	header{grid-area:header;}
+	main{grid-area:main;}
+	aside{grid-area:aside;}
+	footer{grid-area:footer;}
+	header,main,aside,footer{
+		display:flex;
+		justify-content:center;
+		align-items: center; 
+	}
+	header,footer{
+		background-color: black;
+		color:white;
+	}
+	main{}
+	aside{
+		background: #ff9d00;
+	}
+</style>
+
+</head>
+<body>
+	<header>header</header>
+	<main>main</main>
+	<aside>aside</aside>
+	<footer>footer</footer>
+</body>
+</html>

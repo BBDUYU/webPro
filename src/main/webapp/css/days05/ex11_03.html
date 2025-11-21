@@ -50,10 +50,20 @@
   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam semper diam at erat pulvinar, at pulvinar felis blandit.</p>
   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam semper diam at erat pulvinar, at pulvinar felis blandit.</p>
   <p>
-    <button>Yes</button>
-    <button>No</button>
+    <button onclick="getFunc()">Yes</button>
+    <button onclick="setFunc()">No</button>
   </p>
 </div> 
-
+<script>
+	var r = document.querySelector(":root");
+	function getFunc(){
+		var rs=getComputedStyle(r);
+		var color=rs.getPropertyValue("--blue");
+		alert(color);
+	}
+	function setFunc(){
+		r.style.setProperty("--blue","red");	
+	}
+</script>
 </body>
 </html>
