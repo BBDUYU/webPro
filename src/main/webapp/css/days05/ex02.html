@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>2025. 11. 21. 오전 9:24:22</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico"> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<style>
+	#rotate2D,#rotate3D{
+		width:80px;
+		height: 70px;
+		color: white;
+		font-weight: bold;
+		font-size: 15px;
+		padding: 10px;
+		margin-right: 50px;
+		border-radius: 5px;
+		border: 1px solid #000;
+		background-color: red;
+		margin:10px;
+		float: left;
+		position: relative; 
+	}
+</style>
+</head>
+<body>
+<div style="height:80px">
+	<div id="rotate2D" onmouseover="rotate2d()">rotate2D</div>
+	<div id="rotate3D" onmouseover="rotate3d()">rotate3D</div>
+</div>
+<script>
+	var angle2d=0;
+	var angle3d=0;
+	var timer2d, timer3d;
+	const target2d=document.querySelector("#rotate2D");
+	const target3d=document.querySelector("#rotate3D");
+
+	function rotate2d(){
+		timer2d=setInterval(()=>{
+			target2d.style.transform=`rotate(${angle2d++}deg)`;
+			if (angle2d == 180 || angle2d==360) {
+				clearInterval(timer2d);
+				if(angle2d==360) angle2d=0;
+			}
+		},10);	
+	}
+	function rotate3d(){
+		clearInterval(timer3d);
+		timer3d=setInterval(()=>{
+			target3d.style.transform=`rotateX(${angle3d++}deg)`;
+
+		},10);	
+	}
+</script>
+</body>
+</html>

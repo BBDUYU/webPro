@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>2025. 11. 21. 오전 10:09:58</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico"> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<style>
+	div{
+		width:100px;
+		height: 100px;
+		background-color: red;
+		animation-name:sample;
+		animation-duration: 4s;
+		animation-delay: 2s;
+		
+		animation-timing-function: linear;
+		/*마지막 유지 - forwards*/
+		animation-iteration-count: 1;
+		
+		animation-direction: alternate-reverse;
+		
+		animation-fill-mode: forwards;
+	}
+	@keyframes sample{
+		from{
+			background-color: red;
+		}
+		to{
+			background-color: yellow;
+		}
+	}
+</style>
+</head>
+<body>
+<!-- 
+	css 변환, 전환, 애니메이션
+	하나의 스타일에서 점차적으로 다른 스타일로 변환되는것
+	js 처리
+	css 사용한 애니메이션 처리
+		ㄴ 키 프레임을 지정
+		   키 프레임 ? 특정시간에 가지는 요소의 스타일
+		ㄴ @keyframes 규칙
+			ㄴ animation-name
+			ㄴ animation-direction
+			ㄴ animation-duration
+			ㄴ animation-delay
+			ㄴ animation-iteration-count
+			ㄴ animation-timing-function
+			ㄴ animation-fill-mode
+ -->
+ <div>
+ 	
+ </div>
+</body>
+</html>
