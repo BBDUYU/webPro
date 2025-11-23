@@ -9,27 +9,27 @@
 <script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
 </head>
 <style>
-	#name{
-		margin-bottom:1rem;
-	}
-	#data{
-		margin-top:1rem;
-		border:1px solid #ccc; 
-		padding:0.5rem; 
-		min-height:4rem;
-	}
+   #name{
+      margin-bottom:1rem;
+   }
+   #data{
+      margin-top:1rem;
+      border:1px solid #ccc; 
+      padding:0.5rem; 
+      min-height:4rem;
+   }
 
-	#data div {
-	    margin-bottom: 0.2rem;
-	    padding: 0.2rem;
-	}
-	#data div:hover{
-		cursor: pointer;
-	}
-	#data div.active {
-	    color: red;               /* 포커스 시 글자 빨강 */
-	    background-color: yellow; /* 포커스 시 배경 노랑 */
-	}
+   #data div {
+       margin-bottom: 0.2rem;
+       padding: 0.2rem;
+   }
+   #data div:hover{
+      cursor: pointer;
+   }
+   #data div.active {
+       color: red;               /* 포커스 시 글자 빨강 */
+       background-color: yellow; /* 포커스 시 배경 노랑 */
+   }
 </style>
 <header>
   <h1 class="main"><a href="#" style="position: absolute;top:30px;">Home</a></h1>
@@ -41,65 +41,135 @@
 
 <body>
 <div>
-	<xmp class="code">
- 		
-  	</xmp> 
-  	
-  	<div id="name">
-		<label>이름 입력:</label>  	
-		<input type="text" />
-	</div>
-	
-	<div class="group">
-		<button class="add">추가</button>
-		<button class="edit">수정</button>
-		<button class="del">삭제</button> 
-		<button class="search">검색</button>
-		<button class="alldel">모두 삭제</button>
-	</div>
+   <xmp class="code">
+       
+     </xmp> 
+     
+     <div id="name">
+        <label>이름 입력:</label>     
+   <input type="text" />
+   </div>
+   
+   <div class="group">
+      <button class="add">추가</button>
+      <button class="edit">수정</button>
+      <button class="del">삭제</button> 
+      <button class="search">검색</button>
+      <button class="alldel">모두 삭제</button>
+   </div>
   <div class="full" id="data">
-  	
+     
   </div>  
   
 </div>
 
 <script>
-$(document).ready(function() {
-    let dataList = [];
-
-    function addName(name) {
-        // 배열에 추가
-        dataList.push(name);
-
-        // 새 div 생성
-        let $div = $('<div tabindex="0"></div>').text(name);
-
-        // 클릭 시 active 처리
-        $div.click(function() {
-            $('#data div').removeClass('active'); // 이전 active 제거
-            $(this).addClass('active');          // 클릭한 div 활성화
-        });
-
-        // 기존 active 제거 후 새로 추가되는 div 활성화
-        $('#data div').removeClass('active');
-        $div.addClass('active');
-
-        $('#data').append($div);
-        $div.focus();
-    }
-
-    $('.add').click(function() {
-        let name = $('#name input').val().trim();
-        if(name) {
-            addName(name);
-            $('#name input').val('');
-        } else {
-            alert("이름을 입력해주세요.");
+    const txtName = document.querySelector("#name input");
+    const btnAdd = document.querySelector(".add");
+    const btnEdit = document.querySelector(".edit");
+    const dataBox = document.querySelector("#data");
+   const btnDel = document.querySelector(".del");
+    const btnSearch = document.querySelector(".search");
+    const btnAllDel = document.querySelector(".alldel");
+    
+    
+    btnAdd.onclick = function () {
+        let name = txtName.value.trim();
+        if (!name) {
+            alert("이름을 입력해주세요");
+            return;
         }
-    });
-});
-</script>
 
+        let div = document.createElement("div");
+        div.setAttribute("tabindex", "0");
+        div.textContent = name;
+
+        div.onclick = function () {
+            let list = document.querySelectorAll("#data div");
+
+            for (let i = 0; i < list.length; i++) {
+                list[i].classList.remove("active");
+            }
+
+            this.classList.add("active");
+
+            txtName.value = this.textContent;
+            txtName.focus();
+        };
+
+        let list = document.querySelectorAll("#data div");
+        for (let i = 0; i < list.length; i++) {
+            list[i].classList.remove("active");
+        }
+
+        div.classList.add("active");
+        dataBox.appendChild(div);
+
+        div.focus();
+
+        txtName.value = "";
+        txtName.focus();
+    };
+
+    btnEdit.onclick = function() {
+        const selected = document.querySelector("#data div.active");
+        
+        if (!selected) {
+            alert("수정할 항목을 선택해주세요");
+            return;
+        }
+
+        let newName = txtName.value.trim();
+        if (!newName) {
+            alert("이름을 입력해주세요");
+            return;
+        }
+
+        selected.textContent = newName; // 선택된 div 내용 수정
+    };
+   
+    btnDel.onclick = function(){
+       const selected = document.querySelector("#data div.active");
+       if (!selected) {
+            alert("삭제할 항목을 선택해주세요");
+            return;
+        }
+       dataBox.removeChild(selected); 
+        txtName.value = "";
+    }
+    
+    btnSearch.onclick = function(){
+       let keyword = txtName.value.trim();
+       if(!keyword){
+          alert("검색할 이름을 입력해주세요");
+          return;
+       }
+       let found = false;
+       
+        let list = document.querySelectorAll("#data div");
+        
+        for (let i = 0; i < list.length; i++) {
+            list[i].classList.remove("active"); 
+            
+            if (list[i].textContent.includes(keyword)) { 
+                list[i].classList.add("active");
+                found = true;
+            }
+        }
+        if (!found) {
+            alert("검색 결과가 없습니다");
+        }
+    }
+    
+    btnAllDel.onclick = function(){
+       if (dataBox.children.length === 0) {
+            alert("삭제할 항목이 없습니다");
+            return;
+        }
+        dataBox.innerHTML = "";
+    }
+    
+</script>
 
 
 
