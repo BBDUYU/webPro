@@ -32,52 +32,44 @@
   	/* const container = document.querySelector("body > div");
   	container.innerHTML="<button> Turn On</button>"; */
   	
-  	const container = document.querySelector("body > div");
-  	const btnTurnOn = document.createElement("button");
-  	btnTurnOn.innerText = "Turn On";
-  	btnTurnOn.onclick=function(){
+  	const container = $("body > div");
+  	const btnTurnOn = $("<button>Turn On</button>");
+  	btnTurnOn.on("click",function(){
   		bulb_onoff(true);
-  	};
-  	container.appendChild(btnTurnOn);
+  	});
+  	container.append(btnTurnOn);
   	
   	//2. Turn Off 버튼
-  	const btnTurnOff = document.createElement("button");
-  	btnTurnOff.innerText = "Turn Off";
-  	btnTurnOff.onclick=function(){
+  	const btnTurnOff = $("<button>Turn Off</button>");
+  	btnTurnOff.on("click",function(){
   		bulb_onoff(false);
-  	};
-  	btnTurnOff.style.display="none";
-  	container.appendChild(btnTurnOff);
+  	});
+  	btnTurnOff.css("display","none");
+  	container.append(btnTurnOff);
   	
   	//3. br
-  	const br = document.createElement("br");
-  	container.appendChild(br);
+  	container.append($("<br>"));
   	
   	//4.img
-  	const imgBulb=document.createElement("img");
-  	imgBulb.src="../images/pic_bulboff.gif";
-  	container.appendChild(imgBulb);
+  	const imgBulb=$("<img src='../images/pic_bulboff.gif'> ");
+  	container.append(imgBulb);
   	
   	function bulb_onoff(flag){
   		
-  		imgBulb.src="../images/pic_bulb"+ (flag?"on":"off")+".gif";
-  	  	btnTurnOn.style.display=flag?"none":"inline";
-  	  	btnTurnOff.style.display=flag?"inline":"none";
-  		
-  		/*
-  		if(flag){
-  			imgBulb.src="../images/pic_bulbon.gif"
-  	  	    btnTurnOn.style.display="none";
-  	  	    btnTurnOff.style.display="inline";
-  			
-  		}else{
-  			imgBulb.src="../images/pic_bulboff.gif"
-  	  		btnTurnOn.style.display="inline";
-  	  		btnTurnOff.style.display="none";
-  		}
-  		*/
-  		
+  		imgBulb.attr("src","../images/pic_bulb"+ (flag?"on":"off")+".gif");
+  	  	btnTurnOn.css("display",flag?"none":"inline");
+  	  	btnTurnOff.css("display",flag?"inline":"none");		
   	}
+  </script>
+  <script>
+  	imgBulb.hover(
+  		function(){
+  			bulb_onoff(true);
+  		},
+  		function(){
+  			bulb_onoff(false);
+  		});
+  	
   </script>
 </body>
 </html>
