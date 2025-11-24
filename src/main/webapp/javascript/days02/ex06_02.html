@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>2025. 11. 24. 오후 3:50:01</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico"> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="http://localhost/webPro/resources/cdn-main/example.css">
+<script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">Home</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+  <xmp class="code">
+  </xmp>
+  <!-- 
+  <button>Turn On</button>
+  <button>Turn Off</button>
+  <br />
+  <img alt="" src="../images/pic_bulboff.gif">
+  <img alt="" src="../images/pic_bulbon.gif"> 
+  -->
+  </div>
+  <script>
+  	//1. js코딩으로 <button> Turn On</button> 요소를 생성해서 추가
+  	/* const container = document.querySelector("body > div");
+  	container.innerHTML="<button> Turn On</button>"; */
+  	
+  	const container = document.querySelector("body > div");
+  	const btnTurnOn = document.createElement("button");
+  	btnTurnOn.innerText = "Turn On";
+  	btnTurnOn.onclick=function(){};
+  	container.appendChild(btnTurnOn);
+  	
+  	//2. Turn Off 버튼
+  	const btnTurnOff = document.createElement("button");
+  	btnTurnOff.innerText = "Turn Off";
+  	btnTurnOff.onclick=function(){};
+  	container.appendChild(btnTurnOff);
+  	
+  	//3. br
+  	
+  	const br = document.createElement("br");
+  	container.appendChild(br);
+  	
+  	//4.img
+  	const imgBulb=document.createElement("img");
+  	imgBulb.src="../images/pic_bulboff.gif";
+  	container.appendChild(imgBulb);
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

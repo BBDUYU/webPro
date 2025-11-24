@@ -26,26 +26,27 @@
   <!-- <img alt="" src="../images/pic_bulbon.gif"> -->
   </div>
   <script>
-  	const btnTurnOn = document.querySelector("button:first-of-type");
-  	const btnTurnOff = document.querySelector("button:last-of-type");
-  	const imgBulb = document.querySelector("img");
+  	const btnTurnOn = $("button:first-of-type");
+  	const btnTurnOff = $("button:last-of-type");
+  	const imgBulb = $("img");
   	
-  	btnTurnOff.style.display="none";
+  	btnTurnOff.css("display","none");
   	
-  	btnTurnOn.onclick = function(){
+  	btnTurnOn.on("click",function(){
+  		imgBulb.attr("src","../images/pic_bulbon.gif");
+  		btnTurnOn.css("display","none");
+  		btnTurnOff.css("display","inline");
+  	}) 
   		
-  		/* imgBulb.getAttribute("src"); */
-  		imgBulb.src="../images/pic_bulbon.gif"
-  		btnTurnOn.style.display="none";
-  		btnTurnOff.style.display="inline";
+  		
 
-  	}
-  	btnTurnOff.onclick = function(){
-  		imgBulb.src="../images/pic_bulboff.gif"
-  		btnTurnOn.style.display="inline";
-  		btnTurnOff.style.display="none";
+  	
+  	btnTurnOff.on("click",function(){
+  		imgBulb.attr("src","../images/pic_bulboff.gif");
+  		btnTurnOn.css("display","inline");
+  		btnTurnOff.css("display","none");
 
-  	}
+  	})
   </script>
 </body>
 </html>
