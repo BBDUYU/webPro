@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>2025. 11. 24. 오전 9:03:17</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico"> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="http://localhost/webPro/resources/cdn-main/example.css">
+<script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+<style>
+	div#demo{
+		border:solid 1px gray;
+		height: 100px;
+		overflow: auto;
+	}
+	div.item{
+		color:red;
+		background-color: yellow;
+	}
+/* 	#demo > div{
+		cursor:pointer;
+	} */
+</style>
+
+</head>
+
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">Home</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+	<xmp class="code">
+ 		
+  	</xmp>
+  	<label for="name">이름 입력 : </label>
+  	<input type="text" id="name" name= "name" autofocus="autofocus"/>
+  	<br />
+  	<br />
+  	<div class="group">
+  		<button class="add">추가</button>
+  		<button class="edit">수정</button>
+  		<button class="del">삭제</button>
+  		<button class="search">검색</button>
+  		<button class="alldel">모두 삭제</button>
+  	</div>
+  	<br />
+  	<div id="demo" ></div>
+</div>
+<script>
+	const btnAdd = document.querySelector(".add");
+	const btnEdit = document.querySelector(".edit");
+	const btnDel = document.querySelector(".del");
+	const btnSearch = document.querySelector(".search");
+	const btnAllDel = document.querySelector(".alldel");
+	
+	const txtName = document.querySelector("#name")
+    const demo = document.querySelector("#demo");
+
+	function isEmpty(name){
+		return name.trim() === "" || !name;
+	}
+	
+	btnAdd.onclick = function(){
+		
+		let name=txtName.value;
+		
+		/* demo.innerHTML+=name.value+"<br>"; */ 
+		/* document.createElement(); */
+		/* document.append(); */
+		
+		/* if(!name){
+			alert("이름을 입력해주세요")
+		} */
+		
+		if(isEmpty(name)){
+			alert("이름을 입력해주세요");
+			txtName.focus();
+			return;
+		}
+		
+		const itemList = document.querySelectorAll("#demo > div.item");
+		itemList.forEach(item=>{
+			item.classList.remove("item");
+		});
+		
+		demo.innerHTML+=`<div class='item' onmouseover="item_mouseover();" onmouseout="item_mouseout();"
+					onclick='item_click(this);'>${name}</div>`;
+		
+		
+					
+		txtName.select();
+		/* demo.scrollTop=demo.scrollHeight; */
+		/*부드러운 스크롤*/
+		const observer = new MutationObserver((mutationsList, observer) => {
+		      for (const mutation of mutationsList) {
+		         if (mutation.type === 'childList' && mutation.addedNodes.length > 0) {
+		             // demo.scrollTop = demo.scrollHeight;
+		            demo.scrollTo({
+		                  top: demo.scrollHeight,
+		                  behavior: 'smooth'
+		                });
+		         }
+		       }
+		      });
+		observer.observe(demo, { childList: true });
+		
+	} 
+	
+	function item_mouseover(){
+		event.srcElement.style.cursor="pointer";
+		event.srcElement.style.border="1px solid red";
+	}
+	function item_mouseout(){
+		event.srcElement.style.cursor="default";
+		event.srcElement.style.border="1px none red";
+	}
+	
+	btnEdit.onclick = function(){
+		/* if(txtName.value==""){
+			alert("수정할 이름을 입력해주세요")
+		}else{
+			updateItem.innerText=txtName.value;
+		} */
+		let name=txtName.value;
+		
+		if(isEmpty(name)){
+			alert("수정할 이름을 입력해주세요");
+			txtName.focus();
+			return;
+		}
+		
+		updateItem.innerText=name;
+
+	} 
+	btnDel.onclick = function(){
+		const selectedItem = document.querySelector("#demo > div.item");
+	    if(!selectedItem){
+	        alert("삭제할 아이템을 선택해주세요");
+	        return;
+	    }
+	    if(confirm("삭제하시겠습니까?")){
+	        selectedItem.remove();
+	        txtName.value = "";
+	    }
+	} 
+	btnSearch.onclick = function(){
+		let name=txtName.value.trim().toLowerCase();
+		if(!name){
+			alert("검색할 이름을 입력해주세요");
+			return;
+		}
+		const itemList = document.querySelectorAll("#demo > div");
+		itemList.forEach(item=>{
+			if(item.textContent.includes(name)){
+				item.classList.add("item");
+			} else{
+				item.classList.remove("item");
+			}
+		});
+	} 
+	btnAllDel.onclick = function(){
+		if(confirm("모두 삭제하시겠습니까?")){
+			demo.innerHTML="";			
+		}
+	}
+	
+	//keydown, keypress, keyup
+	
+	txtName.addEventListener("keydown", function(event){
+		/* console.log(event.keyCode); */
+		/* if(event.keyCode==13){
+			btnAdd.click();
+		} */
+		if(event.key==='Enter'){
+			btnAdd.click();
+		}
+	});
+	
+	let updateItem;
+	function item_click(item){
+		updateItem=item;
+		const itemList = document.querySelectorAll("#demo > div.item");
+		
+		itemList.forEach(item=>{
+			item.classList.remove("item");
+		});
+		item.classList.add("item");
+		
+		let clickItemName = item.innerText;
+		txtName.value=clickItemName;
+		
+	}
+	
+	
+</script>
+</body>
+</html>

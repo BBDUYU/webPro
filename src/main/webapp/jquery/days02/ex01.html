@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>2025. 11. 24. 오전 9:03:17</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico"> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="http://localhost/webPro/resources/cdn-main/example.css">
+<script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+<style>
+	div#demo{
+		border:solid 1px gray;
+		height: 100px;
+		overflow: auto;
+		
+	}
+	div.item{
+		color:red;
+		background-color: yellow;
+	}
+</style>
+
+</head>
+
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">Home</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+	<xmp class="code">
+ 		
+  	</xmp>
+  	<label for="name">이름 입력 : </label>
+  	<input type="text" id="name" name= "name" autofocus="autofocus"/>
+  	<br />
+  	<br />
+  	<div class="group">
+  		<button class="add">추가</button>
+  		<button class="edit">수정</button>
+  		<button class="del">삭제</button>
+  		<button class="search">검색</button>
+  		<button class="alldel">모두 삭제</button>
+  	</div>
+  	<br />
+  	<div id="demo" ></div>
+</div>
+<script>
+	const btnAdd = $(".add");
+	const btnEdit = $(".edit");
+	const btnDel = $(".del");
+	const btnSearch = $(".search");
+	const btnAllDel = $(".alldel");
+	
+	const txtName = $("#name");
+    const demo = $("#demo");
+
+	btnAdd.on("click", function(){
+		itemAdd();
+	});
+	btnEdit.on("click", function(){
+		
+	});
+	btnDel.on("click", function(){
+		
+	});
+	btnSearch.on("click", function(){
+		
+	});
+	btnAllDel.on("click", function(){
+		
+	});
+	function itemAdd(){
+		let name = txtName.val();
+		$("#demo > div.item").removeClass("item");
+		demo.append(`<div class='item'>${name}</div>`);
+		demo.animate({scrollTop:demo.prop("scrollHeight")},1000);
+		txtName.select();
+	}
+</script>
+</body>
+</html>
