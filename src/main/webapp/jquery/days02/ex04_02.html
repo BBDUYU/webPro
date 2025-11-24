@@ -36,25 +36,38 @@
 	  $(element).on("input", pelem_bgchange)
   })
    
-  const pelem = $("p").get(0);
+  const pelem = $("p");
+  /*
   pelem.css("height","200px");
   pelem.css("font-size","30px");
-  
-  const pelem_bgcolor = getComputedStyle(pelem).backgroundColor;
+  */
+  /*
+  pelem
+  	.css("height","200px")
+  	.css("font-size","30px");
+  */
+  pelem
+  	.css({
+  		"height":"200px","font-size":"30px"	
+  	});
+
+
+  const pelem_bgcolor = pelem.css("background-color");
    
-  const rgbaArr =  pelem_bgcolor.match(/\d+/g).map(Number); 
+  const rgbaArr =  pelem_bgcolor.match( /\d+/g).map(Number); 
   console.log( rgbaArr );
-  rgbRange[0].value =  rgbaArr[0] ;
-  rgbRange[1].value =  rgbaArr[1] ;
-  rgbRange[2].value =  rgbaArr[2] ;
+  rgbRange.eq(0).val(rgbaArr[0]) ;
+  rgbRange.eq(1).val(rgbaArr[1]) ;
+  rgbRange.eq(2).val(rgbaArr[2]) ;
+
   
   function pelem_bgchange(){
-     let cred = rgbRange[0].value;
-     let cgreen = rgbRange[1].value;
-     let cblue = rgbRange[2].value;
+     let cred = rgbRange.eq(0).val();
+     let cgreen = rgbRange.eq(1).val();
+     let cblue = rgbRange.eq(2).val();
      
-     pelem.style.backgroundColor = `RGB(${cred}, ${cgreen}, ${cblue})`;
-     pelem.innerText = `RGB(${cred}, ${cgreen}, ${cblue})`;
+     pelem.css("background-color", `RGB(${cred}, ${cgreen}, ${cblue})`);
+     pelem.text(`RGB(${cred}, ${cgreen}, ${cblue})`);
   }
   </script>
 </body>
