@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2025. 11. 25. 오전 11:48:41</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="http://localhost/webPro/resources/cdn-main/example.css">
+<script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">kEnik HOme</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+  <xmp class="code">
+   [js 출력(표시) 방법 정리]
+   1. console.log()  F12 개발자 모드 - 디버깅.
+   2.   BOM
+      document.write()  테스트 용도로만 사용.
+       ㄴ html 문서가 로딩 된 후에 document.write() 
+          호출하면 기존 body 안의 모든 (요소)코딩 삭제된다. 
+      window
+      location
+   3. window.alert("출력문자열");
+      최상위 부모 객체 생략 가능
+      alert();
+   4. div, p  #demo 선언
+      innerText, innerHTML 속성으로 출력
+      text()     html()       
+  </xmp>
+  
+  <script>
+    // js  문자열    ''     ""
+    let name = '홍길동';
+    console.log( `> name = '${name}'` );
+  </script>
+  
+  <button onclick="document.write('홍길동!!!');">출력</button>
+  <button onclick="alert('홍길동!!!');">경고창</button>
+  <button onclick="window.print();">인쇄</button>
+  
+</div>
+</body>
+</html>
+
+
+
+
+
+

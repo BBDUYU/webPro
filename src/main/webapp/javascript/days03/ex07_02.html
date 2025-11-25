@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2025. 11. 25. 오후 2:19:40</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="http://localhost/webPro/resources/cdn-main/example.css">
+<script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">kEnik HOme</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+  <xmp class="code">   
+  </xmp>
+  
+  <p id="demo"></p>
+    
+</div>
+
+<script>
+   // [var 키워드]  권장 X
+   var age = 25;   
+   //$("#demo").text( age );
+   
+   
+   // js   age 변수를 var 키워드를 사용해서 재선언 가능
+   // 재선언 할지라도 변수의 값은 손실되지 않고 유지된다. ***
+   var age ;
+   
+   $("#demo").text( age );
+   
+</script>
+<script>
+   // age is not defined
+   // alert( age ); // 25
+</script>
+
+<script>
+   var $name;  // $  _ 기호 사용 가능
+               // $ jquery 객체를 저장할 변수명 
+</script>
+
+<script>   
+  // [js 호이스팅]
+  // 모든 선언을 현재 범위(script 안, 함수 안)의 맨 위로 이동시키는 js의 기본 기능.
+
+   // var gender;
+   gender = true;
+   $("#demo").text( gender );
+
+
+
+   var gender;
+   
+   // 주의사항
+   // let 변수를 선언하는 "js 호이스팅" 되지 않는다. 
+   // 그렇기 때문에 
+   // 만약에 let 변수를 선언하면 반드시 선언 후에 사용할
+   // 수 밖에 없다. 
+</script>
+</body>
+</html>
+
+
+
+
+
+

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2025. 11. 25. 오전 10:17:06</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="http://localhost/webPro/resources/cdn-main/example.css">
+<script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+<style>
+.box{
+   color: red;
+   display: inline-block;
+   width: 200px;
+   border: 1px solid gray;
+ } 
+</style>
+ 
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">kEnik HOme</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+  <xmp class="code">
+   
+  </xmp>
+  
+  <fieldset>
+    <legend>html 적용 여부</legend>
+    <form action="">
+      
+      <input type="radio" name="htmlApply" id="hyes" checked="checked">
+      <label for="hyes">적용</label>
+      <input type="radio" name="htmlApply" id="hno">
+      <label for="hno">미적용</label>
+      <br>
+      <input type="text" id="message" class="full" 
+      value="<span class='box'>홍길동</span>">
+      <br>
+      <button type="button">실행</button>
+    </form>
+  </fieldset>
+  
+  <p id="demo"></p>
+</div>
+
+<script>
+  document.querySelector("body > div > fieldset > form > button").onclick = function (){
+	  // alert("이벤트 확인");
+	  let message = document.querySelector("#message").value;
+	  	  
+	  const checkedRadio = document.querySelector("input[type=radio][name=htmlApply]:checked");
+	  
+	  // checkedRadio.getAttribute("id") 
+	  if( checkedRadio.id == 'hno' ){
+		  document.querySelector("#demo").innerText = message; 
+	  }else{
+		  document.querySelector("#demo").innerHTML = message;
+	  } 
+	 
+  }
+</script>
+
+</body>
+</html>
+
+
+
+
+
+

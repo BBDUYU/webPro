@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2025. 11. 25. 오후 12:42:07</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="http://localhost/webPro/resources/cdn-main/example.css">
+<script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">kEnik HOme</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+  <xmp class="code">
+    js 변수를 선언 4가지 방법
+    [ X (권장X), let, var(권장X), const 키워드 설명 ]
+  </xmp> 
+</div>
+
+<script>
+ /* 
+  let kor;
+  let eng;
+  let mat;
+ */
+ 
+ // String, int, double, boolean, char 
+ // 데이터를 담을 컨테이너 ( 변수 선언 )
+ let kor, eng, mat; 
+ // alert( kor );   undefined
+ // alert( name );  출력되지 않음.
+ // alert( age ); 에러  age is not defined
+</script>
+
+<script>
+ let name = "홍길동";
+ // 전역변수
+ // alert( name + " / " + window.name );
+ 
+ // 전역변수
+ // window 객체의 멤버변수가 된다. 
+ var age = 20;
+ // alert( window.age );
+ 
+ 
+</script>
+<script>
+ // alert( name ); // 홍길동.
+ // alert( age );  // 20
+</script>
+
+<script>
+  // const 변수 선언 : 값을 변경하지 않겠다.. (상수)
+  // final double PI = 3.14; (상수)
+  const pi = 3.14;
+  
+  const x = 10;
+  const y = 20;
+  
+  let z = x + y;
+  // alert( z );
+</script>
+
+<script>
+  // js  변수를 선언하지 않고 사용 가능( 권장 X )
+  addr = "서울 강남구 ";
+  // alert( addr );
+</script>
+
+</body>
+</html>
+
+
+
+
+
+

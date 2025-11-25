@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2025. 11. 25. 오후 12:21:52</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="http://localhost/webPro/resources/cdn-main/example.css">
+<script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">kEnik HOme</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+  <xmp class="code">
+   ex06.html
+   
+   1. js 서버 실행 X
+      클라이언트 ( 브라우저 )에서 실행 O
+   2. js 명령문은 작성된 순서대로 실행된다. 
+   3. js 명령문은 세미콜론으로 종결한다. (권장) 
+   4. js 대소문자를 구분한다. 
+      var a , b;
+      A = 100; X   
+   5. js 주석처리     //     /*  */
+   6. js 코딩에서 여러 공백은 무시된다. 
+      var             name   = "홍길동";  
+      var name="홍길동"; 
+      var name = "홍길동";  // 권장
+      연산자 앞 뒤에 공백 1개를 붙이는 것을 권장.
+      
+      a+b+c;
+      a + b + c; // 권장
+   7. 블럭 
+   {
+   _ _var a;   들여쓰기 2칸.
+   }   
+   8. js 예약어
+        abstract	arguments	await*	boolean
+		break	byte	case	catch
+		char	class*	const	continue
+		debugger	default	delete	do
+		double	else	enum*	eval
+		export*	extends*	false	final
+		finally	float	for	function
+		goto	if	implements	import*
+		in	instanceof	int	interface
+		let*	long	native	new
+		null	package	private	protected
+		public	return	short	static
+		super*	switch	synchronized	this
+		throw	throws	transient	true
+		try	typeof	var	void
+		volatile	while	with	yield 
+		  
+  9. js 두 가지 유형의 값
+    1) 리터럴( 고정된 값 )
+       숫자    100     3.14
+       문자열  '홍길동'  "홍길동"
+       true, false
+        
+    2) 변수 값 
+       변수 : 데이터 값을 저장하는 저장공간의 이름
+       자바 변수 선언 형식 : 자료형 변수명[=초기값];
+                         String name = "홍길동";
+                         
+       [js 변수 선언 형식]
+       ㄱ. 1995~2015(ES6) 지역변수, 전역변수
+           var 변수명;
+       ㄴ. 블럭(지역)변수   
+          {
+            let 변수명;
+            const 변수명;
+          }
+       ㄷ. 변수명 = 값;
+           js는  변수를 선언하지 않고 사용 가능하다. 
+           
+   10. js에서 식별자 명명 규칙
+     - 첫 문자는 숫자 시작 X
+     - 대소문자 구분을 한다. 
+     - $   _  기호 사용 가능.
+     let first_name;  O
+     lset first-name; X
+     let $name;
+     보통  jquery 객체를 저장할 변수는  $변수명; 
+   11. js   캐멀캐이스 표기법
+     let firstName;   
+   12. 유니코드 문자 집합을 사용할 수 잇다.
+     let 한글변수명;        
+  </xmp>
+  
+</div>
+
+<script>
+   name = "홍길동";
+   alert( name ); 
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

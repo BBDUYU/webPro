@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2025. 11. 25. 오전 5:21:31</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="http://localhost/webPro/resources/cdn-main/example.css">
+<script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">kEnik HOme</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+  <xmp class="code">
+   
+  </xmp>
+  
+  <input type="radio" name="group" value="Lorem">Lorem.<br>
+  <input type="radio" name="group" value="Deserunt">Deserunt!<br>
+  <input type="radio" name="group" value="Aspernatur" alt="Aspernatur.">Aspernatur.<br>
+  <input type="radio" name="group" value="Quo">Quo.<br>
+  <input type="radio" name="group" value="Debitis">Debitis.<br>
+  <br>
+  <button>실행</button>
+  
+  <p id="demo"></p>
+  
+</div>
+
+<script>
+  document.querySelector("body > div > button").onclick = function (){
+	  let rValue,  rText;
+	  // alert("이벤트 발생 확인!!!")
+	  const checkedRadio = document.querySelector("input[type=radio][name=group]:checked");
+	  
+	  // alert( checkedRadio );   null
+	  // js 는 null도 false로 처리된다.
+	  // if( checkedRadio == null ){  
+	  if( !checkedRadio ){	  
+		  alert("라디오 버튼을 체크하세요.");
+		  return;
+	  }
+	  
+	  rValue = checkedRadio.value;
+	  rText = checkedRadio.nextSibling.textContent;
+	  
+	  document.querySelector("#demo").innerText = `${rValue} / ${rText}`;
+  }
+</script>
+</body>
+</html>
+
+
+
+
+
+
