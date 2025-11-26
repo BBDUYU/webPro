@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>2025. 11. 26. 오후 12:02:39</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico"> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="http://localhost/webPro/resources/cdn-main/example.css">
+<script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">Home</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+  <xmp class="code">
+    ex03_02.html
+  </xmp>
+  <script>
+  myfunc(10);
+  	/* function myfunc(x,y){
+  		/* alert(x); 10*/
+  		/* alert(y); */
+  		/*
+  		if(y=='undefined'){
+  			y=0;
+  		}
+  	} */
+  	function myfunc(x,y=10){
+  		
+  	}
+  	function sum(...args){
+  		let total=0;
+  		for (let arg of args) {
+			total+=arg;
+		}
+  		return total;
+  	}
+  	console.log(sum(10,20));
+  	console.log(sum(10,20,30));
+  	console.log(sum(10,20,30,40));
+
+  </script>
+</div>
+</body>
+</html>
