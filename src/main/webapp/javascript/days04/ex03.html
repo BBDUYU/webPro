@@ -35,9 +35,13 @@
   </xmp>
   <button onclick="test()">버튼 1</button>
   <br />
-  <button onclick="test(10,20)">버튼 2</button>
+  <button onclick="this.innerText=sum(10,20)">버튼 2</button>
 </div>
 <script>
+	function sum(a,b){
+		return a+b;
+	}
+
 	function test(a,b,c){
 		alert("test");
 	}
