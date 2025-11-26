@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>2025. 11. 26. 오후 2:49:11</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico"> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="http://localhost/webPro/resources/cdn-main/example.css">
+<script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">Home</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+  <xmp class="code">
+    객체 생성자를 사용하는방법
+    - 동일한 유형의 많은 객체를 생성
+    - 생성자 함수의 이름은 대문자로 시작
+    - 객체 유형을 생성 -> 많은 객체 생성
+    new Date()
+    new RegExp()
+    new Function()
+    new Map()
+    new Set()
+  </xmp>
+
+</div>
+<script>
+	function Person(name,age,gender){
+		//여기서 this는 값이 없다
+		//새로운 객체가 생성되면 생성된 객체 == this
+		this.name=name;
+		this.age=age;
+		this.gender=gender;
+		this.info = function(){
+			return this.name+"/"+this.age;
+		}
+	}
+	//위의 객체 생성자를 사용해서 여러개의 객체를 생성
+	const p1=new Person("홍길동1",20,true);
+	const p2=new Person("홍길동2",21,true);
+	const p3=new Person("홍길동3",22,true);
+	const p4=new Person("홍길동4",23,true);
+	
+	p4.address="서울 강남구";
+	p4.changeName=function(name){
+		this.name=name;
+	}
+	//객체 생성자
+	Person.prototype.address="주소";
+	Person.prototype.changeName=function(name){
+		this.name=name;
+	}
+	
+</script>
+</body>
+</html>
