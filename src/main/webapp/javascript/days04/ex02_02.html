@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>2025. 11. 26. 오전 11:06:00</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico"> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="http://localhost/webPro/resources/cdn-main/example.css">
+<script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">Home</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+  <xmp class="code">
+    
+  </xmp>
+  <input type="radio" id="rdbp" name="group" value="1" checked="checked"> p 요소
+  <input type="radio" id="rdbs" name="group" value="2"> select 요소
+  
+  
+  <br>
+  팀원 이름 입력 : 
+  <input type="text" id="name" name="name" autofocus="autofocus">
+  
+  <p id="demo">
+  </p>
+  
+  <select>
+  </select>
+  <script>
+   const pdemo = document.querySelector("p#demo");
+   const sel = document.querySelector("select");
+   
+   document.querySelector("#name").onkeyup = function (){
+      if( event.key === 'Enter' ){
+         let checkedRadioValue = document.querySelector("input[type=radio][name=group]:checked").value;
+         // console.log( checkedRadioValue );
+         let name = this.value;
+         
+      if (checkedRadioValue == 1) { // p
+         
+         const li = document.createElement("li");
+          li.innerText =  name;
+          pdemo.appendChild(li);
+         
+      } else { // select
+         
+         sel.innerHTML += `<option>${name}</option>`;
+
+      }
+         
+      } // if
+   }
+</script> 
+</div>
+</body>
+</html>
