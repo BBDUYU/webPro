@@ -28,10 +28,56 @@
     	name = "홍길동";
     	const m = [1,2,3]; //js 배열 -> js 객체
     	m[0]=1
-    	
+	
+	js에서 객체를 선언하는 방법
+		1) object 리터럴을 사용
+		2) new 연산자 사용
+		3) 객체 생성자를 사용 -> ex05_02
+	
+		class Person{
+			String name;
+			int age;
+			void dispPerson(){}
+		}
+		Person p1 = new Person();
+		p1.name
+		p1.dispPerson()
+	
   </xmp>
-  <pre> 
-  </pre>
 </div>
 </body>
+<script>
+
+const person = new Object({
+	name:"홍길동",
+	age:20,
+	disp:function(){}
+})	
+
+/*
+	const person = {}; // 멤버들을 갖고있지 않는 객체
+	//필드 메서드 추가
+	person.name="홍길동";
+	person.age=20;
+	person.disp=function(){
+		//메서드 구현
+	}
+	const person={};
+	const person=new Object();
+	*/
+</script>
+<script>
+/*
+	const person={
+			name:"홍길동",
+			age:20,
+			disp(){
+				return this.name+"/"+this.age;
+			}
+	};*/
+	/* alert(typeof person); */
+	/* person.name;
+	person["name"];
+	person.disp(); */
+</script>
 </html>
