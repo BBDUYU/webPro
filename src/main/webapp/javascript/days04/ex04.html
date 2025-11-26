@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>2025. 11. 26. 오후 2:09:38</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico"> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="http://localhost/webPro/resources/cdn-main/example.css">
+<script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">Home</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+  <xmp class="code">
+  	ex04
+  	
+  	this 정리
+  	1. use strict 엄격모드에서의 this
+  		1) 단독으로 사용될 때의 this == obeject Window
+  		2) 함수안에서의 this == undefined
+  	2. 객체 메서드에서의 this == object Object
+  							person 자기 자신 객체
+  	3. 이벤트 핸들러 안에서의 this
+  	   이벤트 핸들러 ? 이벤트가 발생할 때 호출되는 함수
+  	4.   
+  </xmp>
+<button onclick="btn1_click()">버튼1</button>
+<button onclick="btn2_click(this)">버튼2</button>
+<button id="btn3">버튼3</button>
+<button id="btn4">버튼4</button>
+</div>
+
+<script>
+	document.querySelector("#btn3").onclick=function(){
+		alert(this);//[object HTMLButtonElement]
+		
+	}
+	document.querySelector("#btn4").onclick=()=>{
+		alert(this);//[object Window]
+	}
+</script>
+
+<script>
+	function btn1_click(){
+		/* alert(this); */
+		//[object Window]
+	}
+	function btn2_click(x){
+		alert(x);
+		//[object HTMLButtonElement]
+	}
+</script>
+<script>
+	//const m = [1,2,3];
+	const person={
+			//필드
+			name:"홍길동",
+			age:20,
+			//메서드
+			disp:function(){
+				/* alert(this) */
+				return this.name+"/"+this.age;
+			}
+	};
+	console.log(person.name);
+	console.log(person["age"]);
+	person.disp();
+</script>
+<script>
+	"use strict"; //엄격모드 - 반드시 변수를 선언하고 사용
+	let x= this;
+	alert(x);
+	function test(){
+		let y=this;
+		alert(y);
+	}
+</script>
+</body>
+</html>
