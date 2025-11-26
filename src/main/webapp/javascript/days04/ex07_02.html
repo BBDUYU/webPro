@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>2025. 11. 26. 오후 5:19:41</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico"> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="http://localhost/webPro/resources/cdn-main/example.css">
+<script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">Home</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+  <xmp class="code">
+    
+  </xmp>
+<div style="display: flex;justify-content: space-around;align-items: baseline;">
+    <input id="txt1" type="text" autofocus="autofocus">    
+    <select name="operator" id="operator">
+      <option value="">선택.</option>
+      <option value="+">+</option>
+      <option value="-">-</option>
+      <option value="*">*</option>
+      <option value="/">/</option>
+      <option value="%">%</option>
+      <option value="^">**</option>
+    </select>    
+    <input id="txt2" type="text">
+    =
+    <input id="txt3" type="text" disabled="disabled">    
+  </div>
+</div>
+<script>
+	const txt1=document.querySelector("#txt1");
+	const txt2=document.querySelector("#txt2");
+	const txt3=document.querySelector("#txt3");
+	const op=document.querySelector("#operator");
+	
+	function add(){
+		const num1=Number(txt1.value);
+		const num2=Number(txt2.value);
+		txt3.value=num1+num2;
+	}
+	txt1.onkeydown = function () {
+	      console.log(`txt1.keydown ${event.code} / ${event.key}`);
+	      const allowedKeys = ["Backspace", "Enter", "ArrowLeft", "ArrowRight", "Delete", "Tab"];
+	      if (!allowedKeys.includes(event.key)) {
+
+	      if(event.key < "0" || event.key > "9") {
+		         event.preventDefault();
+		         alert("숫자만 입력");
+		      }
+		   }
+	}
+	txt1.addEventListener("keydown", function(event) {
+		if (event.key === "Enter") {
+		      txt2.focus();
+		}
+	});
+
+	txt2.addEventListener("keydown", function(event) {
+		if (event.key === "Enter") {
+			op.focus();
+		}
+	});
+	op.addEventListener("change", function(event) {
+			calculate();
+	});
+	function calculate() {
+	    const num1 = Number(txt1.value);
+	    const num2 = Number(txt2.value);
+	    let result;
+
+	    switch(op.value) {
+	        case "+": result = num1 + num2; break;
+	        case "-": result = num1 - num2; break;
+	        case "*": result = num1 * num2; break;
+	        case "/": result = num2 !== 0 ? num1 / num2 : "Error"; break;
+	        case "%": result = num2 !== 0 ? num1 % num2 : "Error"; break;
+	        case "^": result = Math.pow(num1, num2); break;
+	        default: result = "연산자 선택 필요";
+	    }
+
+	    txt3.value = result;
+	}
+	
+</script>
+</body>
+</html>

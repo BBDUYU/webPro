@@ -29,8 +29,11 @@
 	})
 </script>
 <script>
+	//html페이지에서 `${sj}` -> sj변수의 값을 출력하는 의미
+	//jsp페이지에서 `${sj}` -> 
+	//		표현언어(EL) 문법 : ${EL}
 	let sj = '<%= subject %>';
-	$(`:radio[value="<%= subject %>"]`).prop("checked",true);
+	$(`:radio[value="\${sj}"]`).prop("checked",true);
 	  
 </script>
 </body>
