@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>2025. 11. 27. 오전 10:44:48</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico"> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="http://localhost/webPro/resources/cdn-main/example.css">
+<script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">Home</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+  <xmp class="code">
+    
+  </xmp>
+    <table id="tblDept">
+     <thead>
+        <tr>
+           <th><input type="checkbox" class="all"> 모두 선택</th>
+           <th>이름</th>
+           <th>지역</th>
+        </tr>
+     </thead>
+     <tbody>
+        <tr>
+           <td><input type="checkbox" id="ck1"></td>
+           <td>Laudantium!</td>
+           <td>Sint!</td>
+        </tr>
+        <tr>
+           <td><input type="checkbox" id="ck2"></td>
+           <td>Voluptatem?</td>
+           <td>Animi!</td>
+        </tr>
+        <tr>
+           <td><input type="checkbox" id="ck3"></td>
+           <td>Architecto!</td>
+           <td>Odit!</td>
+        </tr>
+        <tr>
+           <td><input type="checkbox" id="ck4"></td>
+           <td>Numquam!</td>
+           <td>Molestiae.</td>
+        </tr>
+     </tbody>
+     <tfoot>
+        <tr>
+           <td colspan="3" align="center">
+             <button>선택 확인</button>
+           </td>
+        </tr>
+     </tfoot>
+  </table>
+  
+  <p id="demo"></p>
+</div>
+<script>
+  const ckbAll = document.querySelector("#tblDept > thead > tr > th:nth-child(1) > input");  
+  // #ck1
+  const ckbs = document.querySelectorAll("#tblDept > tbody input[id^='ck']");
+  // console.log(ckbs);       // undefined
+  console.log(ckbs.length);   // undefined
+  
+  ckbAll.onclick = function() {
+     // alert("test");
+     for (var i = 0; i < ckbs.length; i++) {
+        ckbs[i].checked = ckbAll.checked;
+   } // for
+  };
+  
+  // tbody > input[id="ck~"]  click 이벤트 등록
+  for (var i = 0; i < ckbs.length; i++) {
+     ckbs[i].onclick = function() {
+        // alert(this.id + " 클릭됨");
+        ckbs.length==ckbs
+        const checkedCkbs = document.querySelectorAll("#tblDept > tbody input[id^='ck']:checked").length;
+		if(ckbs.length==checkedCkbs){
+			ckbAll.checked=true;
+		}else ckbAll.checked=false;
+     };
+} // for
+
+/* 	const printBtn=document.querySelector("button")
+	const demo = document.getElementById("demo");
+
+	printBtn.onclick=function(){
+		let html="<ul>";
+		ckbs.forEach(ckb=>{
+			if(ckb.checked){
+				const tr = ckb.parentElement.parentElement; 
+	            const tds = tr.querySelectorAll("td");
+	            let tdText = "";
+	            tds.forEach(td => {
+	                if (!td.querySelector("input")) { // 체크박스 제외
+	                    tdText += td.textContent + " ";
+	                }
+	            });
+	            html += `<li>${ckb.id}: ${tdText}</li>`;
+			}
+		})
+		html += "</ul>";
+	    demo.innerHTML = html;
+	} */
+	const btnOK = document.querySelector("#tblDept > tfoot > tr > td > button");
+	const demo = document.querySelector("#demo");
+
+	btnOK.onclick = function (){
+		const checkedCkbs = document.querySelectorAll("#tblDept > tbody input[id^='ck']:checked");
+		let content="<ul>";
+		for (var i = 0; i < checkedCkbs.length; i++) {
+			const ckb=checkedCkbs[i];
+			let name=ckb.parentElement.nextElementSibling.innerText;
+			
+			let loc=ckb.parentElement.nextElementSibling.nextElementSibling.innerText;
+			
+			content+=`<li>${ckb.id} / ${name} / ${loc}</li>`;
+		}
+		content+="</ul>";
+		demo.innerHTML=content;
+	}
+</script>
+<!-- <script>
+const allCheckbox = document.querySelector('.all');
+const Checkboxes = document.querySelectorAll('#tblDept tbody input[type="checkbox"]');
+
+allCheckbox.addEventListener('change', function() {
+    Checkboxes.forEach(c => c.checked = allCheckbox.checked);
+});
+
+</script> -->
+</body>
+</html>
