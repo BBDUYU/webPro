@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>2025. 11. 27. 오후 3:06:57</title>
+<title>2025. 11. 27. 오후 3:29:18</title>
 <link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico"> 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <link rel="stylesheet" href="http://localhost/webPro/resources/cdn-main/example.css">
@@ -20,34 +20,23 @@
   <xmp class="code">
     
   </xmp>
+	<input type="text" class="full" value="김호연[팀장]/최현아/문종범/김유진" />
+	<p id="demo"></p>
 </div>
 <script>
-	/* let a = "hello world";
-	let b = a.toUpperCase(); */
-	
-	/* let a ="hello";
-	let b ="world";
-	let c=a.concat(" ").concat(b);
-	alert(c); */
-	
-	//trim()
-	//trimStart()
-	//trimEnd()
-/* 	let a ="   admin   ";
-	alert(`[${a.trim()}]`);
-	alert(`[${a.trimStart()}]`);
-	alert(`[${a.trimEnd()}]`); */
-
-	let no = 15;
-	alert(no.padStart(5,"0"));
-	alert("0".repeat(5-no.length)+no);
-	
-	let msg="홍길동님 안녕하세요. 홍길동입니다";
-	//문제1 XXX님 안녕하세요. 홍길동입니다
-	alert(msg.replace("홍길동","XXX"));
-	//문제2 XXX님 안녕하세요. XXX입니다
-	alert(msg.replaceAll("홍길동","XXX"));
-	
+	$(":text").on("keydown",function(e){
+		if(e.which==13){
+			alert($(this).val());
+			let msg=$(this).val();
+			const names=msg.split("/");
+			let ul=$("<ul></ul>");
+			names.forEach(name=>{
+				ul.append($(`<li>${name}</li>`));
+			});
+			$("#demo").append(ul);
+			/* String msgArr[] = msg.split("구분자") */
+		}
+	});
 </script>
 </body>
 </html>

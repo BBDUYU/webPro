@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>2025. 11. 27. 오후 3:06:57</title>
+<title>2025. 11. 27. 오후 3:39:58</title>
 <link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico"> 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <link rel="stylesheet" href="http://localhost/webPro/resources/cdn-main/example.css">
@@ -18,36 +18,27 @@
 </header>
 <div>
   <xmp class="code">
+    indexOf()
+    lastIndexOf()
+    search()
     
+    startWith()
+    endsWith()
+    
+    includes()
   </xmp>
 </div>
 <script>
-	/* let a = "hello world";
-	let b = a.toUpperCase(); */
-	
-	/* let a ="hello";
-	let b ="world";
-	let c=a.concat(" ").concat(b);
-	alert(c); */
-	
-	//trim()
-	//trimStart()
-	//trimEnd()
-/* 	let a ="   admin   ";
-	alert(`[${a.trim()}]`);
-	alert(`[${a.trimStart()}]`);
-	alert(`[${a.trimEnd()}]`); */
+	let url = "http://www.naver.com";
+	alert(url.startsWith("http://"));
+</script>
 
-	let no = 15;
-	alert(no.padStart(5,"0"));
-	alert("0".repeat(5-no.length)+no);
+<script>
+	let text = "The rain in SPAIN stays mainly in the plain";
 	
-	let msg="홍길동님 안녕하세요. 홍길동입니다";
-	//문제1 XXX님 안녕하세요. 홍길동입니다
-	alert(msg.replace("홍길동","XXX"));
-	//문제2 XXX님 안녕하세요. XXX입니다
-	alert(msg.replaceAll("홍길동","XXX"));
-	
+	/* text.search(정규표현식) 일치하는 첫 번째 위치값 반환 */
+	/* alert(text.search(/Ain/i)); */
+	console.log(text.match(/Ain/ig));
 </script>
 </body>
 </html>
