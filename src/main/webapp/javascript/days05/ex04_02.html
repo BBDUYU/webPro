@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>2025. 11. 27. 오후 2:37:03</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico"> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="http://localhost/webPro/resources/cdn-main/example.css">
+<script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">Home</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+  <xmp class="code">
+    
+  </xmp>
+</div>
+<script>
+  let rrn = "891223-1700002";
+  //2자리 년도
+  //substring(start,end)
+  let year = rrn.substring(0,2);
+  alert(year);
+  //2자리 월
+  //substr(start,length)
+  let month = rrn.substr(2,2);
+  alert(month);
+  //2자리 일
+  let day=rrn.slice(4,6);
+  alert(day);
+  //문제 주민등록 번호 뒷자리 7자리 
+  alert(rrn.substr(7));
+  </script>
+<script>
+/* 	let msg="aBcdeFghiJ";
+	//1. 문자열 길이 - length 속성
+	alert(msg.length);
+	
+	//2. 한문자
+	alert(msg.charAt(0)+" / "+msg.charCodeAt(0));
+	
+	//2-2 한문자 at(0)
+	alert(msg.at(0));
+	
+	//문제 : 마지막 문자
+	alert(msg.at(-1)); */
+</script>
+
+</body>
+</html>

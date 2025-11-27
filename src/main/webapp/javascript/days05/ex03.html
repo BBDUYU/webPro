@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>2025. 11. 27. 오후 2:16:22</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico"> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="http://localhost/webPro/resources/cdn-main/example.css">
+<script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">Home</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+  <xmp class="code">
+    js 이벤트 처리 정리
+    1. on이벤트명="자바스크립트 코딩...함수();"
+  </xmp>
+  <button onclick="this.innerText='button-1'">버튼 1</button>
+  <br />
+  <button onclick="dispDate(this);">버튼 2</button>
+  <br />
+  <button>버튼 3</button>
+  <br />
+</div>
+<script>
+	// 장점) 여러 개의 event를 처리하는 listener를 선언
+	document.querySelector("button:last-of-type").addEventListener("click",function(){
+		alert("1. 경고창");
+	});
+	document.querySelector("button:last-of-type").addEventListener("click",function(){
+		alert("2. 경고창");
+	});
+
+	document.querySelector("button:nth-of-type(3)").onclick=function(){
+		this.innerText=Date();
+	}
+
+	function dispDate(btn){
+		btn.innerText = Date();
+	}
+</script>
+</body>
+</html>
