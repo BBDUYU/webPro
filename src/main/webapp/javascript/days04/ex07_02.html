@@ -25,18 +25,81 @@
     <select name="operator" id="operator">
       <option value="">선택.</option>
       <option value="+">+</option>
-      <option value="-">-</option>
-      <option value="*">*</option>
-      <option value="/">/</option>
-      <option value="%">%</option>
-      <option value="^">**</option>
+      <option>-</option>
+      <option>*</option>
+      <option>/</option>
+      <option>%</option>
+      <option>**</option>
     </select>    
     <input id="txt2" type="text">
     =
     <input id="txt3" type="text" disabled="disabled">    
   </div>
 </div>
-<script>
+	<script>
+		/* F12 css selector : 
+		 body > div > div > input[type=text]:nth-child(1) */
+		const txt1 = document.querySelector("input[type=text]:first-of-type");
+		const txt2 = document.querySelector("input[type=text]:nth-of-type(2)");
+		const txt3 = document.querySelector("input[type=text]:last-of-type");
+		const op = document.querySelector("#operator");
+		txt1.onkeydown = function() {
+			// bs, d, al, ar, t, ., enter  키보드 허용
+			// 숫자만 허용
+			// 그 외는 허용 X
+			const allowedKeys = [ "Backspace", "Delete", "ArrowLeft",
+					"ArrowRight", "Tab", ".", "Enter" ];
+
+			// [숫자 키 확인]
+			const isNumberKey = (event.key >= "0" && event.key <= "9")
+					|| (event.code.startsWith("Numpad") && !isNaN(event.key));
+
+			if (!isNumberKey && !allowedKeys.includes(event.key)) {
+				alert("입력 잘못!!!");
+				event.preventDefault();
+			} else {
+				if (event.key === 'Enter') {
+					txt2.select();
+				} //  
+			}
+
+		}
+		txt2.onkeydown = function() {
+			if (event.key === 'Enter') {
+				op.focus();
+			} //
+		}
+		op.onchange = function() {
+			let result;
+			switch (this.value) {
+			case "+":
+				result=parseInt(txt1.value)+Number(txt2.value)
+				break;
+			case "-":
+				result=parseInt(txt1.value)-Number(txt2.value)
+				break;
+			case "*":
+				result=parseInt(txt1.value)*Number(txt2.value)
+				break;
+			case "/":
+				result=parseInt(txt1.value)/Number(txt2.value)
+				break;
+			case "%":
+				result=parseInt(txt1.value)%Number(txt2.value)
+				break;
+			case "**":
+				result=parseInt(txt1.value)**Number(txt2.value)
+				break;
+
+			default:
+				break;
+			}
+			txt3.value = result;
+
+		    txt1.select();
+		}
+	</script>
+	<!-- <script>
 	const txt1=document.querySelector("#txt1");
 	const txt2=document.querySelector("#txt2");
 	const txt3=document.querySelector("#txt3");
@@ -90,6 +153,6 @@
 	    txt3.value = result;
 	}
 	
-</script>
+</script> -->
 </body>
 </html>
