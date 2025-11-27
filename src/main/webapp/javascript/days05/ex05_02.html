@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>2025. 11. 27. 오후 4:25:50</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico"> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="http://localhost/webPro/resources/cdn-main/example.css">
+<script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">Home</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+  <xmp class="code">
+    ex05_02.html
+    
+    js 숫자 -> 문자열 변환 함수
+    toString()
+    toExpoential()
+    toFixed()
+    toPrecision()
+  </xmp>
+  
+</div>
+<script>
+/* 	let a =10 +"";
+	alert(typeof a); */
+	let a = 10;
+	alert(typeof a.toString()); //string
+</script>
+<script>
+	//toExponetial()
+	let b = 9.565;				//자리수	
+	document.write(b.toExponential()+"<br>"); 
+	document.write(b.toExponential(2)+"<br>");
+	document.write(b.toExponential(4)+"<br>");
+	document.write(b.toExponential(6)+"<br>");
+	
+	document.write(b.toFixed() + "<br>"); // 10
+	  document.write(b.toFixed(2) + "<br>"); // 9.56
+	  document.write(b.toFixed(4) + "<br>"); // 9.5650
+	  document.write(b.toFixed(6) + "<br>"); // 9.565000
+</script>
+</body>
+</html>

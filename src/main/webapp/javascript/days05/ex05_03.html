@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>2025. 11. 27. 오후 4:34:34</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico"> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="http://localhost/webPro/resources/cdn-main/example.css">
+<script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">Home</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+  <xmp class="code">
+    ex05_03.html
+    js 숫자 <- 문자열 변환
+    parseFloat(), parseInt() -- 인식할수 있는 구문 분석 -> 숫자 변환
+    Number() -- 숫자형식의 문자열 -> 숫자변환
+    eval() - * 위험 *
+    ㄴ  문자로 표현된 JavaScript 코드를 실행하는 함수 
+    
+  </xmp>
+</div>
+<script>
+/* 	let n ="10 20 30";
+	document.write( Number(n)+"[1]<br>");
+	document.write( parseInt(n)+"[2]<br>");
+	document.write( parseFloat(n)+"[3]<br>");
+	document.write( eval(n)+"[4]<br>"); */
+	
+/* 	let n ="10, 20, 30";
+	document.write( Number(n)+"[1]<br>");
+	document.write( parseInt(n)+"[2]<br>");
+	document.write( parseFloat(n)+"[3]<br>");
+	document.write( eval(n)+"[4]<br>"); */
+	
+	let n =true;
+	document.write( Number(n)+"[1]<br>"); //1
+	document.write( parseInt(n)+"[2]<br>");
+	document.write( parseFloat(n)+"[3]<br>");
+	document.write( eval(n)+"[4]<br>"); //true
+	
+	document.write( Number(new Date())); //1764229773509
+</script>
+</body>
+</html>
