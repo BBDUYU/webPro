@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2025. 11. 21. 오후 2:50:34</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="http://localhost/webPro/resources/cdn-main/example.css">
+<script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">Zerozhu HOme</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+  <xmp class="code">
+    
+  </xmp>
+  
+  <script>
+     const m = [3, 5, 11, 2, 4, 1];
+     document.write(m.toString() + "<br>");
+     
+     // [문제] 배열 가장 큰 값, 가장 작은 값 출력
+     // 1. [오]/내 정렬    min    max
+     /*
+     m.sort((a, b) => a-b);
+     document.write(m.toString() + "<br>");
+     let max, min;
+     min = m.at(0);
+     max = m.at(-1);
+     document.write(`min=${min}, max=${max}` + "<br>");
+     */
+     
+     // 2. ... 스프레드(spread) 연산자 : 펼치다, 확장하다
+     /*
+     let min = Math.min(...m);
+     let max = Math.max(...m);
+     document.write(`min=${min}, max=${max}` + "<br>"); // min=NaN, max=NaN
+     */
+     
+     // 3. apply(null, m) 나증에 설명
+     let min = Math.min.apply(null, m);
+     let max = Math.max.apply(null, m);
+     // document.write(`min=${min}, max=${max}` + "<br>");
+  </script>
+  
+  <script>
+     // js 배열 - 검색
+     // inCludes()
+     // indexOf()
+     // lastIndexOf()
+     /*
+     let n = 30, index;
+     index = m.indexOf(n);
+     document.write(`index = ${index}` + "<br>");
+     
+     n = 11;
+     index = m.indexOf(n);
+     document.write(`index = ${index}` + "<br>");
+     index = m.lastIndexOf(n);
+     document.write(`index = ${index}` + "<br>");
+     
+     document.write(`${m.includes(n)}` + "<br>"); // true
+     */
+     
+     // find() / findIndex()
+     // findLast() / findLastIndex()
+     let n = m.findIndex((element)=> element>5);
+     document.write(`${n}`+"<br>");
+     
+     m.indexOf(11);
+     m.findIndex((element)=> element==11);
+     /*
+     m.sort() //m 배열 정렬
+     m.reverse()
+     
+     const n = m.toSort() // m자체를 정렬X, m을 정렬한 새로운 배열n을 반환
+     m.toReverse()
+     */
+  </script>
+ 
+</div>
+</body>
+</html>
