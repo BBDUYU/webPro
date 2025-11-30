@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2025. 11. 28. 오후 3:48:25</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="http://localhost/webPro/resources/cdn-main/example.css">
+<script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">kEnik HOme</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+  <xmp class="code">
+   ex05.html
+   
+   java - Date, Calendar, LocalDate, LocalTime, LocalDateTime 등등
+   js   - Date
+  </xmp>
+
+<script>
+  // 1. 개강일 2025. 8. 18   무슨 요일
+  // ISO 형식
+  const classStartDate = new Date("2025-08-18T09:00:00");
+  /* 
+  const classStartDate = new Date();
+  classStartDate.setFullYear(2025);
+  classStartDate.setMonth(8-1);
+  classStartDate.setDate(18);
+   */
+  document.write( "일월화수목금토".at( classStartDate.getDay() ) +"<br>" );
+  // 2. 개강일 ~ 오늘     경과시간
+  const today = new Date();
+  
+  const diffMs = today - classStartDate;
+  
+  // alert( diffMs );  8839382034ms
+  const diffSec = Math.floor( diffMs / 1000 );
+  const diffMin = Math.floor( diffSec / 60 );
+  const diffHour = Math.floor( diffMin / 60 );
+  const diffday = Math.floor( diffHour / 24 );
+  
+  
+</script>
+
+<script>
+function sample(){
+	
+	const start = new Date("2025-08-18T09:00:00");
+	const now = new Date();
+	
+	let diff = now - start;
+	
+	const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+	diff -= days * (1000 * 60 * 60 * 24);
+	
+	const hours = Math.floor(diff / (1000 * 60 * 60));
+	diff -= hours * (1000 * 60 * 60);
+	
+	const minutes = Math.floor(diff / (1000 * 60));
+	diff -= minutes * (1000 * 60);
+	
+	const seconds = Math.floor(diff / 1000);
+	
+	document.write(`${days}일 ${hours}시간 ${minutes}분 ${seconds}초 경과<br>`);
+
+	setTimeout(sample, 1000);
+}
+
+sample();
+</script>
+
+<script>
+  /*
+  const d = new Date();
+  
+  document.write( d +"<br>" );
+  document.write( d.toLocaleDateString() +"<br>" );
+  document.write( d.toLocaleString() +"<br>" );
+  document.write( d.toLocaleTimeString() +"<br>" );
+  
+  // 년
+  document.write( d.getFullYear() +"<br>" );
+  // 월
+  document.write( d.getMonth()+1 +"<br>" );
+  // 일
+  document.write( d.getDate() +"<br>" );
+  // 시간
+  document.write( d.getHours() +"<br>" );
+  // 분
+  document.write( d.getMinutes() +"<br>" );
+  // 초
+  document.write( d.getSeconds() +"<br>" );
+  // 밀초
+  document.write( d.getMilliseconds() +"<br>" );
+  // 요일
+  document.write( "일월화수목금토".at( d.getDay() ) +"<br>" );
+  */
+</script>  
+  
+</div>
+</body>
+</html>
+
+
+
+
+
+
