@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2025. 11. 28. 오후 3:38:12</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="http://localhost/webPro/resources/cdn-main/example.css">
+<script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">kEnik HOme</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+  <xmp class="code">
+   ex04.html
+   
+   js 배열
+   js Set
+      List X
+      Map
+  </xmp>
+
+<script>
+  const m = new Map([
+	  [1, "홍길동"],
+	  [2, "서영학"]
+  ]);
+  
+  m.set(3, "안우혁");
+  m.set(4, "정창기");
+  
+  // alert( m.size );
+  
+  if ( m.has(3) ) {
+	let name = m.get(3);
+	// alert( name ); // "안우혁"
+	m.set(3, "김종찬");
+	// m.delete(3); // 삭제	
+	// m.clear(); // 모든 엔트리 삭제
+  }else{
+	  alert("키 X")
+  }
+  
+  for (let k of m.keys()) {	
+  }
+  for (let k of m.values()) {	
+  }
+  for (let [key, value] of m.entries()) {	
+  }
+  for (let entry of m.entries()) {
+	  // alert( Array.isArray(entry ))
+	  let key = entry[0];
+	  let value = entry[1];;
+  }
+  
+</script>
+
+</div>
+</body>
+</html>
+
+
+
+
+
+
