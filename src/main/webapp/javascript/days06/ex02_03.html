@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2025. 11. 28. 오후 2:43:46</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="http://localhost/webPro/resources/cdn-main/example.css">
+<script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">kEnik HOme</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+  <xmp class="code">
+   
+  </xmp>
+  
+  로또 게임 횟수 선택 :
+  <select id="cmbCnt"></select>
+  <br>
+  <button>로또 번호 발생기</button>
+  <p id="demo"></p>
+  
+</div>
+
+<script>
+  for (var i = 1; i <= 25; i++) {
+	$("#cmbCnt").append($(`<option>${i}</option>`));
+  }
+</script>
+<script>
+  function getRndInt(min, max){ 
+	return  Math.floor(Math.random() * (max - min + 1)) + min;
+  } 
+
+  $("button").on("click", function (){
+	  
+	  // #demo 제거
+	  // $("#demo").empty();
+	  $("#demo").html("");
+	  
+	  const lottos = []; // set, set, set, set
+	  let cnt = $("#cmbCnt").val();  // 게임횟수
+	  
+	  for (var i = 1; i <= cnt; i++) {
+		  // begin
+		  const lotto = new Set();  
+		  let n ;
+		  while( lotto.size < 6 ){
+			 n =  getRndInt(1, 45);
+			lotto.add(n);
+		  } // while
+		  // end
+		  lottos.push(lotto);
+	  } // for
+
+
+	  // 게임횟수 만큼 반복으로 로또번호 출력.
+	  let content = ""; 
+		  
+	  lottos.forEach( (s, i, arr) =>{
+		
+		  const lottoArr = Array.from(s);
+		  lottoArr.sort((a,b)=>a-b);
+		  
+		  content += `${i+1} 게임 : `;
+		  for ( var v of lottoArr) {
+			  content += `${ v.toString().padStart(2, '0') }\t`;
+		  } 
+		  content += "<br>";
+	  } ); 
+	  
+	  $("#demo").html( content );
+  });
+  
+</script>
+  
+
+</body>
+</html>
+
+
+
+
+
+
