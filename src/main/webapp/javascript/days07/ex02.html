@@ -193,13 +193,20 @@
 	$("#cmbDate").val(tDate);
 
 	//년 월 select 선택할 때 마다 같은 함수 호출해서 일 처리
-	$("#cmbYear").on("change",changeDate);
+	$("#cmbYear").on("change",function(){
+		changeDate();
+		//printCalendar(year,month);
+	});
 	$("#cmbMonth").on("change",function(){
 		changeDate();
+		//printCalendar(year,month);
+
 	});
 	function changeDate(){
 		year =parseInt( $("#cmbYear").val());
 		month =parseInt( $("#cmbMonth").val());
+		
+		printCalendar(year,month);
 		
 		$("#cmbDate").empty();
 		let lastDate = getLastDay(year, month);
@@ -209,6 +216,56 @@
 		}
 		$("#cmbDate").val(tDate);
 	}
+	
+	function printCalendar(year,month){
+		$("#month").text(month);
+		$("#year").text(year);
+		$("ul.days").empty();
+		
+		let dayOfWeek = getDayOfWeek(year,month,1);
+		let lastDay = getLastDay(year,month);
+		
+		//1 위치를 잡기 위한 <li></li> 생성
+		for (var i = 0; i < dayOfWeek; i++) {
+			$("ul.days").append($('<li></li>'));
+		}
+		//1일 ~ 마지막 날짜 <li>1</li> ~ <li>31</li> 
+		for (var i = 1; i <= lastDay; i++) {
+			let liday = new Date(year,month-1,i);
+			if (liday.toLocaleDateString()==today.toLocaleDateString()) {
+				$("ul.days").append($(`<li><span class="active">${i}</span></li>`));
+			}else{
+				$("ul.days").append($(`<li>${i}</li>`));
+			}
+			
+		}
+		//오늘날짜 <span class="active">10</span>
+	}
+	
+	printCalendar(year,month);
+	
+	function changeCalendar(value){
+		month += value;
+		if(month==13){
+			year++;
+			month=1;
+		}else if(month==0){
+			year--;
+			month=12;
+		}
+		$("#cmbYear").val(year);
+		$("#cmbMonth").val(month);
+		changeDate();
+	}
+	
+	
+	$(".next").on("click",function(){
+		 changeCalendar(1);
+	})
+	
+	$(".prev").on("click",function(){
+		changeCalendar(-1);
+	}) 
 	
 	
 </script>
