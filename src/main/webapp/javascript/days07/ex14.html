@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>2025. 12. 1. 오후 4:27:07</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico"> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="http://localhost/webPro/resources/cdn-main/example.css">
+<script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">Home</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+  <xmp class="code">
+    js bind() - 묶다
+    ㄴ 다른 객체에서 메서드를 빌려와서 사용하는 함수
+    ㄴ apply(), call() 차이점
+    ㄴ 함수가 콜백으로 사용되면 this는 손실된다
+    	ㄴ this 키워드를 사용할 수 있다
+	    
+  </xmp>
+  <p id="demo"></p>
+  <script>
+  const person={
+			firstName:"John",
+			lastName:"Doe",
+			display:function(){
+				let x = document.getElementById("demo");
+				x.innerHTML = this.firstName + " / "+this.lastName;
+			}
+	};
+  	//3초마다 사람의 이름을 출력
+  	//	콜백함수 : 매개변수로 등록한 함수
+  	// setTimeout(person.display,3000)
+  	// undefined / undefined
+  	// 해결하기위해 bind() 함수 사용
+  	let display = person.display.bind(person);
+  	setTimeout(display,3000);
+	
+  
+  
+  /*
+  	const person={
+  			firstName:"John",
+  			lastName:"Doe",
+  			display:function(){
+  				let x = document.getElementById("demo");
+  				x.innerHTML = this.firstName + " "+this.lastName;
+  			}
+  	};
+  	person.display();
+  	*/
+  </script>
+</div>
+</body>
+</html>
