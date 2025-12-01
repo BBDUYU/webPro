@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>2025. 12. 1. 오전 9:04:30</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico"> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="http://localhost/webPro/resources/cdn-main/example.css">
+<script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+<style>
+	.container{
+		width:500px;
+	}
+	.collapsible{
+		background-color:#777;
+		color:white;
+		cursor:pointer;
+		padding:18px;
+		width:100%;
+		border:none;
+		text-align:left;
+		outline:none;
+		font-size:15px;
+		padding-left:50px;
+	}
+	
+	.collapsible::after{
+		content:'\002B';
+		color: white;
+		float:right;
+		font-weight: bold;
+		margin-left: 5px;
+		
+	}
+	.collapsible:hover, .active{
+		background-color: #555;
+	}
+	.active::after{
+		content:'\2212';
+	}
+	.content{
+		padding:0 18px;
+		background-color: #f1f1f1;
+		max-height: 0;
+		transition: max-height 0.2s ease-out;
+		
+		overflow:hidden;
+		
+	}
+</style>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">Home</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+  <xmp class="code">
+    
+  </xmp>
+  <div class="container">
+  	<button class="collapsible">Section 1</button>
+  	<div class="content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam perferendis cumque necessitatibus vero exercitationem commodi explicabo iure repellat tempora est quia perspiciatis omnis aperiam autem iusto cupiditate sint quidem reiciendis.</div>
+  	
+  	<button class="collapsible">Section 2</button>
+  	<div class="content">
+	  	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam perferendis cumque necessitatibus vero exercitationem commodi explicabo iure repellat tempora est quia perspiciatis omnis aperiam autem iusto cupiditate sint quidem reiciendis.
+	  	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam perferendis cumque necessitatibus vero exercitationem commodi explicabo iure repellat tempora est quia perspiciatis omnis aperiam autem iusto cupiditate sint quidem reiciendis.
+	  	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam perferendis cumque necessitatibus vero exercitationem commodi explicabo iure repellat tempora est quia perspiciatis omnis aperiam autem iusto cupiditate sint quidem reiciendis.
+  	</div>
+  	
+  	<button class="collapsible">Section 3</button>
+  	<div class="content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam perferendis cumque necessitatibus vero exercitationem commodi explicabo iure repellat tempora est quia perspiciatis omnis aperiam autem iusto cupiditate sint quidem reiciendis.</div>
+  </div>
+</div>
+<script>
+	$(".collapsible").on("click",function(){
+		$(this).toggleClass("active");
+		const $content=$(this).next();
+		let maxHeight = $(this).next().css("max-height");
+		
+		
+		if(maxHeight=="0px"){
+			let sheight = $(this).next().prop("scrollHeight");
+			$content.css("max-height",sheight+"px");
+		}else{
+			$content.css("max-height","0px");
+		}
+		
+	});
+</script>
+</body>
+</html>
