@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2025. 12. 1. 오후 2:27:13</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="http://localhost/webPro/resources/cdn-main/example.css">
+<script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">CHacha's HOme</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+  <xmp class="code">
+    ex09_02.html
+    
+    js 클래스 상속
+    
+  </xmp>
+</div>
+<script>
+//함수 호이스팅O
+//클래스 선언은 호이스팅 X
+  class Car {
+     // 생성자
+     consturctor(brand) {
+        this.carname = brand;
+     }
+     
+     // 메서드
+     present(){
+        return this.carname;
+     }
+     
+     // getter, setter
+     get cname() {
+      return this.cname;
+     }
+     
+     set cname(x) {
+      this.cname = x;
+     }
+     static hello(){
+    	 //
+     }
+  }
+  
+  class Model extends Car {
+     // 생성자
+     consturctor(brand, mod) {
+        super(brand);
+        this.model = mod;
+     }
+     
+     // 메서드
+     show(){
+        return this.present() + "/" + this.model;
+     }
+  }
+  //클래스명.메서드명
+  //Car.hello();
+  
+  const myCar = new Model("Ford","Mustang");
+  alert(myCar.show());
+  
+  myCar.cname = "XXX";//setter
+  alert(myCar.cname);//getter
+</script>
+</body>
+</html>
