@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2025. 12. 1. 오후 4:11:28</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="http://localhost/webPro/resources/cdn-main/example.css">
+<script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">CHacha's HOme</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+  <xmp class="code">
+    [js 함수]
+    1. apply() : 다른 객체의 메서드를 불러서 처리할 수 있는 함수
+      차이점 ) 매개변수 - 배열
+    2. call()  : 다른 객체의 메서드를 불러서 처리할 수 있는 함수
+      차이점 ) 매개변수,매개변수,매개변수,매개변수,매개변수    - 나열 
+      
+    배열 속에 최대값, 최소값 구하는 예제)
+    let max = Math.max.apply(null, m);
+    let min = Math.min.apply(null, m);
+  </xmp>
+</div>
+<script>
+  const person = {
+   print : function() { // 해당 객체 정보를 출력하는 메서드
+     return this.name + " / " + this.age;
+   }, 
+   printf : function(city, color) {
+     return `${this.name} / ${this.age} / ${city} / ${color}`;
+   }
+  }
+
+  // person 객체가 100개...
+  const person1 = {
+        name : "hong",
+        age : 20
+        /* print : function() { // 해당 객체 정보를 출력하는 메서드
+         return this.name + " / " + this.age;
+        } */
+  };
+  const person2 = {
+        name : "admin",
+        age : 40
+        /* print : function() { // 해당 객체 정보를 출력하는 메서드
+         return this.name + " / " + this.age;
+        } */
+  };
+  // :
+  const person100 = {
+        name : "kim",
+        age : 24
+        /* print : function() { // 해당 객체 정보를 출력하는 메서드
+         return this.name + " / " + this.age;
+        } */
+  };
+/*  
+  document.write(person.print.apply(person1) + "<br>");
+  document.write(person.print.apply(person2) + "<br>");
+  document.write(person.print.apply(person100) + "<br>");
+  
+  document.write(person.print.call(person1) + "<br>");
+  document.write(person.print.call(person2) + "<br>");
+  document.write(person.print.call(person100) + "<br>");
+*/
+
+  document.write(person.printf.apply(person1, ["seoul","red"]) + "<br>");
+  document.write(person.printf.apply(person2, ["seoul","red"]) + "<br>");
+  document.write(person.printf.apply(person100, ["seoul","red"]) + "<br>");
+  
+  document.write(person.printf.call(person1, "seoul", "red") + "<br>");
+  document.write(person.printf.call(person2, "seoul", "red") + "<br>");
+  document.write(person.printf.call(person100, "seoul", "red") + "<br>");
+  
+  const m = [3,5,2,4,1];
+  let max = Math.max.apply(null, m);
+  alert(max);
+</script>
+</body>
+</html>
