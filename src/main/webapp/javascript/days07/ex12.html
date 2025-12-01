@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>2025. 12. 1. 오후 3:43:05</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico"> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="http://localhost/webPro/resources/cdn-main/example.css">
+<script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">Home</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+  <xmp class="code">
+    js 객체 생성 방법 정리
+    ㄴ js객체는 기본형을 제외한 모든것이 js객체
+    ㄴ 기본형 ? number, string, boolean, bigint
+    		  null, undefined, symbol
+    ㄴ 객체 ? function, array, object
+    ㄴ 표준 내장객체 - Math, String, Number, Date, Boolean
+    
+    1) 객체 리터럴을 사용
+    	const person={
+    		name : "홍길동",
+    		age : 20
+    	};
+    2) new 키워드를 사용
+    	const person=new Object({
+    		name : "홍길동",
+    		age : 20
+    	});
+    3) 객체 생성자를 사용
+    <script>
+    	//객체 생성자
+    	function Person(name, age){
+    		this.name = name;
+    		this.age=age;
+    	}
+    	// 기존 객체 생성자 속성 추가 X
+    	Person.prototype.gender = true;
+    	//기존 객체 생성자 메서드 추가
+    	Person.prototype.info = function(){
+    		return this.name + " / " + this.age;
+    	}
+    </script>
+  </xmp>
+</div>
+</body>
+</html>
