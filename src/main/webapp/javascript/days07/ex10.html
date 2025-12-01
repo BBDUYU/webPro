@@ -37,6 +37,44 @@
 </div>
 <script>
 	//json 예제 코딩...
+	//ex10_family
+	//json 파일유형 ???.json
+	//json 텍스트의 MIME유형 - "application/json"
+	//json > xml
+	//	1) 종료태그 X 2) 더짧음 3) 읽기 쓰기 더 빠름
+	//	4) 배열을 사용할수 있음
+	//	5) xml -> xml파서, json - js함수 파싱
+	
+	//js object
+	const person ={
+			name:"홍길동",
+			age:20
+	};
+	//1) js object -> json변환
+	const jsonPerson=JSON.stringify(person);
+	//alert(typeof jsonPerson);
+	
+	//2) json -> js Object 변환
+	const parsePerson=JSON.parse(jsonPerson);
+	alert(parsePerson.name+"/"+parsePerson.age);
 </script>
 </body>
 </html>
+<!-- 
+<EMP_LIST><EMP><EMPNO>7369</EMPNO><ENAME>SMITH</ENAME><JOB>CLERK</JOB><SAL>
+
+오라클 12 이상
+SELECT JSON_OBJECT(
+         'empno' VALUE empno,
+         'ename' VALUE ename,
+         'job'   VALUE job,
+         'sal'   VALUE sal
+       ) AS emp_json
+FROM emp;
+
+--
+[
+  { "empno": 7369, "ename": "SMITH", "job": "CLERK", "sal": 800 },
+  { "empno": 7499, "ename": "ALLEN", "job": "SALESMAN", "sal": 1600 }
+]
+ -->

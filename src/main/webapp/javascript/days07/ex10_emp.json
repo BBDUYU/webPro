@@ -1,0 +1,7 @@
+
+{
+	"employees" : [
+	  		{ "empno": 7369, "ename": "SMITH", "job": "CLERK", "sal": 800 },
+	  		{ "empno": 7499, "ename": "ALLEN", "job": "SALESMAN", "sal": 1600 }
+		]
+}
