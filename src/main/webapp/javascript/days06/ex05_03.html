@@ -27,6 +27,51 @@
          오늘이 생일..
   </xmp> 
 </div>
+<script>
+/*
+	const rrn = "991123-1700001";
+	// slice() / substring() / substr()
+	const month=parseInt(rrn.substr(2,2));
+	const date=parseInt(rrn.substr(4,2));
+	
+	const now = new Date();
+	now.setHours(0);
+	now.setMinutes(0);
+	now.setSeconds(0);
+	now.setMilliseconds(0);
+	
+	const birthday=new Date(now.getFullYear(),month-1,date,0,0,0);
+	if (birthday > now) {
+		alert("생일 지났다")
+	}else if(birthday == now){
+		alert("오늘이 생일이다")
+	}else{
+		alert("생일 지나지 않았다")
+	}
+	*/
+</script>
+<script>
+/*
+	const rrn = "991202-1700001"
+	//alert(rrn.substring(2,6));
+	let b_md=Number(rrn.substring(2,6));
+	//alert(b_md);
+	
+	const now = new Date();
+	//alert(now.toLocaleDateString());//2025. 12. 1.
+	//alert(now.toLocaleDateString().substring(5));// 12. 1.    
+	let md = now.toLocaleDateString().substring(5).replace(/[.\s]/g,"");// 121     <- 0 이 빠져서 계산 어려움
+	//alert(md);
+	let n_md=1201;
+	if (b_md>n_md) {
+		X
+	}else if(b_md == n_md){
+		
+	}else{
+		O
+	}
+	*/
+</script>
 </body>
 </html>
 
