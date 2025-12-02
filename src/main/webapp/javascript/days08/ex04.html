@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>2025. 12. 2. 오전 11:30:36</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico"> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="http://localhost/webPro/resources/cdn-main/example.css">
+<script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+<style>
+	 #container{
+	   width:400px;
+	   height:400px;
+	   
+	   position:relative;
+	   background-color:yellow;
+	 }
+	 
+	 .animate{
+	    width:50px;
+	    height:50px;    
+	    position:absolute;    
+	    background-color:red;
+	    border-radius: 50%;             
+	 }
+</style>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">Home</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+  <xmp class="code">
+    
+  </xmp>
+ <button onclick="move();">Click Me</button>
+  <br>
+  <br>
+  
+  
+  <div id="container">   
+  	<div class="animate"></div>
+  </div> 
+</div>
+<script>
+	function move(){
+		let elem = document.querySelector(".animate");
+		let pos=0;
+		let timer=setInterval(()=>{
+			if(pos==350) clearInterval(timer);
+			pos++;
+			elem.style.left=pos+"px";
+			elem.style.top=pos+"px";
+		},10);
+	}
+</script>
+</body>
+</html>
