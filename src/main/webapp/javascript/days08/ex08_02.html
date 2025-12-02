@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2025. 12. 2. 오후 3:36:04</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="http://localhost/webPro/resources/cdn-main/example.css">
+<script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">kEnik HOme</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+  <xmp class="code">
+   ex08_02.html
+  </xmp>
+  
+  <h2>js HTML DOM</h2>
+  <p>Displaying document.body</p>
+  
+  <p id="demo" style="border:1px solid gray">demo</p>  
+  
+</div>
+<script>
+	let element = document.querySelector("h2");
+	let pelem = element.nextElementSibling.nextElementSibling;
+	
+	alert(pelem.nodeValue);
+	alert(pelem.nodeName);
+	alert(pelem.nodeType);
+	
+	
+	
+</script>
+<script>
+
+  /* let element = document.querySelector("h2"); */
+  // alert( element.innerText );
+  
+  // [object HTMLDivElement]
+  // alert(  element.parentElement );
+  // alert( element.parentElement.firstElementChild.innerText );
+  
+  //alert( element.parentElement.firstElementChild.nextElementSibling.innerText );
+
+  
+  // alert( element.parentElement.firstElementChild.nextElementSibling.parentElement.childNodes.length ); // 9
+  
+  /*
+  let elements = document.getElementsByTagName("h2");
+  //alert( elements.length );
+  // h2.innerText = "돔!!!"; 
+  elements[0].innerText = "돔!!!";
+  */
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
