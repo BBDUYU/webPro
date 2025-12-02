@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>2025. 12. 2. 오후 3:09:14</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico"> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="http://localhost/webPro/resources/cdn-main/example.css">
+<script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">Home</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+  <xmp class="code">
+    html문서의 모든 요소를 조작
+    요소생성,수정,삭제
+    스타일변경
+    등등
+    
+    html DOM을 사용해서 모든요소들을 조작, 탐색
+    DOM == Document Object Model
+    html 문서 ->  -> DOM 생성
+    
+    	서버				클라이언트
+    	html 	요청	    브라우저
+    					웹페이지 로딩 -> DOM 생성
+   -html 문서의 모든것들은 노드가 된다
+   		html 요소
+   		주석처리
+   		텍스트
+   		속성
+   		
+   - 모든 노드들은 관계를 맺음
+   		1) 부모자식관계
+   			parentNode 		childNode
+   			parentElement 	
+   		2) 형제관계
+   			nextElementSibling
+   			nextSibling
+   			
+   			previousElementSibling
+   			previousSibling
+   			
+   			firstChild
+   			lastChild
+   			
+   			모든 자식 노드 목록 : childNodes
+   	- 노드 3가지 속성
+   		1) nodeValue
+   		   요소노드-null
+   		   속성노드-속성값
+   		   텍스트노드-텍스트
+   		2) nodeName 속성
+   		   요소노드 - 태그명
+   		   속성노드 - 속성명
+   		   텍스트노드 - #text
+   		   주석노드 - #comment
+   		3) nodeType 속성
+   		   1 요소
+   		   2 속성
+   		   3 텍스트
+   		   4 주석
+   		   5 html
+   		   6 <DOCTYPE> 선언문 노드
+	
+	-DOM 속성, 메서드
+	1) 요소 생성, 추가, 삭제
+	document.createElement()
+	document.appendChild()
+	document.removeChild()
+	document.replaceChild()
+	
+	2) 요소 검색하는 메서드
+	document.getElementsById()
+	document.getElementsByTagName()
+	document.getElementsByName()
+	document.getElementsByClassName()
+	document.querySelector()
+	document.querySelectorAll()
+	
+	3) 요소의 속성 변경 메서드
+	element.setAttribute()
+	element.getAttribute()
+	
+	element.innerText
+	element.innerHTML
+	
+	element.속성명
+	
+	4)
+	document.body == <body>
+	document.documentElement == <html>
+	document.title==<title>
+	document.doctype==<DOCTYPE>
+	document.head==<head>
+	** document.cookie 쿠키속성
+	
+	document.forms 컬렉션
+	document.links 컬렉션
+	document.images 컬렉션
+	document.scripts 컬렉션
+	
+	
+  </xmp>
+</div>
+</body>
+</html>
