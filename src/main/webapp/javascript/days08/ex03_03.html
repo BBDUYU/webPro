@@ -18,10 +18,54 @@
 </header>
 <div>
   <xmp class="code">
-    
+    add(){
+    	let counter=0; 지역변수
+    	//add() 함수가 호출할때마다 변수생성 + 0초기화
+    	//add() 함수가 아닌 다른곳에서는 counter변수를 사용할 수 없도록, 전역변수처럼 사용하고 싶음
+    	
+    	//해결책 : js 중첩함수에 대한 이해 -> 함수 클로저
+    }
   </xmp>
-  <pre> 
-  </pre>
+  
+  <button>count</button>
+  <p id="demo"></p>
+  
 </div>
+<script>
+//[2] 부모함수가 닫힌 후에 부모 범위에 접근할 수 있는 함수 : 클로저
+	let plus = (function (){
+		let counter = 0;
+		return function (){
+			counter++;
+			return counter;
+		}
+	})();
+	
+	$("button").on("click",function(){
+		$("#demo").html(plus());
+	})
+</script>
+<script>
+/* [1]
+	function add(){
+		// 지역변수
+		let counter = 0;
+		
+		//중첩 함수
+		//함수 선언부분
+		function plus(){
+			//부모함수의 지역변수에 접근 가능(암기)
+			counter++;
+		}
+		// 부모함수에서 자식함수를 호출가능
+		plus();
+		return counter;
+	}
+
+	$("button").on("click",function(){
+		$("#demo").html(add());
+	})
+	*/
+</script>
 </body>
 </html>
