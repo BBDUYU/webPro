@@ -17,7 +17,7 @@
       background-color: #f44336;
       color:white;
       opacity: 1; 
-      transition:opacity 0.6s, height 0.6s;
+           transition:opacity 0.6s, height 0.6s;
       margin-bottom: 15px;
    }
    
@@ -63,7 +63,7 @@
       <option>info</option>
    </select>
    <br>
-   내용  : <input type="text" />
+   내용  : <input type="text" class="long"/>
    <button>공지사항 추가</button>
    <br>   
    <hr>
@@ -109,13 +109,34 @@
    $("body > div").append(noticeElement);
   }// for~of
   
-  $("span.closebtn").on("click", function() {
-   //$(this).parent().hide();
-   	  const noticeDiv = $(this).parent();
-   	  noticeDiv.css("opacity","0");
-	  setTimeout(()=>{
-		  noticeDiv.hide();
-	  },600)
+  
+  $(document).on("click",".closebtn", function() {
+    const noticeDiv = $(this).parent();
+   // $(this).parent().hide();
+   noticeDiv.css("opacity", "0");
+   setTimeout(() => {
+      noticeDiv.hide();
+   }, 600); // 0.6초
+  });
+  
+  // 공지사항 추가 버튼
+  $("button").on("click", function() {
+   let type = $("#type").val();
+   let message = $(":text").val();
+   if (type == 'type 없음') {
+      alert("타입 선택해주세요");
+      return;
+   }
+   
+   let noticeElement = 
+      `<div class="alert ${type}">
+          <span class="closebtn">&times;</span>
+          <strong>Info!</strong>
+          ${message}
+        </div>`;
+   // $("body > div").append(noticeElement);
+   $("div.alert").first().before(noticeElement);
+   
   });
 </script>
 </body>
