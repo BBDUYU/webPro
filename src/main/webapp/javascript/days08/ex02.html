@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2025. 11. 21. 오후 2:50:34</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="http://localhost/webPro/resources/cdn-main/example.css">
+<script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+
+<style>
+   #out {
+      background-color: skyblue;
+      padding: 50px;
+   }
+   #in {
+      background-color: white;
+      font-size: 20px;
+      border: 1px solid;
+      padding: 20px;
+   }
+</style>
+
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">Zerozhu HOme</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+  <xmp class="code">
+    1. 이벤트 버블링 O
+       ㄴ 자식 요소에 발생한 이벤트가 부모 요소에 이벤트가 전달되는 것
+    2. 이벤트 캡쳐링 X
+       ㄴ 부모 요소에 발생하는 이벤트가 자식 요소에 이벤트가 전달되는 것
+  </xmp>
+  
+  <div id="out">
+     <h2>이벤트 버블링 체크</h2>
+     <p id="in">자식 p태그</p>
+  </div>
+  
+</div>
+
+<script>
+   // 자식
+   $("#in").on("click", function () {
+      // alert("in");
+      $("#out").css("background-color", "blue");
+      
+      event.stopPropagation(); // 전파 X
+      // event.preventDefault()
+   });
+   // 부모
+   $("#out").on("click", function () {
+      // alert("out");
+      $("#out").css("background-color", "#e79fe7");
+   });
+</script>
+
+</body>
+</html>
