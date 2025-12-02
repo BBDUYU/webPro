@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2025. 12. 2. 오후 2:38:47</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="http://localhost/webPro/resources/cdn-main/example.css">
+<script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">CHacha's HOme</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+  <xmp class="code">
+    ex07.html
+    [콜백함수 ( callback )]
+    1. 다른 함수의 매개변수로 전달되는 함수
+    2. 콜백함수를 사용하면 함수가 다른 함수를 호출 가능
+  </xmp>
+  
+  <p id="demo"></p>
+</div>
+<script>
+
+	setTimeout(콜백함수,100);
+
+  function disp(msg) {
+    $("#demo").html(msg);
+  }
+  
+  function sum(n1, n2, callback) {
+   // return n1 + n2;
+   let result = n1 + n2;
+   callback(result);
+  }
+/*  
+  function sum(n1, n2) {
+   // return n1 + n2;
+   let result = n1 + n2;
+   disp(result);
+  }
+*/
+  
+  // 함수를 매개변수로 가지는 sum 함수를 다시 선언.
+
+  // 순서대로 두 개의 함수를 호출해야 된다.
+  // let result = sum(10,20);
+  // disp(result);
+  
+  // sum(10,35);
+  sum(10,20,disp);
+  
+  function print(msg) {
+   alert(msg);
+  }
+  sum(10,20,print);
+  sum(100,200,(r)=>{
+	  console.log(r);
+  })
+</script>
+</html>
+
+
+
+
+
+
+
