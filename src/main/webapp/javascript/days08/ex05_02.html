@@ -7,6 +7,25 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <link rel="stylesheet" href="http://localhost/webPro/resources/cdn-main/example.css">
 <script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+<style>
+	.myDiv{
+		background-color:#f1f1f1;
+		text-align: center;
+		border:1px solid #d3d3d3;
+		position: absolute;
+		z-index: 9;
+	}
+	.myDivHeader{
+		padding: 10px;
+		cursor: move;
+		z-index: 10;
+		background-color: #2396F3;
+		color: #fff;
+	}
+	#myDiv2{
+		left:150px;
+	}
+</style>
 </head>
 <body>
 <header>
@@ -20,8 +39,61 @@
   <xmp class="code">
     
   </xmp>
-  <pre> 
-  </pre>
+  <div id="myDiv1" class="myDiv">
+  	<div id="myDiv1Header" class="myDivHeader">Click Here 1</div>
+  	<p>Lorem.</p>
+  	<p>Explicabo!</p>
+  	<p>Amet.</p>
+  </div>
+  <div id="myDiv2" class="myDiv">
+  	<div id="myDiv2Header" class="myDivHeader">Click Here 2</div>
+  	<p>Lorem.</p>
+  	<p>Explicabo!</p>
+  	<p>Amet.</p>
+  </div>
 </div>
+<script>
+	function draggable(elem){
+		let elemX = 0, elemY = 0;//마우스 다운 좌표
+		let moveX = 0, moveY = 0;//이동 좌표
+		
+		if (document.querySelector(`#${elem.id}Header`)) {
+			document.querySelector(`#${elem.id}Header`).onmousedown=dragMouseDown;
+		}
+		function dragMouseDown(e){
+			e=window.event || e;
+			console.log(`[md]${e.clientX} / ${e.clientY}`);
+			elemX = e.clientX;
+			elemY = e.clientY;
+			
+			//마우스 무브 이벤트
+			document.onmousemove = dragMouseMove;
+			document.onmouseup = dragMouseUp;
+		}
+		function dragMouseMove(e){
+			e=window.event || e;
+			console.log(`[md]${e.clientX} / ${e.clientY}`);
+			moveX=elemX - e.clientX;
+			moveY=elemY - e.clientY;
+			
+			elem.style.left = elem.offsetLeft - moveX+"px";
+			elem.style.top = elem.offsetTop - moveY+"px";
+			
+			elemX=e.clientX;
+			elemY=e.clientY;
+			
+			
+		}
+		function dragMouseUp(e){
+			//마우스 무브 제거
+			document.onmousemove = null;
+			document.onmouseup = null;
+		}
+
+	}
+
+	draggable(document.querySelector("#myDiv1"));
+	draggable(document.querySelector("#myDiv2"));
+</script>
 </body>
 </html>
