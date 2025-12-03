@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>2025. 12. 3. 오전 11:23:58</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico"> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="http://localhost/webPro/resources/cdn-main/example.css">
+<script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">Home</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+  <xmp class="code">
+    웹 api
+    	웹 스토리지 api
+    	데이터 저장하는 저장소 - 쿠기
+    	locatlStorage
+    		브라우저를 닫아도 삭제되지 않는다
+    		만료일 X
+    		수정,추가,읽기,삭제
+    	
+    	localStorage.setItem("name","admin");
+    	
+    	sessionStorage.setItem("name","admin");
+    		브라우저 닫히면 데이터는 자동삭제
+    		
+    	
+  </xmp>
+  <p id="demo"></p>
+  <script>
+  	//추가
+  	/* localStorage.setItem("name","admin"); */
+  	//읽기
+  	let name = localStorage.getItem("name");
+  	$("#demo").html(name);
+  	//삭제
+  	//localStorage.removeItem("키이름");
+  	//localStroage.clear()//전체삭제
+  </script>
+</div>
+</body>
+</html>

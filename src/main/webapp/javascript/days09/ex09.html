@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>2025. 12. 3. 오전 11:14:24</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico"> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="http://localhost/webPro/resources/cdn-main/example.css">
+<script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">Home</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+  <xmp class="code">
+    js 웹 api
+    api == Application Programming Interface
+    웹 API ? 웹을위한API
+    브라우저의 기능을 확장, 복잡한 기능을 개선해서 단순화
+    복잡한 코드를 쉬운구문으로 제공
+    예) 지리적 위치 API(브라우저를 사용한 위치 좌표)
+  </xmp>
+</div>
+<button onclick="getLocation">Try</button>
+<p id="demo"></p>
+<script>
+   const demo = document.querySelector("#demo");
+   function getLocation() {
+      try {
+         // 콜백함수
+         navigator.geolocation.getCurrentPosition(showPosition);
+      } catch (err) {
+         demo.innerText = err;
+      }
+   }
+   
+   function showPosition(position) {
+      demo.innerText =  "Latitude: " + position.coords.latitude + 
+        "<br>Longitude: " + position.coords.longitude;
+   }
+</script>
+</body>
+</html>
