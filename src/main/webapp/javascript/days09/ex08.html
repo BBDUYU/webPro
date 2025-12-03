@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>2025. 12. 3. 오전 11:07:36</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico"> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="http://localhost/webPro/resources/cdn-main/example.css">
+<script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">Home</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+  <xmp class="code">
+    js 3가지 대화상자
+  </xmp>
+  <button>종료</button>
+</div>
+<script>
+	let message = "나이를 입력";
+	let age=0;
+	let result = prompt(message,age);
+	alert(result);
+</script>
+<script>
+	$("button").on("click",function(){
+		let message = "종료 ?";
+		if(confirm(message)){
+			self.close();
+		}
+	})
+</script>
+</body>
+</html>
