@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>2025. 12. 3. 오전 9:33:15</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico"> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="http://localhost/webPro/resources/cdn-main/example.css">
+<script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">Home</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+  <xmp class="code">
+    
+  </xmp>
+</div>
+<table border="1" style="width:500px; margin:0 auto">
+	<tr>
+		<td>우편번호</td>
+		<td>
+			<input type="text" id="zip1" name="zip1" size=3  readonly="readonly"/>
+			-
+			<input type="text" id="zip2" name="zip2" size=3  readonly="readonly"/>
+			<input type="button" value="우편번호 검색" onclick="search_zipcode()"/>
+		</td>
+	</tr>
+	<tr>
+		<td>주소</td>
+		<td>
+			<input type="text" id="addr1" name="addr1" style="width:90%"/>
+		</td>
+	</tr>
+	<tr>
+		<td>상세주소</td>
+		<td><input type="text" id="addr2" name="addr2" style="width:90%"/></td>
+	</tr> 
+</table>
+<script>
+	function search_zipcode(){
+		let url = "ex03_02.html";
+	      let target = "";
+	      let windowFeatures = "left=100, top=200, width=600, height=600";
+	      if(!newWin){
+	      	newWin = window.open(url, target, windowFeatures);  
+	      }else{
+	    	  newWin.focus();
+	      }
+	}
+</script>
+</body>
+</html>
