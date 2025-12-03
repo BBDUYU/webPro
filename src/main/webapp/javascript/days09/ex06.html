@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>2025. 12. 3. 오전 10:37:05</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico"> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="http://localhost/webPro/resources/cdn-main/example.css">
+<script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">Home</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+  <xmp class="code">
+    ex06
+    BOM
+    	w
+    	s
+    	l
+    	history
+    		- 브라우저 기록이 포함되어있는 객체
+    		- 기록 목록에는 이전 주소, 다음 주소
+    					  이동 	   이동
+    				history.back() history.forward()
+    				history.go(-3) history.go(3)
+    			
+  </xmp>
+  <a href="#">ex01.html 이동</a>
+  <br />
+  <a href="javascript:history.go(1)">다음페이지로 이동</a>
+</div>
+<script>
+	$("a").eq(3).on("click",function(){
+		alert("test");
+		/* $(this).attr("href","ex01.html"); */
+		let name = 'admin';
+		let age = 20;
+		
+		location.href=`ex01.html?name=${name}&age=${age}`;
+		
+	})
+</script>
+</body>
+</html>
