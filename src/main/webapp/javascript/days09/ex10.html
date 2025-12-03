@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>2025. 12. 3. 오전 11:44:47</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico"> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="http://localhost/webPro/resources/cdn-main/example.css">
+<script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">Home</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+  <xmp class="code">
+    
+  </xmp>
+  <!-- item01 ~ 21.gif -->
+  <img src="../images/item01.gif" alt="" />
+</div>
+<script>
+	document.oncontextmenu=function(){
+		/* alert("오른쪽 마우스는 사용할 수 없다"); */
+		return false;
+	}
+	function getRandom( min, max){
+		   return Math.floor( Math.random()*(max-min+1)+min);
+		 }
+	document.onmousedown=function(){
+		//alert(event.button);
+		if (event.button==0) {
+			document.title=`${event.clientX},${event.clientY} / ${$("img").width()}`;
+			let newImg=document.createElement("img");
+			let imgNo = getRandom(1,21).toString().padStart(2,0);
+			newImg.src=`../images/item${imgNo}.gif`;
+			let imgLeft = event.clientX - $("img").width()/2;
+			let imgTop = event.clientY - $("img").height()/2;
+			newImg.setAttribute("style", `position:absolute;left:${imgLeft}px;top:${imgTop}px`);
+			document.body.appendChild(newImg);
+			
+		}else if(event.button==1){
+			/*
+			var allImgs = document.querySelectorAll("img");
+			for(let img of allImgs){
+				img.remove();
+			}*/
+			
+			//var allImgs = document.images;
+			$("body img").remove();
+			
+			
+		}else if(event.button==2){
+			//이벤트 받은 요소 event.srcElement,event.target
+			//document.body.removeChild(event.target);
+			if(event.target.matches('img')){
+				event.target.remove();				
+			}
+		}
+	}
+</script>
+</body>
+</html>
