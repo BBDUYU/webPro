@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="Author" content="in">
+	<meta name="Generator" content="Visual Studio Code">
+	<title>JavaScript</title>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+	<link rel="stylesheet" href="basic.css">
+	<style>
+	</style>
+</head>
+<body oncontextmenu='return false' ondragstart='return false' onselectstart='return false'>
+
+<style>
+	#place {
+		border: 1px solid #999;
+		padding: 20px;
+		min-height: 146px;
+	}
+</style>
+<div class="main m1000">
+	<div class="mainHeader">
+		<h1>숫자키 이벤트 + 이미지 동적 생성하기</h1>
+		<div>숫자키를 누르면 하단의 박스(div)안에 이미지를 생성하시오.</div>
+		<ul>
+			<li>상단 숫자키 사용 가능</li>
+			<li>우측 숫자키패드 사용 가능</li>
+		</ul>
+		<div class="code">window.onkeydown, event.keyCode, div.innerHTML</div>
+	</div>
+
+	<div id="place"></div>
+	
+</div>
+
+<script>
+
+	var place = document.getElementById("place");
+
+	window.onkeydown = function() {
+
+		if (event.keyCode >= 48 && event.keyCode <= 57) {
+			place.innerHTML += "<img src='../images/" + (event.keyCode - 48) + ".png'>";
+		} else if (event.keyCode >= 96 && event.keyCode <= 105) {
+			place.innerHTML += "<img src='../images/" + (event.keyCode - 96) + ".png'>";
+		}
+
+	};
+	
+</script>
+
+	<script src="basic.js"></script>
+</body>
+</html>
+

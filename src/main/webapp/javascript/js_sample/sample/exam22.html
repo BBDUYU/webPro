@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="Author" content="in">
+	<meta name="Generator" content="Visual Studio Code">
+	<title>JavaScript</title>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+	<link rel="stylesheet" href="basic.css">
+	<style>
+	</style>
+</head>
+<body oncontextmenu='return false' ondragstart='return false' onselectstart='return false'>
+
+
+<style>
+	#tbl1 td {
+		width: 100px;
+		height: 100px;
+	}
+
+	html, body {
+		overflow: hidden;
+	}
+</style>
+<script>
+	
+	var cell;
+	var index = 0;
+	
+	window.onload = function() {
+		cell = document.getElementsByTagName("td");
+		cell[index].bgColor = "tomato";
+	};
+	
+	window.onkeydown = function() {
+
+		console.log(event.keyCode);
+		
+		clear();
+		
+		if (event.keyCode ==  37) { //좌
+		
+			index--;
+			if (index < 0 || index % 5 == 4) index++;
+		
+		} else if (event.keyCode == 39) { //우
+			
+			index++;
+			if (index >= cell.length || index % 5 == 0) index--;
+		
+		} else if (event.keyCode == 38) { //상
+			
+			index-=5;
+			if (index < 0) index+=5;
+		
+		} else if (event.keyCode == 40) { //하
+			
+			index+=5;
+			if (index >= cell.length) index-=5;
+		
+		}
+		
+		cell[index].bgColor = "tomato";
+		
+	};
+	
+	function clear() {
+		
+		for (var i=0; i<cell.length; i++) {
+			cell[i].bgColor = "transparent";
+		}
+		
+	}
+	
+</script>
+
+<div class="main m800">
+	<div class="mainHeader">
+		<h1>테이블 셀 이동하기 + 키이벤트</h1>
+		<div>방향키에 맞춰 활성화된 셀을 이동하시오.</div>
+		<ul>
+			<li>상,하,좌,우</li>
+		</ul>
+		<div class="code">window.onkeydown</div>
+	</div>
+	<table id="tbl1" class="table" style="margin: 50px auto;">
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+	</table>
+</div>
+
+
+
+
+
+
+
+	<script src="basic.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

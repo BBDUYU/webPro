@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="Author" content="in">
+	<meta name="Generator" content="Visual Studio Code">
+	<title>JavaScript</title>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+	<link rel="stylesheet" href="basic.css">
+	<style>
+	</style>
+</head>
+<body oncontextmenu='return false' ondragstart='return false' onselectstart='return false'>
+
+<style>
+	table { border-spacing: 3px; }
+	th { width: 100px; text-align: right; }
+	td { border: 1px solid #999; border-radius: 5px; width: 20px; height: 20px; text-align: center; }
+	td.disabled { background-color: #ccc; }
+</style>
+<div class="main m1400">
+	<div class="mainHeader">
+		<h1>테이블 시계</h1>
+		<div>테이블의 셀을 사용해 시간을 표시하시오.</div>
+		<ul>
+			<li>첫번째 행 : 시</li>
+			<li>두번째 행 : 분</li>
+			<li>세번째 행 : 초</li>
+		</ul>
+		<div class="code">new Date(), document.getElementsByClassName(), td.bgColor, setInterval()</div>
+	</div>
+
+	<table>
+		<tr>
+			<th>Hour&nbsp;</th>
+			<td class="hour" colspan="2"></td>
+			<td class="hour" colspan="2"></td>
+			<td class="hour" colspan="2"></td>
+			<td class="hour" colspan="2"></td>
+			<td class="hour" colspan="2"></td>
+			<td class="hour" colspan="2"></td>
+			<td class="hour" colspan="2"></td>
+			<td class="hour" colspan="2"></td>
+			<td class="hour" colspan="2"></td>
+			<td class="hour" colspan="2"></td>
+			<td class="hour" colspan="2"></td>
+			<td class="hour" colspan="2"></td>
+			<td class="hour" colspan="2"></td>
+			<td class="hour" colspan="2"></td>
+			<td class="hour" colspan="2"></td>
+			<td class="hour" colspan="2"></td>
+			<td class="hour" colspan="2"></td>
+			<td class="hour" colspan="2"></td>
+			<td class="hour" colspan="2"></td>
+			<td class="hour" colspan="2"></td>
+			<td class="hour" colspan="2"></td>
+			<td class="hour" colspan="2"></td>
+			<td class="hour" colspan="2"></td>
+			<td class="hour" colspan="2"></td>
+			<td class="hour disabled" colspan="2"></td>
+			<td class="hour disabled" colspan="2"></td>
+			<td class="hour disabled" colspan="2"></td>
+			<td class="hour disabled" colspan="2"></td>
+			<td class="hour disabled" colspan="2"></td>
+			<td class="hour disabled"></td>
+		</tr>
+		<tr>
+			<th>Minute&nbsp;</th>
+			<td class="min"></td>
+			<td class="min"></td>
+			<td class="min"></td>
+			<td class="min"></td>
+			<td class="min"></td>
+			<td class="min"></td>
+			<td class="min"></td>
+			<td class="min"></td>
+			<td class="min"></td>
+			<td class="min"></td>
+			<td class="min"></td>
+			<td class="min"></td>
+			<td class="min"></td>
+			<td class="min"></td>
+			<td class="min"></td>
+			<td class="min"></td>
+			<td class="min"></td>
+			<td class="min"></td>
+			<td class="min"></td>
+			<td class="min"></td>
+			<td class="min"></td>
+			<td class="min"></td>
+			<td class="min"></td>
+			<td class="min"></td>
+			<td class="min"></td>
+			<td class="min"></td>
+			<td class="min"></td>
+			<td class="min"></td>
+			<td class="min"></td>
+			<td class="min"></td>
+			<td class="min"></td>
+			<td class="min"></td>
+			<td class="min"></td>
+			<td class="min"></td>
+			<td class="min"></td>
+			<td class="min"></td>
+			<td class="min"></td>
+			<td class="min"></td>
+			<td class="min"></td>
+			<td class="min"></td>
+			<td class="min"></td>
+			<td class="min"></td>
+			<td class="min"></td>
+			<td class="min"></td>
+			<td class="min"></td>
+			<td class="min"></td>
+			<td class="min"></td>
+			<td class="min"></td>
+			<td class="min"></td>
+			<td class="min"></td>
+			<td class="min"></td>
+			<td class="min"></td>
+			<td class="min"></td>
+			<td class="min"></td>
+			<td class="min"></td>
+			<td class="min"></td>
+			<td class="min"></td>
+			<td class="min"></td>
+			<td class="min"></td>
+		</tr>
+		<tr>
+			<th>Second&nbsp;</th>
+			<td class="sec"></td>
+			<td class="sec"></td>
+			<td class="sec"></td>
+			<td class="sec"></td>
+			<td class="sec"></td>
+			<td class="sec"></td>
+			<td class="sec"></td>
+			<td class="sec"></td>
+			<td class="sec"></td>
+			<td class="sec"></td>
+			<td class="sec"></td>
+			<td class="sec"></td>
+			<td class="sec"></td>
+			<td class="sec"></td>
+			<td class="sec"></td>
+			<td class="sec"></td>
+			<td class="sec"></td>
+			<td class="sec"></td>
+			<td class="sec"></td>
+			<td class="sec"></td>
+			<td class="sec"></td>
+			<td class="sec"></td>
+			<td class="sec"></td>
+			<td class="sec"></td>
+			<td class="sec"></td>
+			<td class="sec"></td>
+			<td class="sec"></td>
+			<td class="sec"></td>
+			<td class="sec"></td>
+			<td class="sec"></td>
+			<td class="sec"></td>
+			<td class="sec"></td>
+			<td class="sec"></td>
+			<td class="sec"></td>
+			<td class="sec"></td>
+			<td class="sec"></td>
+			<td class="sec"></td>
+			<td class="sec"></td>
+			<td class="sec"></td>
+			<td class="sec"></td>
+			<td class="sec"></td>
+			<td class="sec"></td>
+			<td class="sec"></td>
+			<td class="sec"></td>
+			<td class="sec"></td>
+			<td class="sec"></td>
+			<td class="sec"></td>
+			<td class="sec"></td>
+			<td class="sec"></td>
+			<td class="sec"></td>
+			<td class="sec"></td>
+			<td class="sec"></td>
+			<td class="sec"></td>
+			<td class="sec"></td>
+			<td class="sec"></td>
+			<td class="sec"></td>
+			<td class="sec"></td>
+			<td class="sec"></td>
+			<td class="sec"></td>
+		</tr>
+	</table>
+</div>
+
+<script>
+
+	var hour = document.getElementsByClassName("hour");
+	var min = document.getElementsByClassName("min");
+	var sec = document.getElementsByClassName("sec");
+
+	var timer = setInterval(m1, 1000);
+
+	function m1() {
+
+		var now = new Date();
+
+		var h = now.getHours();
+		var m = now.getMinutes();
+		var s = now.getSeconds();
+		console.log(h, m, s);
+
+		for (var i=0; i<hour.length; i++) {
+			hour[i].bgColor = "white";
+		}
+		for (var i=0; i<min.length; i++) {
+			min[i].bgColor = "white";
+		}
+		for (var i=0; i<sec.length; i++) {
+			sec[i].bgColor = "white";
+		}
+
+		for (var i=0; i<h; i++) {
+			hour[i].bgColor = "tomato";
+		}
+		for (var i=0; i<m; i++) {
+			min[i].bgColor = "cornflowerblue";
+		}
+		for (var i=0; i<s; i++) {
+			sec[i].bgColor = "gold";
+		}
+	}
+
+	m1();
+
+</script>
+
+	<script src="basic.js"></script>
+</body>
+</html>
+

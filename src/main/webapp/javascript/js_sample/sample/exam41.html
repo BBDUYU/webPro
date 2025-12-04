@@ -1,0 +1,43 @@
+<style>
+	.line {
+		border-top: 1px solid black;
+		width: 100px;
+		transition: all 3s;
+	} 
+	/* .line:hover {
+		width: 100%;
+	} */
+</style>
+<div class="main m1000">
+	<div class="mainHeader">
+		<h1>Temp</h1>
+		<div></div>
+		<ul>
+			<li></li>
+		</ul>
+		<div class="code"></div>
+	</div>
+
+	<div id="box"></div>
+	
+</div>
+<script>
+	
+	//var colors = [ 'black', 'tomato', 'cornflowerblue', 'gold', 'green' ];
+
+	for (var i=0; i<500; i++) {
+		var line = document.createElement("div");
+		line.className = "line";
+		//line.dataset["color"] = 0;
+		line.onmouseover = function() {
+			var obj = event.srcElement;
+			obj.style.width = "100%";
+			//obj.dataset["color"]++;
+			//obj.style.borderColor = colors[line.dataset["color"]];
+			setTimeout(function() {
+				obj.style.width = "100px";
+			}, 3000);
+		};		
+		document.getElementById("box").append(line);
+	}
+</script>

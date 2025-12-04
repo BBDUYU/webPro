@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="Author" content="in">
+	<meta name="Generator" content="Visual Studio Code">
+	<title>JavaScript</title>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+	<link rel="stylesheet" href="basic.css">
+	<style>
+	</style>
+</head>
+<body oncontextmenu='return false' ondragstart='return false' onselectstart='return false'>
+
+
+<style>
+    form {
+        width: 500px;
+        margin: 20px auto;
+    }
+
+    form > div {
+        margin-bottom: 15px;
+    }
+
+    #txtId { width: 120px; }
+    #txtMessage { width: 230px; border: 0px solid transparent; outline: none; color: tomato; }
+</style>
+<script>
+
+    var txtId, txtMessage;
+
+    window.onload = function() {
+        txtId = window.document.form1.txtId;
+        txtMessage = window.document.form1.txtMessage;
+        txtId.onkeyup = valid;
+    };
+
+    function valid() {
+        if (txtId.value.length == 0) {
+            txtMessage.value = "";
+        } else if (txtId.value.length < 5) {
+            txtMessage.value = "아이디가 너무 짧습니다.";
+        } else if (txtId.value.length > 10) {
+            txtMessage.value = "아이디가 너무 깁니다.";
+        } else {
+            txtMessage.value = "아이디가 적합합니다.";
+        }
+    }
+    
+</script>
+
+<div class="main m400">
+	<div class="mainHeader">
+		<h1>아이디 유효성 검사</h1>
+		<div>아이디 유효성 검사를 하시오.</div>
+		<ul>
+            <li>아이디 : 5자 ~ 10자 이내</li>
+		</ul>
+		<div class="code">txt.onkeyup, txt.value</div>
+	</div>
+    <form name="form1">
+        <div>
+        아이디 : <input type="text" name="txtId" id="txtId">
+        <input type="text" name="txtMessage" id="txtMessage">
+        </div>
+    </form>
+</div>
+
+	<script src="basic.js"></script>
+</body>
+</html>

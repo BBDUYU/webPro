@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="Author" content="in">
+	<meta name="Generator" content="Visual Studio Code">
+	<title>JavaScript</title>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+	<link rel="stylesheet" href="basic.css">
+	<style>
+	</style>
+</head>
+<body oncontextmenu='return false' ondragstart='return false' onselectstart='return false'>
+
+
+<style>
+	#main, .main {
+		position: static;
+	}
+	body { background-color: #444; }
+	#box { border: 10px solid black; width: 1000px; height: 700px; margin: 50px auto; overflow: hidden; position: relative; left: 0px; top: 0px; background-color: white; }
+	.cat { position: absolute; left:0px; top: 0px; display: none; }
+</style>
+<script>
+	var cats;
+	var isDown = false;
+	var pathX = [];
+	var pathY = [];
+	var box;
+
+	window.onload = function() {
+		box = document.getElementById("box");
+		cats = document.getElementsByClassName("cat");
+		for (var i=0; i<cats.length; i++) {
+			cats[i].style.zIndex = (cats.length-i);
+		}
+	};
+
+	window.onmousedown = function() {
+		isDown = true;
+	};
+	window.onmouseup = function() {
+		isDown = false;
+	};
+	window.onmousemove = function() {
+		pathX.push(event.clientX);
+		pathY.push(event.clientY);
+
+		if (pathX.length > cats.length) {
+			pathX.shift();
+			pathY.shift();
+		}
+
+		moveCat();
+	};
+
+	function moveCat() {
+		for (var i=0; i<cats.length; i++) {
+			if (pathX[i] != null) {
+				cats[i].style.left = pathX[i] - 64 - box.offsetLeft + "px";
+				cats[i].style.top = pathY[i] - 64 - box.offsetTop + "px";
+				cats[i].style.display = "block";
+			}
+		}
+
+	}
+
+</script>
+<div class="main m1200">
+	<div class="mainHeader" style="color:white;">
+		<h1 style="color:white;">이미지 + 연속 이동하기</h1>
+		<div style="color:white;">마우스의 움직임을 따라 고양이를 연속으로 움직이시오.</div>
+		<div class="code" style="color:white;"></div>
+	</div>
+	<div id="box">
+		<img src="../images/catty01.png" class="cat">
+		<img src="../images/catty02.png" class="cat">
+		<img src="../images/catty03.png" class="cat">
+		<img src="../images/catty04.png" class="cat">
+		<img src="../images/catty05.png" class="cat">
+		<img src="../images/catty06.png" class="cat">
+		<img src="../images/catty07.png" class="cat">
+		<img src="../images/catty08.png" class="cat">
+		<img src="../images/catty09.png" class="cat">
+		<img src="../images/catty10.png" class="cat">
+		<img src="../images/catty11.png" class="cat">
+		<img src="../images/catty12.png" class="cat">
+		<img src="../images/catty13.png" class="cat">
+		<img src="../images/catty14.png" class="cat">
+		<img src="../images/catty15.png" class="cat">
+		<img src="../images/catty16.png" class="cat">
+		<img src="../images/catty17.png" class="cat">
+		<img src="../images/catty18.png" class="cat">
+		<img src="../images/catty19.png" class="cat">
+		<img src="../images/catty20.png" class="cat">
+		<img src="../images/catty21.png" class="cat">
+	</div>
+</div>
+
+
+
+
+
+
+	<script src="basic.js"></script>
+</body>
+</html>

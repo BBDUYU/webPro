@@ -1,0 +1,173 @@
+
+
+body {
+	margin-bottom: 100px;
+}
+
+body, p, div, span, ul, ol, li, table, th, td, input, textarea, button, a, select, option {
+	color: #444;
+	font-size: 1.0321em;
+	outline: none !important;
+}
+
+h1 {
+	font-size: 1.74em;
+}
+
+
+.table {
+	border: 1px solid gray;
+	border-collapse: collapse;	
+}
+
+.table th, .table td {
+	border: 1px solid gray;
+	padding: 4px;
+}
+
+.table th { background-color: #eee; }
+
+.box { border: 1px solid black; }
+
+.box.big { width: 300px; height: 300px; }
+.box.medium { width: 200px; height: 200px; }
+.box.small { width: 100px; height: 100px; }
+
+.box.red { background-color: tomato; }
+.box.blue { background-color: cornflowerblue; }
+.box.yellow { background-color: #FFF766; }
+.box.green { background-color: lightgreen; }
+.box.orange { background-color: #E5C361; }
+
+.main {
+	margin: 0px auto;
+	position: relative;
+	left: 0px;
+	top: 0px;
+}
+.main.m400 {
+	width: 400px;
+}
+.main.m600 {
+	width: 600px;
+}
+.main.m800 {
+	width: 800px;
+}
+.main.m1000 {
+	width: 1000px;
+}
+.main.m1200 {
+	width: 1200px;
+}
+.main.m1400 {
+	width: 1400px;
+}
+.main.m1600 {
+	width: 1600px;
+}
+
+
+
+/* 요구사항 */
+.main .mainHeader {
+	/* border-top: 7px dashed #aaa; */
+	border-bottom: 1px dashed #aaa;
+	
+	margin-top: 30px;
+	margin-bottom: 50px;
+}
+
+ul > li {
+	margin-bottom: 5px;
+}
+
+
+
+/* 요구사항.프로그래밍 코드 */
+.main .code {
+	/* margin-right: -20px; */
+	margin-top: 15px;
+	margin-bottom: 0px;
+	font-family: 'D2Coding';
+	font-size: .74em;
+	/* background-color: rgba(40, 44, 52, .35); */
+	/* border-bottom: 1px dashed gray; */
+	text-align: right;
+	color: #777;
+}
+
+
+
+/* 말풍선 */
+.script {
+	position: absolute;
+	background-repeat: no-repeat;
+	display: none;
+}
+.script > div {
+	font-size: 14px;
+	/* font-weight: bold; */
+	position: absolute;
+	line-height: 1.4em;
+}
+.script01 {
+	background-image: url('../images/script01.png');
+	background-size: 174px 130px;
+	width: 174px;
+	height: 130px;
+}
+.script23 {
+	background-image: url('../images/script23.png');
+	background-size: 250px 250px;
+	width: 250px;
+	height: 250px;
+}
+.script29_1 {
+	background-image: url('../images/script29_1.png');
+	background-size: 250px 250px;
+	width: 250px;
+	height: 250px;
+}
+.script29_2 {
+	background-image: url('../images/script29_2.png');
+	background-size: 250px 250px;
+	width: 250px;
+	height: 250px;
+}
+.script29_3 {
+	background-image: url('../images/script29_3.png');
+	background-size: 250px 250px;
+	width: 250px;
+	height: 250px;
+}
+.script29_4 {
+	background-image: url('../images/script29_4.png');
+	background-size: 250px 250px;
+	width: 250px;
+	height: 250px;
+}
+.script42_1 {
+	background-image: url('../images/script42_1.png');
+	background-size: 250px 250px;
+	width: 250px;
+	height: 250px;
+}
+.script42_2 {
+	background-image: url('../images/script42_2.png');
+	background-size: 250px 250px;
+	width: 250px;
+	height: 250px;
+}
+.script42_3 {
+	background-image: url('../images/script42_3.png');
+	background-size: 250px 250px;
+	width: 250px;
+	height: 250px;
+}
+.script42_4 {
+	background-image: url('../images/script42_4.png');
+	background-size: 250px 250px;
+	width: 250px;
+	height: 250px;
+}
