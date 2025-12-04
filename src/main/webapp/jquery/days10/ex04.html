@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>2025. 12. 4. 오후 12:09:15</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico"> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="http://localhost/webPro/resources/cdn-main/example.css">
+<script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">Home</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+  <xmp class="code">
+    Effects
+  </xmp>
+  <div id="clickme">
+  Clickhere
+  </div>
+  <img id="book" 
+  src="https://api.jquery.com/resources/0042_06_05.png" alt="" 
+  style="width:500;height:500px">
+  
+  <script>
+  	$("#clickme").on("click",function(){
+  		/* $("#book").hide(); */
+  		//$("#book").hide(5000,test); //5초후 test()실행 콜백함수사용
+  		//$("#book").hide("slow");//slow - 600,  fast - 200
+  		//test();
+  		//$("#book").show(5000);
+  		$("#book").toggle(500);
+  	})
+  	function test(){
+  		alert("완전히 숨겨진 후 처리할 코딩");
+  	}
+  </script>
+</div>
+</body>
+</html>
