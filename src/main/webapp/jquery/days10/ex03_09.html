@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>2025. 12. 4. 오전 11:39:59</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico"> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="http://localhost/webPro/resources/cdn-main/example.css">
+<script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">Home</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+  <xmp class="code">
+    
+  </xmp>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt nemo.</p>
+  <p>Alias ad illo <span>repellendus</span> totam exercitationem voluptate deleniti magnam sunt!</p>
+  <p>Laborum vel doloribus nostrum aperiam provident fuga culpa libero amet!</p>
+  <p>Voluptatem animi modi repudiandae deserunt nostrum placeat iusto omnis libero.</p>
+  <p>Blanditiis rem officia id suscipit dolore deleniti ab quos error?</p>
+  
+</div>
+<script>
+	$("p").css("color","red");
+	
+	//span 태그를 자식으로 가지고 있는 p태그의 글자색을 파랑
+	//$("p:has(span)").css("color","blue");
+	$("p").has("span").css("color","green");
+	
+	// [문제] p 태그의 내용 중에 "ibus" 문자열 포함하는 
+	// p 태그의 배경색을 노랑색으로 설정.
+	$("p").each(function(index,element){
+		let content = $(element).text();
+		/* if(content.indexOf("ibus")!=-1){ */
+		if(content.includes("ibus")){	
+			$(element).css("background-color","yellow");
+		}
+	})
+	//filter()
+	//:contains
+	$("p").filter(":contains(ibus)")
+		.css("background-color","yellow");
+	
+	$("p:contains('ibus')").css("background-color","yellow"); 
+</script>
+</body>
+</html>
