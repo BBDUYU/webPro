@@ -57,23 +57,16 @@
     
   </xmp>
   
-  <p id="demo"></p>
+  <p id="demo">결과 : </p>
  		<button>Trigger custom event</button>
 	<span style="display:none;"></span>
 </div>
+
 <script>
-$( "p" ).on( "myCustomEvent", function( event, myName ) {
-  $( this ).text( myName + ", hi there!" );
-  $( "span" )
-    .stop() //function이 작동할 시 진행중이던 애니메이션을 중단시키고 다시 진행
-    .css( "opacity", 1 )
-    .text( "myName = " + myName )
-    .fadeIn( 30 )
-    .fadeOut( 1000 );
-});
-$( "button" ).click(function () {
-  $( "p" ).trigger( "myCustomEvent", [ "John" ] );
-});
+	$("button").on("click",function(){
+		let oldHtml = $("#demo").text();
+		$("#demo").html(oldHtml+"홍길동");
+	})
 </script>
 </body>
 </html>

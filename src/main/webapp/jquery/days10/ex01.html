@@ -57,12 +57,12 @@
     
   </xmp>
   
-  <p id="demo"></p>
+  <p id="demo">결과 : </p>
  		<button>Trigger custom event</button>
 	<span style="display:none;"></span>
 </div>
 <script>
-/*
+
 $( "p" ).on( "myCustomEvent", function( event, myName ) {
   $( this ).text( myName + ", hi there!" );
   $( "span" )
@@ -74,12 +74,8 @@ $( "p" ).on( "myCustomEvent", function( event, myName ) {
 });
 $( "button" ).click(function () {
   $( "p" ).trigger( "myCustomEvent", [ "John" ] );
-});*/
+});
 </script>
-<script>
-	$("button").on("click",function(){
-		$("#demo").html("홍길동");
-	})
-</script>
+
 </body>
 </html>
